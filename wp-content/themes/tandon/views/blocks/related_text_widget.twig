@@ -1,0 +1,19 @@
+<div id="text_widget" style="background-color: {{ block.background_color_picker }}">
+
+    <div class="container">
+
+        {% include 'blocks/block-title.twig' %}
+
+        <div class="content-block">
+
+		{% for widget in block.text_widget %}
+
+		    {{ widget.post_content|wpautop }}
+
+		{% endfor %}
+
+    	</div>
+
+    </div>
+
+</div>

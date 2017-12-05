@@ -1,0 +1,56 @@
+{% if lectures %}
+<div id="past-events">
+
+	<div class="container">
+
+		<h2 class="text-left text-capitalize mb-5">Past Events</h2>
+
+		<div class="row row-eq-height">
+
+	    {% for post in lectures %}
+
+	    <div class="col-12 col-sm-6">
+
+			<div class="card mb-4">
+			    {% if post.thumbnail.src|default %}
+
+			        <a href="{{ post.link }}">
+			            <img src="{{ post.thumbnail.src }}" alt="{{ post.title }}" class="card-img-top w-100">
+			        </a>
+
+			    {% endif %}
+				<div class="card-body">
+
+					<h4 class="card-title">
+					    <a href="{{ post.link }}">
+					        {{ function('strip_tags', post.title, '<i>, <em>' ) }}
+					    </a>
+					</h4>
+
+	                <h6><a href="{{ post.link }}">{{ post.lecture_title }}</a></h6>
+
+					<p class="card-text">
+					    {% set preview = post.get_preview(43,false,false,true) %}
+
+					    {% if preview %}
+
+					        <p>{{ preview }}</p>
+
+					    {% endif %}
+
+					    <a href="{{ post.link }}" class="read-more mt-4">Learn More</a>
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+
+	    {% endfor %}
+
+	    </div>
+
+	</div>
+
+</div>
+{% endif %}

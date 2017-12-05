@@ -1,0 +1,17 @@
+<ul class="main-menu">
+
+    {% for block in flex_blocks %}
+
+    {% set anchor = block.block_title ~ '-' ~ loop.index %}
+
+   <li>
+
+        <a href="#{{ anchor|sanitize }}" class="anchor">
+            {{ block.block_title }}
+        </a>
+
+    </li>
+
+    {% endfor %}
+
+</ul>

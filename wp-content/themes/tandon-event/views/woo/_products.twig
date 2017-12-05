@@ -1,0 +1,19 @@
+
+{% do action("woocommerce_before_main_content") %}
+
+{% do action("woocommerce_before_shop_loop") %}
+<div class="clearfix"></div>
+
+<div class="card-deck">
+
+    {% for post in products %}
+
+        <div class="card">
+
+        {% include "views/woo/_tease.twig" %}
+
+        </div>
+
+    {% endfor %}
+
+</div>

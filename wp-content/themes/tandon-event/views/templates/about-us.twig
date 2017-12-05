@@ -1,0 +1,23 @@
+{% block content %}
+
+<div id="about-us">
+
+	<div class="container">
+
+		<h2 class="text-left text-capitalize mb-5">About Us</h2>
+
+		<div class="card-deck">
+			{% for item in aboutus %}
+				<div class="card">
+  						<h5 class="card-header">{{ item.title }}</h5>
+						<div class="card-body">
+						{{ item.content }}
+						</div>
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+
+</div>
+{% endblock %}

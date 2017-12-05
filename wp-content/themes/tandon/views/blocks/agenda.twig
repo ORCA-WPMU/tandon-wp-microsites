@@ -1,0 +1,29 @@
+<div id="agenda">
+
+	<div class="container">
+
+		{% include 'blocks/block-title.twig' %}
+
+		<table class="table table-responsive table-hover table-dark">
+
+			<tbody class="w-100" style="display: table;">
+
+			{% for list in block.agenda_content_repeater %}
+
+				<tr>
+					<td style="min-width: 187px;">{{ list.agenda_title|striptags('<span>')|wpautop }}</td>
+
+					<td>
+					{{ list.agenda_item|striptags('<span>, <a>')|wpautop }}
+					</td>
+				</tr>
+
+			{% endfor %}
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+</div>

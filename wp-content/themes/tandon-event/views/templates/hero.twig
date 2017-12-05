@@ -1,0 +1,91 @@
+<!-- Large modal -->
+<!--div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <iframe src="http://act.online.engineering.nyu.edu/acton/form/9709/0217:d-0001/1/-/-/-/-/index.htm" frameborder="0" height="100%"></iframe>
+    </div>
+  </div>
+</div-->
+
+
+<div id="hero">
+
+    <div class="hero d-flex ">
+
+        <div class="content-block">
+
+            <div class="align-items-center d-xs-none d-sm-none d-md-flex d-lg-flex d-xl-flex">
+
+                <div class="container">
+
+                    <div class="text-right">
+
+                        {% if herotitle %}
+                        <h2>
+                            {{ herotitle }}
+                        </h2>
+                        {% endif %}
+                        <p></p>
+                        {% if herologo %}
+                        <div class="sponsor">
+                            <h3 class="text-uppercase">Sponsor</h3>
+                        </div>
+                        <img class="logo" src="{{ Image(herologo).src }}" alt="">
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="event-details">
+                <div class="container-fluid">
+
+                    <div class="row align-items-center">
+
+                            <div class="col-12 col-sm-6">
+                            {% if heroeventtitle %}
+                                <h2 class="event-title">{{ heroeventtitle }}</h2>
+                            {% endif %}
+                            </div>
+
+                            <div class="col-12 col-sm-3">
+                            {% if herodetails %}
+                                <h2>{{ herodetails }}</h2>
+                            {% endif %}
+                            </div>
+
+                            <div class="col-12 col-sm-3">
+                                {% if registrationurl %}
+
+                                <a href="{{ registrationurl }}" class="register-button" target="_blank">
+                                    Register
+                                </a>
+
+                                {% endif %}
+
+                                {% if herocta %}
+
+                                <a href="#{{ herocta|sanitize }}" class="scroll-button">
+                                    <div>View {{ herocta }}</div>
+                                </a>
+
+                                {% endif %}
+
+                            </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <img class="w-100" src="{{ Image(heroimage).src }}" alt="">
+
+    </div>
+
+</div>
+

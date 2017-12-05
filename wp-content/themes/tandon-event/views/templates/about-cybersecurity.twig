@@ -1,0 +1,20 @@
+{% block content %}
+
+<div id="about-cybersecurity">
+
+	<div class="container">
+
+		<h2 class="text-left mb-5">Cybersecurity at NYU</h2>
+			{% for item in aboutcybersecurity %}
+				<div class="card mb-4">
+  						<h5 class="card-header">{{ item.title }}</h5>
+						<div class="card-body">
+						{{ item.content }}
+						</div>
+				</div>
+			{% endfor %}
+
+	</div>
+
+</div>
+{% endblock %}

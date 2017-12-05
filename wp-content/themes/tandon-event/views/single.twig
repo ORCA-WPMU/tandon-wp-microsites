@@ -1,0 +1,38 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div id="single">
+
+    <div class="container">
+
+        <h1 class="article-h1">{{ post.title }}</h1>
+
+        <div class="w-100"><hr></div>
+
+        <div class="row">
+
+            <div class="col-12">
+                <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+
+                    <img src="{{ post.thumbnail.src }}" style="max-width:300px;height:auto;margin-bottom:15px;">
+
+                    <section class="article-content">
+
+
+                        <div class="article-body">
+                            {{ post.content }}
+                        </div>
+
+
+                    </section>
+
+
+                </article>
+            </div>
+        </div>
+
+
+    </div><!-- /.container -->
+</div>
+{% endblock %}

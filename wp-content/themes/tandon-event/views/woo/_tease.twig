@@ -1,0 +1,37 @@
+{{ fn("timber_set_product", post) }} {# set context #}
+
+<div class="card-body">
+
+    {% if post.thumbnail %}
+
+    <a href="{{ post.link }}">
+        <img src="{{ post.thumbnail.src('thumbnail') }}" class="card-img-top">
+    </a>
+
+    {% else %}
+
+    <a href="{{ post.link }}">
+        <img src="{{ theme.link }}/img/orient-logo.png" class="card-img-top">
+    </a>
+
+    {% endif %}
+
+    <div class="pl-3 pr-3 pb-3">
+
+    <h4 class="card-title">
+        {% do action('woocommerce_before_shop_loop_item_title') %}
+    </h4>
+
+    <h4 class="card-title">
+        <a href="{{ post.link }}">{{ post.title }}</a>
+    </h4>
+
+    <p class="card-text">
+        {% do action("woocommerce_after_shop_loop_item_title") %}
+        {% do action("woocommerce_after_shop_loop_item") %}
+    </p>
+
+    </div>
+
+</div>
+

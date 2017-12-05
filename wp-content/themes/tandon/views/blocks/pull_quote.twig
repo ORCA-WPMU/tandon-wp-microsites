@@ -1,0 +1,15 @@
+{% if block.quote %}
+
+<div id="quote">
+
+	{% include 'blocks/block-title.twig' %}
+
+    <h4>&quot; <span style="display: inline;">{{ block.quote|striptags }}</span>&quot;</h4>
+
+    <hr>
+
+    <h3>– {{ block.attribution }}</h3>
+
+</div>
+
+{% endif %}

@@ -1,0 +1,67 @@
+
+.hamburger{
+    position: relative;
+    right: 15px;
+    top: 0;
+    padding: 7px 50px 0 0;
+    float: left;
+    transition: all .2s;
+
+    // @include mq($max-width: $xl) {
+    //     right: 22px;
+    //     padding: 0;
+    // }
+
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        transition: all .2s;
+        background-color: #fff;
+        width: 55px;
+        height: 4px;
+        border-radius: 0;
+    }
+
+    .hamburger-inner::after {
+        bottom: -12px;
+    }
+
+    .hamburger-inner::before {
+        top: -12px;
+    }
+}
+
+
+header.banner {
+    &.shrink{
+        .hamburger{
+            position: relative;
+            float: left;
+            transition: all .2s;
+            padding: 4px 40px 0px 0;
+            // @include mq($max-width: $xl) {
+            // padding: 4px 40px 0px 0;
+            // }
+        }
+        .hamburger-inner,
+        .hamburger-inner::before,
+        .hamburger-inner::after {
+            background-color: #fff;
+            width: 45px;
+            height: 3px;
+        }
+        .hamburger-inner::after {
+            bottom: -9px;
+        }
+
+        .hamburger-inner::before {
+            top: -9px;
+        }
+    }
+    .hamburger--squeeze.is-active .hamburger-inner::after {
+        bottom: 0;
+    }
+    .hamburger--squeeze.is-active .hamburger-inner::before {
+        top: 0;
+    }
+}

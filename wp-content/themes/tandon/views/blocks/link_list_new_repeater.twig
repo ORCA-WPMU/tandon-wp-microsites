@@ -1,0 +1,73 @@
+<div id="link_list" style="background-color: {{ block.background_color_picker }}">
+
+    <div class="container">
+
+        {% include 'blocks/block-title.twig' %}
+
+        <div class="card-deck">
+
+        {% for list in block.links_repeater %}
+
+        <div class="card mb-4">
+
+            <div class="card-body">
+
+                <h4> {{ list.section_title }}</h4>
+
+                <div class="bulleted-list">
+
+                    <div class="row">
+
+                        {% for item in list.links %}
+
+                                <div class="col-12 col-sm-4">
+
+                                {% if item.link_type == 'external' %}
+
+                                    <li>
+
+                                    <a href="{{ item.external_url }}" target="_blank">{{ item.title }}</a>
+
+                                    </li>
+
+                                {% elseif item.link_type == 'internal' %}
+
+                                    <li>
+
+                                    <a href="{{ item.internal_url }}">{{ item.title }}</a>
+
+                                    </li>
+
+                                {% endif %}
+
+                                </div>
+
+                        {% endfor %}
+
+                    </div><!-- /.row -->
+
+                </div><!-- /.bulleted-list -->
+
+                {% if loop.last %}
+
+                    <span></span>
+
+                {% elseif loop.index %}
+
+                    <hr>
+
+                    <div class="spacer-half"></div>
+
+                {% endif %}
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>

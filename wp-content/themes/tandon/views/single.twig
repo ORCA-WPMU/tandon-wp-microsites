@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% set flex_blocks = flexblock %}
+
+{% include 'templates/sidebar-nav.twig' %}
+
+{% include 'templates/header.twig' %}
+
+{% include 'templates/hero.twig' %}
+
+{% include 'templates/flex-content.twig' with flex_blocks %}
+
+{% include 'templates/footer.twig' %}
+
+
+{% endblock %}

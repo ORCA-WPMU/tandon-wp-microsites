@@ -1,0 +1,22 @@
+<div class="nav-sub">
+
+<div class="dropdown show float-right">
+  <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Go to section
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+    {% for block in flex_blocks %}
+
+    {% set anchor = block.block_title ~ '-' ~ loop.index %}
+
+    <a href="#{{ anchor|sanitize }}" class="dropdown-item anchor">
+        {{ block.block_title }}
+    </a>
+
+    {% endfor %}
+
+  </div>
+</div>
+
+</div><!-- /.nav-sub -->
