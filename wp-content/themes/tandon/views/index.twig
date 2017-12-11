@@ -51,9 +51,19 @@
 
             {% include 'templates/hero.twig' %}
 
+            {% include 'templates/about.twig' %}
+
+            {% if flex_blocks %}
+
             {% include 'templates/flex-content.twig' with flex_blocks %}
 
+            {% endif %}
+
+            <div id="breaker">
+
             {% include 'templates/footer.twig' %}
+
+            </div>
 
             {% endblock %}
 

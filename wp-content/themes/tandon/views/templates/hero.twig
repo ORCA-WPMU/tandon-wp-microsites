@@ -1,16 +1,16 @@
-<div id="hero">
+<div id="hero" style="{% if ifherobackgroundimage == 'true' %}{% if heroimage.url %}background: url({{ heroimage.url }})no-repeat center center {% if herofixed == 'true' %}fixed{% endif %};-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;{% endif %}{% else %}background-color:{{herobackgroundcolor}};{% endif %}{% if herotextcolor %}color:{{herotextcolor}}!important;{% endif %}">
 
-        {% if (herotrue == 'true') and (fullheight == "false") %}
+    {% if (herotrue == 'true') and (fullheight == "false") %}
 
-        <div class="hero d-flex ">
+    <div class="hero">
 
-        {% else %}
+    {% else %}
 
-        <div class="hero half d-flex ">
+    <div class="hero half">
 
-        {% endif %}
+    {% endif %}
 
-        <div class="hero-block">
+        <div class="hero-block align-items-center" style="{% if eventfixed =='true' %} height: 100%; {% else %} height: 89.3%; {% endif %}">
 
             <div class="align-items-center d-xs-none d-sm-none d-md-flex d-lg-flex d-xl-flex">
 
@@ -19,9 +19,9 @@
                     <div class="text-right">
 
                         {% if herotitle %}
-                        <h1>
-                            {{ herotitle|striptags('<p><br>') }}
-                        </h1>
+
+                            {{ herotitle|striptags('<p><br><h1><h2><h3><h4>') }}
+
                         {% endif %}
 
                     </div>
@@ -32,27 +32,73 @@
 
         </div>
 
-        {% if (herotrue == 'true') and (fullheight == "false") %}
+        {% if alerttrue == "true" %}
 
-        <img class="w-100" src="{{ Image(heroimage).src }}" alt="">
+        <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
 
-        {% else %}
+          {{ alert|striptags }}
 
-        <img class="w-100 half" src="{{ Image(heroimage).src }}" alt="">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+        </div>
 
         {% endif %}
 
-        {% if alert %}
+        {% if upcomingevent == 'true' %}
 
-        <div class="event-details">
+        <div class="event-details{% if eventfixed =='true' %} fixed{% endif %}" style="background: {{ eventbackgroundcolor }}; color: {{ eventtextcolor }} !important;">
 
-            <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+            <div class="container-fluid">
 
-              {{ alert|striptags }}
+                <div class="row align-items-center">
 
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                    <div class="col-12 col-sm-6">
+
+                    {% if eventtitle %}
+
+                        <h2 class="event-title">{{ eventtitle }}</h2>
+
+                    {% endif %}
+
+                    </div>
+
+                    <div class="col-12 col-sm-3">
+
+                    {% if eventdate %}
+
+                        <h2>{{ eventdate }}</h2>
+
+                    {% endif %}
+
+                    </div>
+
+                    <div class="col-12 col-sm-3">
+
+                        {% if heroregistration %}
+
+                        <a href="{{ heroregistration }}" class="register-button" target="_blank">
+
+                            Register
+
+                        </a>
+
+                        {% endif %}
+
+                        {% if heroagenda %}
+
+                        <a href="#{{ heroagenda|sanitize }}" class="scroll-button">
+
+                            <div>View Agenda</div>
+
+                        </a>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -60,7 +106,47 @@
 
         {% endif %}
 
+    {% if istherebackgroundimage == 'true' %}
+
+    <div class="bkg-color" style="background: {{ herobackgroundcolor }};opacity:0.{{herobackgroundcoloropacity}}"></div>
+
+    {% else %}
+
+    <div class="bkg-color" style="background: {{ herobackgroundcolor }};"></div>
+
+    {% endif %}
+
+    {% if (herotrue == 'true') and (fullheight == "false") %}
+
     </div>
+
+    {% else %}
+
+    </div>
+
+    {% endif %}
+
+    {% if aboutsection =='true' %}
+
+    {% if upcomingevent == 'true' %}
+
+        <a href="#about" class="about-more withevent" style="color:{{herotextcolor}}!important;">
+
+    {% else %}
+
+        <a href="#about" class="about-more" style="color:{{herotextcolor}}!important;">
+
+    {% endif %}
+
+        <h3>Learn More</h3>
+
+        <span class="chevron bottom">
+
+        </span>
+
+    </a>
+
+    {% endif %}
 
 </div>
 

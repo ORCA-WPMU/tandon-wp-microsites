@@ -1,0 +1,56 @@
+{% if aboutsection =='true' %}
+
+<section id="about" style="
+    {% if istherebackgroundimage == 'true' %}
+
+    {% if aboutbackgroundimage.url %}
+        background: url({{ aboutbackgroundimage.url }})no-repeat center center {% if backgroundfixed == 'true' %}fixed{% endif %};-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;
+    {% endif %}
+
+    {% endif %}
+
+    {% if aboutbackgroundcolor %}
+        background-color:{{aboutbackgroundcolor}};;
+    {% endif %}
+
+{% if centercontent %}
+    text-align:center;
+{% endif %}
+
+{% if aboutbackgroundcolor %}
+    background-color:{{aboutbackgroundcolor}}opacity:1;;
+{% endif %}
+
+{% if abouttextcolor %}
+    color:{{abouttextcolor}}!important;
+{% endif %}
+
+">
+
+    <div class="container">
+
+        <div class="content-block">
+
+            <h1>{{ aboutprimarytitle }}</h1>
+
+            <h3>{{ aboutsecondarytitle }}</h3>
+
+            {{ aboutwysiwyg|wpautop }}
+
+        </div>
+
+    </div>
+
+    {% if istherebackgroundimage == 'true' %}
+
+    <div class="bkg-color" style="background: {{ aboutbackgroundcolor }};opacity:0.{{backgroundcoloropacity}}"></div>
+
+    {% else %}
+
+    <div class="bkg-color" style="background: {{ aboutbackgroundcolor }};"></div>
+
+    {% endif %}
+
+</section>
+
+{% endif %}

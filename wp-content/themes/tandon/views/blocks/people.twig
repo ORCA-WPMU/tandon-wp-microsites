@@ -72,7 +72,7 @@
 
                 <div class="card-body">
 
-                    {% if item.people_image %}
+                    {% if item.people_image[0] %}
 
                         <img src="{{Image(item.people_image).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto">
 
@@ -86,12 +86,12 @@
                     {% if item.lecturer_type %}
                     {% endif %}
 
-                    <a href="#0" data-toggle="modal" data-target="#exampleModalLong{{ counter }}"><h2 class="card-title my-3 text-center">{{ item.post_title }}</h2></a>
-                    <span class="badge badge-primary badge-pill">{{ item.lecturer_type }}</span>
+                    <a href="#0" data-toggle="modal" data-target="#exampleModalLong{{ counter }}"><h2 class="card-title my-3 text-center">{{ item.post_title[0] }}</h2></a>
+                    <span class="badge badge-primary badge-pill">{{ item.lecturer_type[0] }}</span>
 
-                    <h6 class="text-center">{{ item.job_title }}</h6>
+                    <h6 class="text-center">{{ item.job_title[0] }}</h6>
 
-                    <p class="card-text mb-0">{{ item.bio|raw|striptags|slice(0, 220) ~ '...' }}</p>
+                    <p class="card-text mb-0">{{ item.bio[0]|raw|striptags|slice(0, 220) ~ '...' }}</p>
                     <!-- Button trigger modal -->
 
 

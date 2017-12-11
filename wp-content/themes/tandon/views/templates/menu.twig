@@ -1,5 +1,25 @@
 <ul class="main-menu">
 
+    {% if aboutsection =='true' %}
+
+    <li>
+
+        <a href="#hero" class="anchor">
+            Home
+        </a>
+
+    </li>
+
+    <li>
+
+        <a href="#about" class="anchor">
+            About
+        </a>
+
+    </li>
+
+    {% endif %}
+
     {% for block in flex_blocks %}
 
     {% set anchor = block.block_title ~ '-' ~ loop.index %}

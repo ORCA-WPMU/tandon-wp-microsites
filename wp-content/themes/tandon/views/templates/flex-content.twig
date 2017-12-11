@@ -4,19 +4,10 @@
 
     {% set anchor = block.block_title ~ '-' ~ loop.index %}
 
-    <section id="{{ anchor|sanitize }}" style="
-        background: url({{ block.background_image.url }})
-        no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-color: {{ block.background_color_picker }};
-        color: {{ block.text_color_picker }} !important;
-    ">
+    <section id="{{ anchor|sanitize }}" style="{% if block.if_content_block_background_image == 'true' %}{% if block.content_block_background_image %}background: url({{ block.content_block_background_image.url }})no-repeat center center {% if block.fixed == 'true' %}fixed{% endif %};-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;{% endif %}{% else %}background-color:{{block.background_color_picker}};{% endif %}{% if block.text_color_picker %}color:{{block.text_color_picker}}!important;{% endif %}{% if block.if_center_content %}text-align:center;{% endif %}">
 
-    {% if block.background_image.url %}
-        <span class="img-bkg">
+    {% if block.if_content_block_background_image == 'true' %}
+        <div class="bkg-color" style="background: {{ block.background_color_picker }};opacity:0.{{block.content_block_bkg_color_opacity}}"></div>
     {% endif %}
 
     {% if 'agenda_repeater' == block.acf_fc_layout %}
@@ -119,7 +110,7 @@
 
     <hr class="my-0">
 
-    {% if block.background_image.url %}
+    {% if block.content_block_background_image.url %}
         </span>
     {% endif %}
 
