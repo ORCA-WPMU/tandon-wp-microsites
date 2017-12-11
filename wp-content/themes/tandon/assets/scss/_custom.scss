@@ -43,23 +43,23 @@ form .form-row {
     margin: 0 0 10px;
 }
 
-table.variations{
-    tr{
-        margin-bottom: 20px;
-    }
-    td.label{
-        min-width: 70px;
-        vertical-align: top;
-        .swatchtitlelabel{
-            font-family: 'Lato', sans-serif;
-            font-weight: 600;
-        }
+// table.variations{
+//     tr{
+//         margin-bottom: 20px;
+//     }
+//     td.label{
+//         min-width: 70px;
+//         vertical-align: top;
+//         .swatchtitlelabel{
+//             font-family: 'Lato', sans-serif;
+//             font-weight: 600;
+//         }
 
-    }
-    td.value{
+//     }
+//     td.value{
 
-    }
-}
+//     }
+// }
 
 .modal-dialog {
     max-width: 800px;
@@ -158,6 +158,8 @@ table.variations{
 .content-block {
     margin: 0;
     padding: 0px 0 40px;
+    position: relative;
+    z-index: 2;
     img {
         max-width: 100%;
         height: auto;
@@ -165,7 +167,37 @@ table.variations{
 }
 
 section {
-    padding-top: 30px;
+    padding-top: 40px;
+    position: relative;
+}
+
+.event-details {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    background: #000;
+    color: #fff;
+    padding: 15px 30px;
+    &.passed {
+        position: relative;
+    }
+    // @include mq($max-width: $lg) {
+    //     position: absolute;
+    //     padding: 10px 0 10px;
+    // }
+    @include mq($max-width: $sm) {
+        position: relative;
+        min-width: 320px;
+    }
+}
+
+h2 {
+    &.section-title {
+        font-size: 36px;
+        z-index: 1;
+        position: relative;
+    }
 }
 
 .hero{
@@ -178,7 +210,7 @@ section {
         min-height: auto;
     }
     p {
-        color: #fff;
+        //color: #fff;
     }
     &.single {
         height: 50vh;
@@ -189,7 +221,9 @@ section {
         //padding-top: 60px;
     }
     .hero-block {
-        padding: 72px 0px;
+        @include mq($max-width: $sm) {
+            padding-bottom: 50px;
+        }
     }
     .sponsor {
         color: #f2f2f2;
@@ -209,22 +243,6 @@ section {
             max-width: 75px;
         }
     }
-    .event-details {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        z-index: 10;
-        &.passed {
-            position: relative;
-        }
-        @include mq($max-width: $lg) {
-            position: absolute;
-            padding: 10px 0 10px;
-        }
-        @include mq($max-width: $sm) {
-            min-width: 320px;
-        }
-    }
     .alert {
         margin-bottom: 0;
     }
@@ -234,6 +252,10 @@ section {
         display: inline-grid;
         width: 100%;
         background: rgba(0, 0, 0, 0.5);
+        p {
+        @include mq($max-width: $sm) {
+            display: none;
+        }        }
         &.single {
             position: absolute;
             top: 0;
@@ -259,14 +281,6 @@ section {
         left: 0;
     }
     //background: url('/wp-content/themes/Wildfire/img/carousel.jpg') center center no-repeat;
-    h1{
-        font-size: 50px;
-        color: #fff;
-        z-index: 9;
-        @include mq($max-width: $sm) {
-            font-size: 33px;
-        }
-    }
     .cta {
         max-width: 85%;
         display: flex;
@@ -275,6 +289,18 @@ section {
             max-width: 100%;
             font-size: 20px;
             display: block;
+        }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        //color: #fff;
+    }
+
+    h1{
+        font-size: 50px;
+        //color: #fff;
+        z-index: 9;
+        @include mq($max-width: $sm) {
+            font-size: 33px;
         }
     }
     h2 {
@@ -334,13 +360,18 @@ section {
     }
 }
 
+.bkg-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0.5;
+}
 
 #hero{
     font-family: "helvetica",sans-serif;
-
-    h1, h2, h3 {
-        color: #fff;
-    }
 
     h1 {
         font-size: 65px;
@@ -352,7 +383,7 @@ section {
     }
 
     h2 {
-        font-size: 22px;
+        font-size: 24px;
         font-weight: 600;
         margin: 0;
         max-width: 800px;
@@ -1260,13 +1291,13 @@ nav.nav-desktop{
 
 }
 
-span.img-bkg {
-    display: block;
-    margin-top: -30px;
-    padding-top: 30px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.4);
-}
+// span.img-bkg {
+//     display: block;
+//     margin-top: -30px;
+//     padding-top: 30px;
+//     width: 100%;
+//     background: rgba(0, 0, 0, 0.4);
+// }
 
 #past-events {
     background: #fff;
@@ -1338,11 +1369,11 @@ span.img-bkg {
     }
 }
 
-.table td {
-    @include mq($max-width: $sm) {
-        padding: 0.75rem 0;
-    }
-}
+// .table td {
+//     @include mq($max-width: $sm) {
+//         padding: 0.75rem 0;
+//     }
+// }
 
 
 #single{
@@ -1565,6 +1596,56 @@ select.custom-select {
     }
     &:focus{
         color: #fff;
+    }
+}
+
+.about-more {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 9;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0 0;
+    &.withevent {
+        bottom: 120px;
+        @include mq($max-width: $sm) {
+            bottom: 40px;
+        }
+    }
+    // @media ( max-height: 768px ){
+    //     position: relative;
+    //     left: 0;
+    //     transform: initial;
+    //     display: block;
+    // }
+    // @include mq($max-width: $sm) {
+    //     //position: relative;
+    //     bottom: 0;
+    //     width: 100%;
+    //     display: inline-block;
+    // }
+    h3 {
+        font-family: 'proxima-nova', helvetica;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 3px;
+        font-weight: 500;
+        margin-bottom: 13px;
+    }
+}
+.chevron{
+    top: 10px;
+    left: -8px;
+    position: relative;
+    transition: all .2s;
+    @include mq($max-width: $xs) {
+        top: 3px;
+    }
+    &:hover{
+        top: 15px;
     }
 }
 
