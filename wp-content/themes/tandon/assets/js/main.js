@@ -1,5 +1,14 @@
 export function main() {
 
+$(window).scroll(function () {
+
+    var scroll = $(window).scrollTop();
+
+    $('.event-details').toggleClass('d-none', scroll >= $('#breaker').offset().top - 800
+
+    );
+
+});
 
   $('main .woocommerce').addClass('orient');
   //$('.orient-div .row').removeClass('row');
@@ -22,7 +31,7 @@ export function main() {
 
 $(window).scroll(function() {
 
-  if ($("header").offset().top > 220) {
+  if ($("header").offset().top > 240) {
 
       $("header").addClass("shrink");
 
@@ -71,21 +80,13 @@ $(window).scroll(function() {
 
   });
 
-$(window).scroll(function (e) {
 
-    var scroll = $(window).scrollTop();
-
-    $('.event-details').toggleClass('passed', scroll >= $('#contact').offset().top
-
-    );
-
-});
 
 $(window).scroll();
 
-  $('a.anchor').click(function(e){
+  $('a.anchor, a.about-more, a.scroll-button').click(function(e){
 
-      e.preventDefault();
+      //e.preventDefault();
 
       //in case search shelf is open
 
@@ -95,7 +96,7 @@ $(window).scroll();
 
       $("html, body").animate({
 
-        scrollTop: offset.top - 85,
+        scrollTop: offset.top - 41,
 
       }, 300);
 
