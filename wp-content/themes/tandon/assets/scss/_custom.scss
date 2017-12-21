@@ -25,6 +25,21 @@
     }
 }
 
+.bulleted-list {
+    li {
+        list-style: none;
+        font-size: 18px;
+        letter-spacing: 0px;
+        font-weight: 500;
+        color: #333;
+        padding: 6px 0;
+        border-bottom: 1px solid #ddd;
+        &:last-child{
+            border-bottom: 0px solid #ddd;
+        }
+    }
+}
+
 .container{
     @include mq($max-width: $sm) {
         min-width: 320px;
@@ -43,30 +58,34 @@ form .form-row {
     margin: 0 0 10px;
 }
 
-// table.variations{
-//     tr{
-//         margin-bottom: 20px;
-//     }
-//     td.label{
-//         min-width: 70px;
-//         vertical-align: top;
-//         .swatchtitlelabel{
-//             font-family: 'Lato', sans-serif;
-//             font-weight: 600;
-//         }
+.alert {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    z-index: 999;
+    padding: 10px;
+    border: 0;
+    border-radius: 0;
+}
 
-//     }
-//     td.value{
-
-//     }
-// }
+.alert-dismissible .close {
+    position: absolute;
+    top: 7px;
+    right: 12px;
+    padding: 0;
+    color: inherit;
+}
 
 .modal-dialog {
     max-width: 800px;
 }
 .modal-body {
     display: inline-grid;
-    padding: 3em;
+    padding: 1em 3em 2em;
+}
+.modal-content {
+    color: #232323;
 }
 
 .jumbotron {
@@ -182,19 +201,21 @@ section {
     &.passed {
         position: relative;
     }
-    // @include mq($max-width: $lg) {
-    //     position: absolute;
-    //     padding: 10px 0 10px;
-    // }
     @include mq($max-width: $sm) {
         position: relative;
         min-width: 320px;
+    }
+    @media ( max-height: 768px ){
+        bottom: 0;
+        position: relative;
+        padding-top: 120px;
     }
 }
 
 h2 {
     &.section-title {
-        font-size: 36px;
+        font-size: 40px;
+        font-weight: 700;
         z-index: 1;
         position: relative;
     }
@@ -218,11 +239,11 @@ h2 {
     }
     @include mq($max-width: $sm) {
         min-height: auto;
-        //padding-top: 60px;
+        height: auto;
     }
     .hero-block {
         @include mq($max-width: $sm) {
-            padding-bottom: 50px;
+            padding: 100px 0px 40px;
         }
     }
     .sponsor {
@@ -375,7 +396,7 @@ h2 {
 
     h1 {
         font-size: 65px;
-        font-weight: 400;
+        font-weight: 500;
         margin: 0;
         @include mq($max-width: $sm) {
             font-size: 40px;
@@ -442,7 +463,7 @@ text-decoration: none;
     padding: 10px 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 15px 0;
+    //margin: 15px 0;
     margin-right: 10px;
     float: none;
     transition: all .2s;
@@ -471,7 +492,7 @@ text-decoration: none;
     padding: 10px 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 15px 0;
+    //margin: 15px 0;
     float: right;
     transition: all .2s;
 
@@ -558,6 +579,8 @@ a.read-more.reveal {
 
 .card {
     background: #FFF;
+    color: #000;
+    font-size: 14px;
     h4.card-header {
         background: $brand;
         color: #fff;
@@ -618,80 +641,80 @@ a.read-more.reveal {
     text-align: center;
 }
 
-.gform_wrapper form {
-    margin-bottom: 50px;
-}
+// .gform_wrapper form {
+//     margin-bottom: 50px;
+// }
 
-.gform_footer {
-    display: inline-block;
-    width: 20%;
-    font-size: 20px;
-    border: 0;
-    input.gform_button{
-        display: block;
-        font-family: 'Lato', sans-serif;
-        width: 100%;
-        padding: 10px;
-        font-size: 20px;
-        border: 0;
-        border-radius: 0;
-        background: rgba(254, 84, 66, 0.81);
-        color: #fff;
-        transition: all .2s;
-        &:hover{
-            background: darken(rgba(254, 84, 66, 0.81), 5%);
-            cursor: pointer;
-        }
-    }
-    @include mq($max-width: $sm) {
-        width: 100%;
-        border: 0;
-        margin-top: 10px;
-    }
-}
+// .gform_footer {
+//     display: inline-block;
+//     width: 20%;
+//     font-size: 20px;
+//     border: 0;
+//     input.gform_button{
+//         display: block;
+//         font-family: 'Lato', sans-serif;
+//         width: 100%;
+//         padding: 10px;
+//         font-size: 20px;
+//         border: 0;
+//         border-radius: 0;
+//         background: rgba(254, 84, 66, 0.81);
+//         color: #fff;
+//         transition: all .2s;
+//         &:hover{
+//             background: darken(rgba(254, 84, 66, 0.81), 5%);
+//             cursor: pointer;
+//         }
+//     }
+//     @include mq($max-width: $sm) {
+//         width: 100%;
+//         border: 0;
+//         margin-top: 10px;
+//     }
+// }
 
-.gform_body {
-    width: 78%;
-    float: left;
-    font-size: 20px;
-    border: 0;
-    @include mq($max-width: $sm) {
-    width: 100%;
-    }
-    input, input.medium{
-        font-family: 'Lato', sans-serif;
-        display: block;
-        width: 97%;
-        margin-bottom: 12px;
-        font-size: 20px;
-        padding: 10px;
-        border-radius: 0;
-        min-height: 48px;
-    }
-    input#input_1_1 {
-        width: 98.5%;
-    }
-    label {
-        display: block;
-        margin-bottom: 0;
-        position: absolute;
-        right: 30px;
-        top: 12px;
-        color: $brand;
-    }
-    form, li, ul {
-        list-style: none;
-    }
-    li{
-        float: left;
-        position: relative;
-        width: 100%;
-    }
-}
+// .gform_body {
+//     width: 78%;
+//     float: left;
+//     font-size: 20px;
+//     border: 0;
+//     @include mq($max-width: $sm) {
+//     width: 100%;
+//     }
+//     input, input.medium{
+//         font-family: 'Lato', sans-serif;
+//         display: block;
+//         width: 97%;
+//         margin-bottom: 12px;
+//         font-size: 20px;
+//         padding: 10px;
+//         border-radius: 0;
+//         min-height: 48px;
+//     }
+//     input#input_1_1 {
+//         width: 98.5%;
+//     }
+//     label {
+//         display: block;
+//         margin-bottom: 0;
+//         position: absolute;
+//         right: 30px;
+//         top: 12px;
+//         color: $brand;
+//     }
+//     form, li, ul {
+//         list-style: none;
+//     }
+//     li{
+//         float: left;
+//         position: relative;
+//         width: 100%;
+//     }
+// }
 
-.gform_wrapper li{
-    margin: 0;
-}
+// .gform_wrapper li{
+//     margin: 0;
+// }
 
 ul.sub-menu.wpmenucart {
     background: #fff;
@@ -1599,6 +1622,15 @@ select.custom-select {
     }
 }
 
+.scroll-fix {
+    background-attachment: fixed !important;
+    @include mq($max-width: $sm) {
+        background-attachment: scroll !important;
+    }
+}
+
+
+
 .about-more {
     position: absolute;
     bottom: 0;
@@ -1610,23 +1642,14 @@ select.custom-select {
     width: 100%;
     padding: 10px 0 0;
     &.withevent {
-        bottom: 120px;
+        bottom: 100px;
         @include mq($max-width: $sm) {
             bottom: 40px;
         }
+        @media ( max-height: 768px ){
+            visibility: hidden
+        }
     }
-    // @media ( max-height: 768px ){
-    //     position: relative;
-    //     left: 0;
-    //     transform: initial;
-    //     display: block;
-    // }
-    // @include mq($max-width: $sm) {
-    //     //position: relative;
-    //     bottom: 0;
-    //     width: 100%;
-    //     display: inline-block;
-    // }
     h3 {
         font-family: 'proxima-nova', helvetica;
         text-transform: uppercase;
@@ -1728,19 +1751,27 @@ header.banner {
     text-align: center;
     padding: 0;
     transition: all .2s;
-webkit-backface-visibility:hidden;
-webkit-transform: translate3d(0, 0, 0);
--moz-backface-visibility:hidden;
+
+    &.if_alert {
+        .logo{
+            img{
+                top: 60px;
+            }
+        }
+        .site-title {
+            top: 50px;
+            left: 10px;
+            transition: all .2s;
+            position: absolute;
+        }
+    }
+
     .site-title {
         color: #fff;
         float: left;
-        padding: 10px 15px;
-    webkit-backface-visibility:hidden;
--moz-backface-visibility:hidden;
-    webkit-transform: translate3d(0, 0, 0);
-        h1 {
-            // font-family: helvetica;
-        }
+        position: relative;
+        padding: 5px 23px;
+
     }
 
     h1{
@@ -1780,7 +1811,7 @@ webkit-transform: translate3d(0, 0, 0);
             text-align: left;
             transition: all .2s;
             right: 15px;
-            top: 10px;
+            top: 3px;
             position: fixed;
             @include mq($max-width: $sm) {
                 max-width: 215px;
@@ -1801,9 +1832,12 @@ webkit-transform: translate3d(0, 0, 0);
         height: 42px;
         background-color: $brand;
 
-        .site-title {
-            padding: 5px 15px;
+        &.if_alert {
+            .site-title {
+                top: 0;
+            }
         }
+
 
         h1{
             color: #FFF;
