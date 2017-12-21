@@ -6,6 +6,21 @@ Timber::$dirname = array('templates', 'views');
 
 if ( function_exists( 'acf_add_options_page' ) ) {
   acf_add_options_page();
+  acf_add_options_sub_page( 'About' );
+}
+
+// if ( function_exists( 'acf_add_options_page' ) ) {
+//   acf_add_options_page();
+//   acf_add_options_sub_page( 'Agenda' );
+// }
+
+if ( function_exists( 'acf_add_options_page' ) ) {
+  acf_add_options_page();
+  acf_add_options_sub_page( 'Event Details' );
+}
+
+if ( function_exists( 'acf_add_options_page' ) ) {
+  acf_add_options_page();
   acf_add_options_sub_page( 'Hero' );
 }
 
