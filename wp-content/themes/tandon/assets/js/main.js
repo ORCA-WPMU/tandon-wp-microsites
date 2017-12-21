@@ -10,10 +10,11 @@ $(window).scroll(function () {
 
 });
 
-  $('main .woocommerce').addClass('orient');
-  //$('.orient-div .row').removeClass('row');
+  $('table').addClass('table-responsive');
 
-
+  $('#topAlert').on('closed.bs.alert', function () {
+    $('.banner').removeClass('if_alert');
+  })
 
   //sidebar vas
   $("#menu-toggle").click(function(e) {
@@ -31,7 +32,7 @@ $(window).scroll(function () {
 
 $(window).scroll(function() {
 
-  if ($("header").offset().top > 240) {
+  if ($("header").offset().top > 50) {
 
       $("header").addClass("shrink");
 
