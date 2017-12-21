@@ -1,0 +1,242 @@
+{
+    "key": "group_5a049ada8a706",
+    "title": "Hero",
+    "fields": [
+        {
+            "key": "field_5a04a10ee9b33",
+            "label": "Hero?",
+            "name": "hero_true",
+            "type": "true_false",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Do you want a hero?",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a04a03971c55",
+            "label": "Full Height?",
+            "name": "full_height",
+            "type": "true_false",
+            "value": null,
+            "instructions": "If checked true, hero will be at 100vh (if not, hero will be 35vh)",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a04a10ee9b33",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "True",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_59f226679c917",
+            "label": "Hero Title",
+            "name": "hero_title",
+            "type": "wysiwyg",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a04a10ee9b33",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5a29c5cbbad0a",
+            "label": "Background Image?",
+            "name": "is_hero_background_image",
+            "type": "true_false",
+            "value": null,
+            "instructions": "** DO NOT LOAD IMAGES GREATER THAN 500 KB ** \r\n** IDEALLY IMAGES WILL SAVED FOR WEB IN PHOTOSHOP **\r\n** IMAGES LONG SIDE NO GREATER THAN 1800 PX **",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a297ea790372",
+            "label": "Background Color",
+            "name": "hero_background_color",
+            "type": "color_picker",
+            "value": null,
+            "instructions": "overlay color, at opacity 0.4",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_5a29c641bad0d",
+            "label": "Text Color",
+            "name": "hero_text_color",
+            "type": "color_picker",
+            "value": null,
+            "instructions": "color of text",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_59f0dcc3b2303",
+            "label": "Background Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "value": null,
+            "instructions": "min longest width 2000px, no more that 1mb",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29c5cbbad0a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a29c616bad0c",
+            "label": "Fixed?",
+            "name": "hero_fixed",
+            "type": "true_false",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29c5cbbad0a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a29c5e4bad0b",
+            "label": "Background Color Opacity",
+            "name": "hero_background_color_opacity",
+            "type": "range",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29c5cbbad0a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 9,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1512738733
+}
