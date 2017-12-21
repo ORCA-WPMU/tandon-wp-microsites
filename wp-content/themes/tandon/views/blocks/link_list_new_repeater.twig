@@ -12,17 +12,26 @@
 
             <div class="card-body">
 
+                {% if list.section_title %}
+
                 <h4> {{ list.section_title }}</h4>
+
+                {% endif %}
 
                 <div class="bulleted-list">
 
-                    <div class="row">
 
                         {% for item in list.links %}
 
-                                <div class="col-12 col-sm-4">
 
-                                {% if item.link_type == 'external' %}
+                                    <li>
+
+                                        {{ item.title }}
+
+                                    </li>
+
+
+                                {#% if item.link_type == 'external' %}
 
                                     <li>
 
@@ -38,13 +47,19 @@
 
                                     </li>
 
-                                {% endif %}
+                                {% else %}
 
-                                </div>
+                                    <li>
+
+                                        {{ item.title }}
+
+                                    </li>
+
+                                {% endif %#}
+
 
                         {% endfor %}
 
-                    </div><!-- /.row -->
 
                 </div><!-- /.bulleted-list -->
 
@@ -53,8 +68,6 @@
                     <span></span>
 
                 {% elseif loop.index %}
-
-                    <hr>
 
                     <div class="spacer-half"></div>
 

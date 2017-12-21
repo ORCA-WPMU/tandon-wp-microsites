@@ -1,10 +1,10 @@
-{% if block.file_download %}
+{% if block.files %}
 
-<div id="file_download">
+<div id="files">
 
     {% include 'blocks/block-title.twig' %}
 
-    {% for download in block.file_download %}
+    {% for download in block.files %}
 
     <div class="row row-eq-height">
 

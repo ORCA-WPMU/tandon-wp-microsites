@@ -1,59 +1,3 @@
-<!-- ////////////////////////////////////////// -->
-<!-- ////////////// MODAL POP UP ////////////// -->
-<!-- ////////////////////////////////////////// -->
-
-{% for item in people %}
-
-{% set counter = ( counter | default(0) ) + 1 %}
-<div class="modal fade" id="exampleModalLong{{ counter }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-
-    <div class="modal-dialog" role="document">
-
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-
-                {% if item.people_image %}
-
-                    <img src="{{Image(item.people_image).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto" style="max-width: 180px;">
-
-                {% else %}
-
-                    <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto" style="max-width: 180px;">
-
-                {% endif %}
-
-                <h4 class="card-title my-3 text-center">{{ item.post_title }}</h4>
-
-                <span class="badge badge-primary badge-pill">{{ item.lecturer_type }}</span>
-
-                <h6 class="text-center">{{ item.job_title }}</h6>
-
-                <hr>
-
-                <p class="card-text">{{ item.bio|wpautop }}</p>
-
-            </div>
-            <!-- Button trigger modal -->
-
-        </div>
-
-    </div>
-
-</div>
-
-{% endfor %}
-
-<!-- ////////////////////////////////////////// -->
-<!-- ////////////// MODAL POP UP ////////////// -->
-<!-- ////////////////////////////////////////// -->
-
 <div id="people">
 
     <div class="container">
@@ -62,9 +6,9 @@
 
         <div class="content-block">
 
-            <div class="card-deck">
+            <div class="card-deck {% if block.if_center_content %}justify-content-center{% endif %}">
 
-            {% for item in people %}
+            {% for item in block.people %}
 
             {% set counter = ( counter | default(0) ) + 1 %}
 
@@ -72,32 +16,49 @@
 
                 <div class="card-body">
 
-                    {% if item.people_image[0] %}
+                    {% if item.speaker_image %}
 
-                        <img src="{{Image(item.people_image).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto">
+                        <a href="#0" class="read-more" data-toggle="modal" data-target="#{{ item.post_title|sanitize|replace({'ö': 'o'}) }}{{ counter }}">
 
-                    {% else %}
+                            <img src="{{Image(item.speaker_image).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto">
 
-                        <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto">
+                        {% else %}
+
+                            <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto">
+
+                        </a>
 
                     {% endif %}
 
+                    <a href="#0" data-toggle="modal" data-target="#{{ item.post_title|sanitize|replace({'ö': 'o'}) }}{{ counter }}">
+
+                        <h4 class="card-title mt-3 mb-2">{{ item.post_title }}</h4>
+
+                    </a>
 
                     {% if item.lecturer_type %}
+
+                        <span class="badge badge-primary badge-pill">{{ item.lecturer_type }}</span>
+
                     {% endif %}
 
-                    <a href="#0" data-toggle="modal" data-target="#exampleModalLong{{ counter }}"><h2 class="card-title my-3 text-center">{{ item.post_title[0] }}</h2></a>
-                    <span class="badge badge-primary badge-pill">{{ item.lecturer_type[0] }}</span>
+                    {% if item.job_title %}
 
-                    <h6 class="text-center">{{ item.job_title[0] }}</h6>
+                        <h6>{{ item.job_title }}</h6>
 
-                    <p class="card-text mb-0">{{ item.bio[0]|raw|striptags|slice(0, 220) ~ '...' }}</p>
-                    <!-- Button trigger modal -->
+                    {% endif %}
+
+                    {% if item.bio %}
+
+                        <p class="card-text mb-0">{{ item.bio|raw|striptags|slice(0, 220) ~ '...' }}</p>
+                        <!-- Button trigger modal -->
 
 
-                    <a href="#0" class="read-more" data-toggle="modal" data-target="#exampleModalLong{{ counter }}">
-                      Read More
-                    </a>
+                        <a href="#0" class="read-more" data-toggle="modal" data-target="#{{ item.post_title|sanitize|replace({'ö': 'o'}) }}{{ counter }}">
+                          Read More
+                        </a>
+
+                    {% endif %}
 
 
                 </div>
@@ -114,3 +75,84 @@
 
 </div>
 
+<!-- ////////////////////////////////////////// -->
+<!-- ////////////// MODAL POP UP ////////////// -->
+<!-- ////////////////////////////////////////// -->
+
+{% for item in block.people %}
+
+{% set counter = ( counter | default(0) ) + 1 %}
+<div class="modal fade" id="{{ item.post_title|sanitize|replace({'ö': 'o'}) }}{{ counter }}" tabindex="-1" role="dialog" aria-labelledby="{{ item.post_title|sanitize|replace({'ö': 'o'}) }}Title" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                {% if item.speaker_image %}
+
+                    <img src="{{Image(item.speaker_image).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto" style="max-width: 250px;">
+
+                {% else %}
+
+                    <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto" style="max-width: 250px;">
+
+                {% endif %}
+
+                {% if item.post_title %}
+
+                    <h4 class="card-title my-3 ">{{ item.post_title }}</h4>
+
+                {% endif %}
+
+                {% if item.job_title %}
+
+                    <h5>{{ item.job_title }}</h5>
+
+                {% endif %}
+
+                {% if item.affiliation %}
+
+                    <h6 class="mb-3">{{ item.affiliation }}</h6>
+
+                {% endif %}
+
+                {% if item.country %}
+
+                    <h6 class="mb-3">{{ item.country }}</h6>
+
+                {% endif %}
+
+                {% if item.bio %}
+
+                    {{ item.bio|wpautop }}
+
+                {% endif %}
+
+                {% if item.people_url %}
+
+                    <a href="{{ item.people_url }}" target="_blank">{{ item.people_url }}</a>
+
+                {% endif %}
+
+            </div>
+            <!-- Button trigger modal -->
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+<!-- ////////////////////////////////////////// -->
+<!-- ////////////// MODAL POP UP ////////////// -->
+<!-- ////////////////////////////////////////// -->

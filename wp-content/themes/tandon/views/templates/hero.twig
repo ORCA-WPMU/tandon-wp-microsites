@@ -1,4 +1,4 @@
-<div id="hero" style="{% if ifherobackgroundimage == 'true' %}{% if heroimage.url %}background: url({{ heroimage.url }})no-repeat center center {% if herofixed == 'true' %}fixed{% endif %};-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;{% endif %}{% else %}background-color:{{herobackgroundcolor}};{% endif %}{% if herotextcolor %}color:{{herotextcolor}}!important;{% endif %}">
+<div id="hero" class="{% if backgroundfixed == 'true' %}scroll-fix{% endif %}" style="{% if ifherobackgroundimage == 'true' %}{% if heroimage.url %}background: url({{ heroimage.url }})no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;{% endif %}{% else %}background-color:{{herobackgroundcolor}};{% endif %}{% if herotextcolor %}color:{{herotextcolor}}!important;{% endif %}">
 
     {% if (herotrue == 'true') and (fullheight == "false") %}
 
@@ -10,13 +10,13 @@
 
     {% endif %}
 
-        <div class="hero-block align-items-center" style="{% if eventfixed =='true' %} height: 100%; {% else %} height: 89.3%; {% endif %}">
+        <div class="hero-block align-items-center" style="height: 100%;">
 
             <div class="align-items-center d-xs-none d-sm-none d-md-flex d-lg-flex d-xl-flex">
 
-            	<div class="container">
+                <div class="container">
 
-                    <div class="text-right">
+                    <div class="text-right pb-5">
 
                         {% if herotitle %}
 
@@ -32,79 +32,55 @@
 
         </div>
 
-        {% if alerttrue == "true" %}
-
-        <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
-
-          {{ alert|striptags }}
-
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-
-        </div>
-
-        {% endif %}
-
         {% if upcomingevent == 'true' %}
 
-        <div class="event-details{% if eventfixed =='true' %} fixed{% endif %}" style="background: {{ eventbackgroundcolor }}; color: {{ eventtextcolor }} !important;">
+        <div class="event-details {% if eventfixed =='true' %}fixed{% endif %}" style="background: {{ eventbackgroundcolor }}; color: {{ eventtextcolor }} !important;">
 
-            <div class="container-fluid">
+            <span class="d-flex">
 
-                <div class="row align-items-center">
+                {% if eventtitle %}
 
-                    <div class="col-12 col-sm-6">
+                <h2 class="event-title align-self-center">{{ eventtitle }}</h2>
 
-                    {% if eventtitle %}
+                {% endif %}
 
-                        <h2 class="event-title">{{ eventtitle }}</h2>
+                {% if eventdate %}
 
-                    {% endif %}
+                <h2 class="align-self-center pl-4">{{ eventdate }}</h2>
 
-                    </div>
+                {% endif %}
 
-                    <div class="col-12 col-sm-3">
 
-                    {% if eventdate %}
+                {% if heroregistration %}
 
-                        <h2>{{ eventdate }}</h2>
+                <div class="ml-auto">
 
-                    {% endif %}
+                <a href="{{ heroregistration }}" class="register-button" target="_blank">
 
-                    </div>
+                    Register
 
-                    <div class="col-12 col-sm-3">
+                </a>
 
-                        {% if heroregistration %}
+                {% endif %}
 
-                        <a href="{{ heroregistration }}" class="register-button" target="_blank">
+                {% if heroagenda %}
 
-                            Register
+                <a href="#{{ heroagenda|sanitize }}" class="scroll-button">
 
-                        </a>
+                    <span>View Agenda</span>
 
-                        {% endif %}
-
-                        {% if heroagenda %}
-
-                        <a href="#{{ heroagenda|sanitize }}" class="scroll-button">
-
-                            <div>View Agenda</div>
-
-                        </a>
-
-                        {% endif %}
-
-                    </div>
+                </a>
 
                 </div>
 
-            </div>
+                {% endif %}
 
-        </div>
+            </span>
+
 
         {% endif %}
+
+    </div>
 
     {% if istherebackgroundimage == 'true' %}
 
@@ -130,11 +106,11 @@
 
     {% if upcomingevent == 'true' %}
 
-        <a href="#about" class="about-more withevent" style="color:{{herotextcolor}}!important;">
+        <a href="#about" class="about-more withevent d-none d-sm-none d-md-block d-lg-block d-xl-block" style="color:{{herotextcolor}}!important;">
 
     {% else %}
 
-        <a href="#about" class="about-more" style="color:{{herotextcolor}}!important;">
+        <a href="#about" class="about-more d-none d-sm-none d-md-block d-lg-block d-xl-block" style="color:{{herotextcolor}}!important;">
 
     {% endif %}
 
