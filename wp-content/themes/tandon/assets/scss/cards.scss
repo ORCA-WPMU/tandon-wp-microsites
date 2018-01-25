@@ -1,0 +1,97 @@
+.card {
+    min-width: 350px;
+    max-width: 350px;
+    margin-bottom: 30px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    border: 0;
+    border-radius: 0;
+    background: #f6f6f6;
+
+    p {
+        font-size: 16px;
+    }
+
+    h2 a {
+        text-decoration: none;
+    }
+
+    a {
+        letter-spacing: 0;
+        text-decoration: underline;
+        &:hover {
+            color: darken($secondary, 15%);
+        }
+    }
+
+    @include mq($max-width: $lg) {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    @include mq($max-width: $sm) {
+        margin: 0 0 15px;
+    }
+
+    span{
+        display: block;
+        padding: 10px 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+        &.elipsis{
+            display: inline;
+            background: none;
+            padding: 0;
+        }
+    }
+
+    .read-more {
+        letter-spacing: 0;
+        font-size: 16px;
+    }
+
+    h4.card-header {
+        background: $brand;
+        color: #fff;
+        font-size: 18px;
+        margin: 0;
+        /* text-transform: uppercase; */
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    img.rounded-circle {
+        max-width: 180px;
+    }
+
+    img {
+        margin: 0 auto;
+        text-align: center;
+        float: none;
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    @include mq($max-width: $sm) {
+        margin-bottom: 15px;
+    }
+
+    h5{
+        color: #666;
+        font-size: 100%;
+    }
+}
+
+.card-body{
+    padding: 20px;
+    color: #000;
+}
+
+.card-img-overlay{
+    transition: all .2s;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}

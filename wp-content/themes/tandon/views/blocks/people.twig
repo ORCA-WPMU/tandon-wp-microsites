@@ -2,7 +2,13 @@
 
     <div class="container">
 
-        {% include 'blocks/block-title.twig' %}
+        {% include 'partial/block-title.twig' %}
+
+        <a href="{{ site.link }}/{{ block.block_title|sanitize }}" class="show-all float-right" style="color:{{block.text_color_picker}}!important;">
+           <h4 class="section-title mt-3 mb-4"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
+        </a>
+
+        {% include 'partial/block-intro.twig' %}
 
         <div class="content-block">
 
@@ -10,60 +16,76 @@
 
             {% for item in block.people %}
 
-            {% set counter = ( counter | default(0) ) + 1 %}
+                <div class="card">
 
-            <div class="card">
+                    <div class="card-body">
 
-                <div class="card-body">
+                        {% if item.headshot %}
 
-                    {% if item.speaker_image %}
+                            <a href="{{ function('get_permalink', item.ID) }}">
 
-                        <a href="#0" class="read-more" data-toggle="modal" data-target="#{{ item.post_title|sanitize|replace({'ö': 'o'}) }}{{ counter }}">
+                                <img src="{{Image(item.headshot).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto">
 
-                            <img src="{{Image(item.speaker_image).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto">
-
-                        {% else %}
-
-                            <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto">
-
-                        </a>
-
-                    {% endif %}
-
-                    <a href="#0" data-toggle="modal" data-target="#{{ item.post_title|sanitize|replace({'ö': 'o'}) }}{{ counter }}">
-
-                        <h4 class="card-title mt-3 mb-2">{{ item.post_title }}</h4>
-
-                    </a>
-
-                    {% if item.lecturer_type %}
-
-                        <span class="badge badge-primary badge-pill">{{ item.lecturer_type }}</span>
-
-                    {% endif %}
-
-                    {% if item.job_title %}
-
-                        <h6>{{ item.job_title }}</h6>
-
-                    {% endif %}
-
-                    {% if item.bio %}
-
-                        <p class="card-text mb-0">{{ item.bio|raw|striptags|slice(0, 220) ~ '...' }}</p>
-                        <!-- Button trigger modal -->
+                            </a>
 
 
-                        <a href="#0" class="read-more" data-toggle="modal" data-target="#{{ item.post_title|sanitize|replace({'ö': 'o'}) }}{{ counter }}">
-                          Read More
-                        </a>
+                            {% else %}
 
-                    {% endif %}
+                            <a href="{{ function('get_permalink', item.ID) }}">
 
+                                <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto">
+
+                            </a>
+
+                        {% endif %}
+
+                        <h2 class="serif mt-3 mb-1 text-center">
+                            <a href="{{ function('get_permalink', item.ID) }}">{{ item.post_title }}</a>
+                        </h2>
+
+                        <h5 class="text-center">{{ item.job_title }}</h5>
+
+                        <hr class="my-3">
+
+                        <div class="read-more text-left">
+
+                        {% set text = item.bio|split(' ') %}
+
+                        {% if text|length > 50 %}
+
+                            {% for shorttxt in text|slice(0, 50) %}
+
+                                {{ shorttxt }}
+
+                            {% endfor %}
+
+                            <span class="elipsis">...</span>
+
+                            <div class="readmore">
+                            {% for moretxt in text|slice(50, 1000) %}
+
+                                {{ moretxt }}
+
+                            {% endfor %}
+                            </div>
+
+                            <div>
+                                <a href="#0" class="read-more">
+                                  Read More
+                                </a>
+                            </div>
+
+                            {% else %}
+
+                            {{ text|join(' ') }}
+
+                        {% endif %}
+
+                        </div>
+
+                    </div>
 
                 </div>
-
-            </div>
 
             {% endfor %}
 
@@ -74,85 +96,3 @@
     </div>
 
 </div>
-
-<!-- ////////////////////////////////////////// -->
-<!-- ////////////// MODAL POP UP ////////////// -->
-<!-- ////////////////////////////////////////// -->
-
-{% for item in block.people %}
-
-{% set counter = ( counter | default(0) ) + 1 %}
-<div class="modal fade" id="{{ item.post_title|sanitize|replace({'ö': 'o'}) }}{{ counter }}" tabindex="-1" role="dialog" aria-labelledby="{{ item.post_title|sanitize|replace({'ö': 'o'}) }}Title" aria-hidden="true">
-
-    <div class="modal-dialog" role="document">
-
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-
-                {% if item.speaker_image %}
-
-                    <img src="{{Image(item.speaker_image).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto" style="max-width: 250px;">
-
-                {% else %}
-
-                    <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto" style="max-width: 250px;">
-
-                {% endif %}
-
-                {% if item.post_title %}
-
-                    <h4 class="card-title my-3 ">{{ item.post_title }}</h4>
-
-                {% endif %}
-
-                {% if item.job_title %}
-
-                    <h5>{{ item.job_title }}</h5>
-
-                {% endif %}
-
-                {% if item.affiliation %}
-
-                    <h6 class="mb-3">{{ item.affiliation }}</h6>
-
-                {% endif %}
-
-                {% if item.country %}
-
-                    <h6 class="mb-3">{{ item.country }}</h6>
-
-                {% endif %}
-
-                {% if item.bio %}
-
-                    {{ item.bio|wpautop }}
-
-                {% endif %}
-
-                {% if item.people_url %}
-
-                    <a href="{{ item.people_url }}" target="_blank">{{ item.people_url }}</a>
-
-                {% endif %}
-
-            </div>
-            <!-- Button trigger modal -->
-
-        </div>
-
-    </div>
-
-</div>
-
-{% endfor %}
-
-<!-- ////////////////////////////////////////// -->
-<!-- ////////////// MODAL POP UP ////////////// -->
-<!-- ////////////////////////////////////////// -->

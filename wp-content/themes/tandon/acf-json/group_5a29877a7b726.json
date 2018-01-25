@@ -1,0 +1,280 @@
+{
+    "key": "group_5a29877a7b726",
+    "title": "Event Details",
+    "fields": [
+        {
+            "key": "field_5a2970e48b842",
+            "label": "Upcoming Event?",
+            "name": "upcoming_event",
+            "type": "true_false",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a29867c72fe0",
+            "label": "Event Title",
+            "name": "event_title",
+            "type": "text",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2970e48b842",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a29720338529",
+            "label": "Event Date",
+            "name": "event_date",
+            "type": "date_picker",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2970e48b842",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_5a2970ff8b843",
+            "label": "Registration",
+            "name": "registration",
+            "type": "url",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2970e48b842",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a2971da8b844",
+            "label": "CTA Name",
+            "name": "agenda",
+            "type": "text",
+            "value": null,
+            "instructions": "Name of section, scroll to ie agenda",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2970e48b842",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a6630621f618",
+            "label": "CTA Anchor",
+            "name": "agenda_anchor",
+            "type": "link",
+            "value": null,
+            "instructions": "Inspect Agenda Section and Copy id of section.. ie agenda-3 ** for anchor scrolling you must prepend with # ** If you rearrange flexible content blocks, then you will need to update",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2970e48b842",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5a29972e0ec3c",
+            "label": "Fixed",
+            "name": "event_fixed",
+            "type": "true_false",
+            "value": null,
+            "instructions": "Do you want Event Details fixed to bottom of browser?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2970e48b842",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a29887f7d4dd",
+            "label": "Background Color",
+            "name": "event_background_color",
+            "type": "color_picker",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2970e48b842",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#000"
+        },
+        {
+            "key": "field_5a6632fd92fa5",
+            "label": "Background Opacity",
+            "name": "opacity",
+            "type": "range",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2970e48b842",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 10,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5a2988917d4de",
+            "label": "Text Color",
+            "name": "event_text_color",
+            "type": "color_picker",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2970e48b842",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#FFF"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-event-details"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1516814069
+}

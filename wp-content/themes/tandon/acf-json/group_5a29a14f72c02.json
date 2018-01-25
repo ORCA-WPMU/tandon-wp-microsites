@@ -1,0 +1,337 @@
+{
+    "key": "group_5a29a14f72c02",
+    "title": "About",
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-about"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1514995466,
+    "fields": [
+        {
+            "key": "field_5a29a4a5cb1aa",
+            "label": "About Section?",
+            "name": "about_section",
+            "type": "true_false",
+            "value": null,
+            "instructions": "Is there an about section? Will auto generate about chevron in hero, thats scrolls down to this section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a29a39bcb1a7",
+            "label": "Primary Title",
+            "name": "primary_title",
+            "type": "text",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a29a3aecb1a8",
+            "label": "Secondary Title",
+            "name": "secondary_title",
+            "type": "text",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a29a3d2cb1a9",
+            "label": "About WYSIWYG",
+            "name": "about_wysiwyg",
+            "type": "wysiwyg",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5a29ae211a99b",
+            "label": "Center Content?",
+            "name": "center_content",
+            "type": "true_false",
+            "value": null,
+            "instructions": "Do you want content centered?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a29b8bd3d420",
+            "label": "Background Image?",
+            "name": "is_there_background_image",
+            "type": "true_false",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a29ae451a99c",
+            "label": "Background Color",
+            "name": "about_background_color",
+            "type": "color_picker",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.333",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_5a29ae681a99d",
+            "label": "Text Color",
+            "name": "about_text_color",
+            "type": "color_picker",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_5a29b37d1dcbd",
+            "label": "Background Image",
+            "name": "about_background_image",
+            "type": "image",
+            "value": null,
+            "instructions": "** DO NOT LOAD IMAGES GREATER THAN 500 KB ** \r\n** IDEALLY IMAGES WILL SAVED FOR WEB IN PHOTOSHOP **\r\n** IMAGES LONG SIDE NO GREATER THAN 1800 PX **",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29b8bd3d420",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a29b8e23d421",
+            "label": "Fixed",
+            "name": "fixed",
+            "type": "true_false",
+            "value": null,
+            "instructions": "Do you want background image fixed?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29b8bd3d420",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a29b9223d422",
+            "label": "Background Color Opacity",
+            "name": "background_color_opacity",
+            "type": "range",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29b8bd3d420",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 9,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        }
+    ]
+}

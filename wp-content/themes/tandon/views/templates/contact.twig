@@ -1,48 +1,70 @@
 <div class="container">
 
-    <div class="row">
+    <div id="contact">
 
-        <div class="col-6 col-sm-3">
+        <div class="row">
 
-            <div class="center logo mt-2">
+            <div class="col-6 col-sm-3">
 
-                <a href="/"><img src="{{ theme.link }}/img/logo.png" alt="" class="w-100"></a>
+                <div class="center logo mt-2">
+
+                    <a href="/"><img src="{{ theme.link }}/img/logo.png" alt="" class="w-100"></a>
+
+                </div>
+
+            </div>
+
+            <div class="col-6 col-sm-9">
+
+                <div class="float-right mt-2">
+
+                {% include 'partial/socialmedia.twig' %}
+
+                </div>
 
             </div>
 
         </div>
 
-        <div class="col-6 col-sm-9">
+        <p></p>
+
+        <div class="row">
+
+        	<div class="col-12 col-lg-4">
+
+                {% if footerleftblock %}
+
+                <p>{{ footerleftblock }}</p>
+
+                {% endif %}
+
+            </div>
+
+            <div class="col-12 col-lg-5">
+
+                {% if footercenterblock %}
+
+                {{ footercenterblock }}
+
+                {% endif %}
+
+            </div>
+
+        	<div class="col-12 col-lg-3">
+
+        		<div class="text-right">
+
+                    {% if footerrightblock %}
+
+        			<p>{{ footerrightblock }}</p>
+
+                    {% endif %}
+
+        		</div>
+
+        	</div>
 
         </div>
-
-    </div>
-
-    <p><br></p>
-
-    <div class="row">
-
-    	<div class="col-12 col-lg-4">
-
-            <p>{{ footerleftblock }}</p>
-
-        </div>
-
-        <div class="col-12 col-lg-5">
-
-            {{ footercenterblock }}
-
-        </div>
-
-    	<div class="col-12 col-lg-3">
-
-    		<div class="text-right">
-
-    			<p>{{ footerrightblock }}</p>
-
-    		</div>
-
-    	</div>
 
     </div>
 

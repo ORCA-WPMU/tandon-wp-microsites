@@ -1,0 +1,89 @@
+{% extends "base.twig" %}
+
+{% set flex_blocks = flexblock %}
+
+{% block content %}
+
+<div id="single">
+
+    <div class="container">
+
+        <div class="lawyer p-0">
+
+            <div class="row">
+
+                <div class="col-12 col-sm-3">
+
+                {% if post.headshot %}
+
+                        <img src="{{Image(post.headshot).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto">
+
+                    {% else %}
+
+                        <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto">
+
+                {% endif %}
+
+                <div class="mx-auto my-3 text-center">
+
+                    {% if post.phone %}<p>{{ post.phone }}</p>{% endif %}
+
+                    {% if post.email %}<a href="mailto:{{ post.email }}"><i class="fa fa-envelope" aria-hidden="true"></i> E-mail</a><br>{% endif %}
+
+                    {% if post.cv_upload %}<a href="{{ post.get_field('cv_upload') }}"><i class="fa fa-download" aria-hidden="true"></i> CV</a>{% endif %}
+
+                </div>
+
+                </div>
+
+                <div class="col-12 col-md-9">
+
+                    <div class="float-left">
+
+                        <h2 class="serif mb-1">
+
+                            {{ post.name }}
+
+                        </h2>
+
+                        <h5 class="text-left">
+
+                            {% if post.job_title %}{{ post.job_title }} {% else %} {% endif %}
+
+                            {% if post.affiliation %}—{% else %}{% endif %}
+                            {% if post.affiliation %}{{ post.affiliation }} {% endif %}
+
+                            {% if post.country %}—{% else %}{% endif %}
+                            {% if post.country %}{{ post.country }}{% endif %}
+
+                        </h5>
+
+                    </div>
+
+                    <div class="float-right">
+
+                    {% if post.team_email %}
+
+                        <a href="mailto:{{ post.team_email }}"><div class="btn btn-primary mt-2"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ post.name }}</div></a>
+
+                    {% endif %}
+
+                    </div>
+
+                    <div class="d-inline-block mt-3 w-100">
+
+                        <p>{{ post.bio }}</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div><!-- /.container -->
+
+</div>
+
+{% endblock %}

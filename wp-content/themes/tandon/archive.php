@@ -13,14 +13,14 @@ $context['title_post_type'] = get_post_type();
 
 $context['slug'] = get_queried_object();
 
-$context['categories'] = Timber::get_terms('categories', array(
-    'orderby'   => 'title',
-    'parent'    => 0,
-    'order'     => 'ASC'
+$journals = array(
+    'post_type' => 'publications',
+    'posts_per_page' => -1,
+    'orderby' => array(
+        'date' => 'DESC'
 ));
-$context['footerleftblock'] = get_field('footer_left_block');
-$context['footercenterblock'] = get_field('footer_center_block');
-$context['footerrightblock'] = get_field('footer_right_block');
+$context['publication_list'] = Timber::get_posts( $journals );
+
 $context['title_term'] = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
 
 $templates = array( 'archive.twig' );

@@ -79,8 +79,7 @@ module.exports = {
                     'file-loader?name=images/[name].[ext]',
                 ]
             },
-            { test: /\.(woff2?)$/, use: 'url-loader?limit=10000&name=fonts/[name].[ext]' },
-            { test: /\.(ttf|eot)$/, use: 'file-loader?name=fonts/[name].[ext]' }
+            { test: /fonts\/.*\.(woff|woff2|eot|otf|ttf|svg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=100000&name=fonts/[name].[ext]' },
         ]
     },
     // devServer: {
@@ -97,8 +96,8 @@ module.exports = {
             allChunks: true
         }),
         new BrowserSyncPlugin({
-            proxy: 'http://microsites.engineering.nyu.dev/master',
-            port: 5555,
+            proxy: 'http://microsites.engineering.nyu.local',
+            port: 7676,
             files: [
                 '**/*.php'
             ],

@@ -1,0 +1,111 @@
+.carousel {
+    height: 100vh;
+    @include mq($max-width: $sm) {
+         max-height: 300px !important;
+
+    }
+}
+.carousel-inner {
+    @include mq($max-width: $sm) {
+         max-height: 300px !important;
+    }
+}
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background-size: cover;
+    @include mq($max-width: $sm) {
+        height: 300px;
+    }
+    &.scroll-fix {
+        background-attachment: fixed !important;
+    }
+}
+
+
+.carousel-nav {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    left: auto;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+    list-style: none;
+    &.withevent {
+        bottom: 94px;
+    }
+    @include mq($max-width: $sm) {
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        bottom: 10px;
+
+    }
+    a {
+        color: rgba(255, 255, 255, 0.2);
+        transition: all .2s;
+        @include mq($max-width: $sm) {
+            margin: 0 15px;
+        }
+        &:active, &:focus, &:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+}
+
+.carousel-indicators {
+    position: relative;
+    right: 0;
+    bottom: 0px;
+    left: auto;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin: 5px 15px;
+    list-style: none;
+    @include mq($max-width: $sm) {
+        margin: 5px auto;
+    }
+    li {
+        position: relative;
+        flex: 0 1 auto;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin: 2px 5px 0px 5px;
+        text-indent: -999px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev{
+    display: flex;
+}
+
+.carousel-block {
+    width: 100%;
+    z-index: 9;
+    p {
+        @include mq($max-width: $sm) {
+            display: none;
+        }
+    }
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 9;
+}
+
+.carouselcaption {
+    z-index: 9;
+}

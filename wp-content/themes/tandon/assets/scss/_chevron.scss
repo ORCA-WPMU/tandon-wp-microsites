@@ -23,3 +23,25 @@
 .chevron.left:before {
 	transform: rotate(-135deg);
 }
+
+.card.is-active {
+		span.chevron.bottom.accordian {
+    	transform: rotate(180deg);
+
+		}
+	}
+
+span.chevron.bottom.accordian {
+    position: absolute;
+    right: 10px;
+    width: 50px;
+    height: 22px;
+    margin-top: 2px;
+    left: auto;
+    background: none !important;
+    &:before {
+		height: 28px;
+		width: 28px;
+		border-width: 5px 5px 0 0;
+	}
+}

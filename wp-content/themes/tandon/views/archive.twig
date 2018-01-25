@@ -1,85 +1,93 @@
-{% extends "index.twig" %}
-
-{% block body_class %}default{% endblock %}
+{% extends "base.twig" %}
 
 {% block content %}
 
+<div id="single">
 
-<div id="content">
+    <div class="container">
 
-                {% if slug.name %}
-                    <h1>{{ slug.name|upper }}</h1>
-                {% elseif title_term.name %}
-                    <h1>{{ title_term.name|upper }}</h1>
-                {% elseif title_post_type %}
-                    <h1>{{ title_post_type|upper }}</h1>
-                {% elseif title %}
-                    <h1>{{ title|upper }}</h1>
-                {% endif %}
+        <div class="content">
+
+        {% if slug.name %}
+            <h1>{{ slug.name|upper }}</h1>
+        {% elseif title_term.name %}
+            <h1>{{ title_term.name|upper }}</h1>
+        {% elseif title_post_type %}
+            <h1>{{ title_post_type|upper }}</h1>
+        {% elseif title %}
+            <h1>{{ title|upper }}</h1>
+        {% endif %}
+
+        {% for post in publication_list %}
+
+            {% for term in post.terms('journals') %}
+                <li class="term-item"><a href="{{term.link}}">{{term.name}}</a></li>
+            {% endfor %}
+
+            <article>
+                <div class="content-block-post">
+                    <div class="row">
+
+                        <div class="col-12 col-sm-5 col-md-4">
+                        {# Check if the post has a thumbnail #}
+                        {% if post.thumbnail.src|default %}
+
+                            {# Set the alt to a var #}
+                            {% set thumb_alt = post.thumbnail.alt %}
+
+                            {# If the alt is empty, set the post title with Thumbnail appended to var #}
+                            {% if thumb_alt == false %}
+                                {% set thumb_alt = post.title ~ ' Thumbnail' %}
+                            {% endif %}
+
+                            <a href="{{ post.link }}">
+                                <img src="{{ post.thumbnail.src|resize(768, 768, 'center') }}" alt="{{ post.title }}" class="w-100">
+                            </a>
 
 
-                {% for post in posts %}
+                        {% endif %}
+                        </div>
 
-                    <article>
-                        <div class="content-block-post">
-                            <div class="row">
-
-                                <div class="col-12 col-sm-5 col-md-4">
-                                {# Check if the post has a thumbnail #}
-                                {% if post.thumbnail.src|default %}
-
-                                    {# Set the alt to a var #}
-                                    {% set thumb_alt = post.thumbnail.alt %}
-
-                                    {# If the alt is empty, set the post title with Thumbnail appended to var #}
-                                    {% if thumb_alt == false %}
-                                        {% set thumb_alt = post.title ~ ' Thumbnail' %}
-                                    {% endif %}
-
-                                    <a href="{{ post.link }}">
-                                        <img src="{{ post.thumbnail.src|resize(768, 768, 'center') }}" alt="{{ post.title }}" class="w-100">
-                                    </a>
-
-
-                                {% endif %}
+                        <div class="col-12 col-sm-7 col-md-8">
+                            <div class="content-padding">
+                                <div class="w-100">
+                                    <h3>
+                                        <a href="{{ post.link }}">
+                                            {{ function('strip_tags', post.title, '<i>, <em>' ) }}
+                                        </a>
+                                    </h3>
                                 </div>
 
-                                <div class="col-12 col-sm-7 col-md-8">
-                                    <div class="content-padding">
-                                        <div class="w-100">
-                                            <h3>
-                                                <a href="{{ post.link }}">
-                                                    {{ function('strip_tags', post.title, '<i>, <em>' ) }}
-                                                </a>
-                                            </h3>
-                                        </div>
+                                {% set preview = post.get_preview(50,false,false,true) %}
 
-                                        {% set preview = post.get_preview(50,false,false,true) %}
+                                {% if preview %}
 
-                                        {% if preview %}
+                                    <p>{{ preview }}</p>
 
-                                            <p>{{ preview }}</p>
+                                {% endif %}
 
-                                        {% endif %}
+                                <a href="{{ post.link }}" class="read-more mt-4">Read More</a>
 
-                                        <a href="{{ post.link }}" class="read-more mt-4">Read More</a>
+                            </div>
+                        </div><!-- /.col -->
 
-                                    </div>
-                                </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.content-block-post -->
+            </article>
 
-                            </div><!-- /.row -->
-                        </div><!-- /.content-block-post -->
-                    </article>
+            {% if loop.last %}
 
-                    {% if loop.last %}
-
-                    {% elseif loop.index %}
-                    <hr>
-                    {% endif %}
+            {% elseif loop.index %}
+            <hr>
+            {% endif %}
 
 
-                {% endfor %}
+        {% endfor %}
 
+
+        </div>
+
+    </div>
 
 </div>
 

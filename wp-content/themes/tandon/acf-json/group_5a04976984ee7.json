@@ -1,0 +1,92 @@
+{
+    "key": "group_5a04976984ee7",
+    "title": "Social Media",
+    "fields": [
+        {
+            "key": "field_5a049128d509f",
+            "label": "Social Media",
+            "name": "social_media",
+            "type": "repeater",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Social Media",
+            "sub_fields": [
+                {
+                    "key": "field_5a049152d50a0",
+                    "label": "",
+                    "name": "service",
+                    "type": "select",
+                    "value": null,
+                    "instructions": "ie Facebook, Instagram, Linkedin",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "float-left",
+                        "id": ""
+                    },
+                    "choices": {
+                        "null": "-- Choose --",
+                        "Facebook": "Facebook",
+                        "Instagram": "Instagram",
+                        "Twitter": "Twitter",
+                        "Linkedin": "Linkedin"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5a049197d50a1",
+                    "label": "",
+                    "name": "url",
+                    "type": "url",
+                    "value": null,
+                    "instructions": "Your Social Media's URL",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
+                        "class": "float-right",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-global"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1516633617
+}

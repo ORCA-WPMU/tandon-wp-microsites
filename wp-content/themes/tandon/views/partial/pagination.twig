@@ -1,0 +1,44 @@
+<nav aria-label="Page navigation example">
+
+    <ul class="pages pagination justify-content-center">
+
+        {% if blog_posts.pagination.prev %}
+
+            <li class="page-item">
+
+                <a href="{{blog_posts.pagination.prev.link}}" class="page-link prev {{blog_posts.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+
+            </li>
+
+        {% endif %}
+
+        {% for page in blog_posts.pagination.pages %}
+
+            <li class="page-item">
+
+                {% if page.link %}
+
+                    <a href="{{page.link}}" class="page-link {{page.class}}">{{page.title}}</a>
+
+                {% else %}
+
+                    <span class="page-link disabled {{page.class}}">{{page.title}}</span>
+
+                {% endif %}
+
+            </li>
+
+        {% endfor %}
+
+        {% if blog_posts.pagination.next %}
+
+            <li class="page-item">
+
+                <a href="{{blog_posts.pagination.next.link}}" class="page-link next {{blog_posts.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+
+            </li>
+
+        {% endif %}
+
+    </ul>
+</nav>

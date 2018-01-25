@@ -1,26 +1,12 @@
-{% if alerttrue == "true" %}
-
-    <div id="topAlert" class="alert alert-warning alert-dismissible fade show text-center my-0" role="alert">
-
-        {{ alert|striptags('<a>') }}
-
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-
-            <a href="#0" aria-hidden="true" class="text-dark">&times;</span></a>
-
-        </button>
-
-    </div>
-
-{% endif %}
-
 <header id="banner" class="banner {% if alerttrue == "true" %}if_alert{% endif %}">
 
     <div class="site-title">
 
+        {% include 'templates/hamburger.twig' %}
+
         <a href="{{ site.link }}">
 
-            <h1 class="d-none d-sm-none d-md-none d-lg-none d-xl-inline">
+            <h1 class="d-none d-sm-none d-md-none d-lg-none d-xl-inline-block">
 
                 <span>{{ site.title }}</span>
 
@@ -28,7 +14,7 @@
 
         </a>
 
-        {% include 'templates/hamburger.twig' %}
+        {#% include 'partial/socialmedia.twig' %#}
 
     </div>
 
@@ -39,4 +25,3 @@
     </div>
 
 </header>
-

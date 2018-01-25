@@ -1,6 +1,7 @@
 @import "../../node_modules/sass-mediaqueries/_media-queries.scss";
-// @import "../../node_modules/font-awesome/scss/font-awesome.scss";
+@import "../../node_modules/font-awesome/scss/font-awesome.scss";
 @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "../../node_modules/flickity/dist/flickity.min.css";
 
 
 @import './utilities/*';
@@ -14,4 +15,9 @@
 @import "_footer";
 
 
+@import "cards";
+@import "carousel";
+@import "buttons";
 @import "hamburgers";
+@import "header";
+@import "hero";

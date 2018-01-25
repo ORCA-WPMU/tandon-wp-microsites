@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+
+{% set flex_blocks = flexblock %}
+
+{% block content %}
+
+<div id="single">
+
+    <div class="container">
+
+        <h2>News</h2>
+
+        <hr class="mt-2 mb-5">
+
+        <div class="card-deck">
+
+        {% for post in blog_posts %}
+
+            <div class="card">
+
+                <div class="card-body">
+
+                {% include ['./templates/tease.twig'] %}
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+        </div>
+
+        {% include ['./partial/pagination.twig'] %}
+
+    </div>
+
+</div>
+
+{% endblock %}

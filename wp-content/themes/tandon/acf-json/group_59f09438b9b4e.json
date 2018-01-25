@@ -5,7 +5,7 @@
         {
             "key": "field_59f0c2de79fde",
             "label": "Headshot",
-            "name": "speaker_image",
+            "name": "headshot",
             "type": "image",
             "value": null,
             "instructions": "",
@@ -91,38 +91,139 @@
             "key": "field_5a04b91639b56",
             "label": "Bio",
             "name": "bio",
-            "type": "textarea",
+            "type": "wysiwyg",
             "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5a04b92039b57",
+            "label": "URL",
+            "name": "url",
+            "type": "repeater",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Website",
+            "sub_fields": [
+                {
+                    "key": "field_5a04b94639b58",
+                    "label": "Website URL",
+                    "name": "website",
+                    "type": "url",
+                    "value": null,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
+                        "class": "float-right",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5a04b96239b59",
+                    "label": "Site Title",
+                    "name": "site_title",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "float-left",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5a3404e82de2d",
+            "label": "Email",
+            "name": "email",
+            "type": "email",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3333",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_5a04b92039b57",
-            "label": "URL",
-            "name": "people_url",
-            "type": "url",
+            "key": "field_5a3404f32de2e",
+            "label": "Phone",
+            "name": "phone",
+            "type": "text",
             "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33.3333",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a3405042de2f",
+            "label": "CV Upload",
+            "name": "cv_upload",
+            "type": "file",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -142,5 +243,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1513181989
+    "modified": 1515786936
 }

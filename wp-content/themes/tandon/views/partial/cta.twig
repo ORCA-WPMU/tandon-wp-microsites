@@ -1,0 +1,45 @@
+{% if upcomingevent == 'true' %}
+
+<div class="event-details d-flex {% if eventfixed =='true' %}fixed{% endif %}" style="color: {{ eventtextcolor }} !important;">
+
+    {% if eventtitle %}
+
+    <h2 class="align-self-center">{{ eventtitle }}</h2>
+
+    {% endif %}
+
+    {% if eventdate %}
+
+    <h4 class="align-self-center pl-4">{{ eventdate }}</h4>
+
+    {% endif %}
+
+    <div class="ml-auto">
+
+    {% if heroregistration %}
+
+        <a href="{{ heroregistration }}" class="register-button" target="_blank">
+
+            Register
+
+        </a>
+
+    {% endif %}
+
+    {% if heroagendactaanchor %}
+
+        <a href="#{{ heroagendactaanchor.url|sanitize }}" class="scroll-button" {% if heroagendactaanchor.target == '_blank' %}target="_blank"{% else %}{% endif %}>
+
+            <span>View {{ heroagendactaanchor.title }}</span>
+
+        </a>
+
+    {% endif %}
+
+    </div><!-- /.ml-auto -->
+
+    <span style="background: {{ eventbackgroundcolor }};{% if eventbackgroundopacity == 10 %}opacity:1{% else %}opacity:0.{{eventbackgroundopacity}}{% endif %};width: 100%;position: absolute;bottom: 0;left: 0;height: 78px;z-index: -1;"></span>
+
+</div><!-- /.event-details -->
+
+{% endif %}

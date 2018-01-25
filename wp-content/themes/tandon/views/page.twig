@@ -1,22 +1,25 @@
-{% extends "index.twig" %}
-
-{% block body_class %}default{% endblock %}
-
-
-
-{% block content %}
+{% extends "base.twig" %}
 
 {% set flex_blocks = flexblock %}
 
-{% include 'templates/sidebar-nav.twig' %}
+{% block content %}
 
-{% include 'templates/header.twig' %}
+<div id="single">
 
-{% include 'templates/hero.twig' %}
+    <div class="container">
 
-{% include 'templates/flex-content.twig' with flex_blocks %}
+        <div class="content">
 
-{% include 'templates/footer.twig' %}
+            <h2>{{ post.name }}</h2>
 
+            <hr class="mt-2 mb-5">
+
+            {{ post.content }}
+
+        </div>
+
+    </div><!-- /.container -->
+
+</div>
 
 {% endblock %}

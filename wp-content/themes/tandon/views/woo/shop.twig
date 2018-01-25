@@ -1,0 +1,25 @@
+{% extends "index.twig" %}
+
+{% block content %}
+
+<div class="woocommerce">
+
+    <div class="shop-title">
+
+        {{ content }}
+
+    </div>
+
+    <div class="shop-content">
+
+        {% include "views/woo/_products.twig" with { products: posts } %}
+
+    </div>
+
+    {% do action("woocommerce_after_shop_loop") %}
+
+    {% do action("woocommerce_after_main_content") %}
+
+</div>
+
+{% endblock %}

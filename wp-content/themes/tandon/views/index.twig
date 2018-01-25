@@ -35,11 +35,30 @@
 
     {{function('wp_head')}}
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112057147-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-112057147-1');
+    </script>
+
+    <!--style type="text/css">
+
+        .shrink.primary-color {
+            background-color: {#{ primarycolor }#};
+        }
+
+    </style-->
+
 </head>
 
     <body class="{{body_class}}" data-source="base.twig">
 
         <div id="wrapper">
+        <div id="canvas">
 
             {% block content %}
 
@@ -51,7 +70,9 @@
 
             {% include 'templates/hero.twig' %}
 
-            {% include 'templates/about.twig' %}
+            {% include 'templates/about-us.twig' %}
+
+            <div id="breaker"><!-- de-attaches sticky event detail --></div>
 
             {% if flex_blocks %}
 
@@ -59,17 +80,14 @@
 
             {% endif %}
 
-            <div id="breaker">
-
             {% include 'templates/footer.twig' %}
-
-            </div>
 
             {% endblock %}
 
             {{ function('wp_footer') }}
 
-        </div><!-- /.wrapper -->
+        </div><!-- /#canvas -->
+        </div><!-- /#wrapper -->
 
     </body>
 

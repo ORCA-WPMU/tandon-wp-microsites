@@ -1,9 +1,31 @@
 <!-- Sidebar -->
-<div id="sidebar-wrapper">
+<div id="menu">
 
     <ul class="sidebar-nav">
 
+        <div class="header-mob d-flex d-sm-none">
+
+            <div class="logo-mob">
+
+                <img src="{{ theme.link }}/img/favicon/android-chrome-192x192.png" style="max-width: 35px;">
+
+            </div>
+
+            <a href="{{ site.link }}" class="align-self-center">
+
+                <h4>{{ site.title }}</h4>
+
+            </a>
+
+        </div>
+
         {% include 'templates/menu.twig' %}
+
+        <div class="my-4">
+
+        {% include 'partial/socialmedia.twig' %}
+
+        </div>
 
     </ul>
 

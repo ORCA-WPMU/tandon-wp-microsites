@@ -1,15 +1,13 @@
-{% if block.quote %}
-
 <div id="quote">
 
-	{% include 'blocks/block-title.twig' %}
+    <div class="container">
 
-    <h4>&quot; <span style="display: inline;">{{ block.quote|striptags }}</span>&quot;</h4>
+	{% include 'partial/block-title.twig' %}
 
-    <hr>
+    <h3>&quot; <span style="display: inline;">{{ block.quote|striptags }}</span>&quot;</h3>
 
-    <h3>– {{ block.attribution }}</h3>
+    <h4>– {{ block.attribution }}</h4>
+
+    </div>
 
 </div>
-
-{% endif %}

@@ -1,0 +1,115 @@
+#hero, #hero-carousel{
+
+    // h1 {
+    //     font-size: 65px;
+    //     font-weight: 500;
+    //     margin: 0;
+    //     @include mq($max-width: $sm) {
+    //         font-size: 26px;
+    //     }
+    // }
+
+    // h4 {
+    //     margin-top: 10px;
+    // }
+
+    .scroll-button {
+        float: right;
+        @include mq($max-width: $sm) {
+            float: none;
+            display: inline-block;
+        }
+    }
+
+    .chevron{
+        top: 10px;
+        left: -8px;
+        position: relative;
+        transition: all .2s;
+        &:hover{
+            top: 15px;
+        }
+    }
+}
+
+.hero, .carousel{
+    position: relative;
+    height: 100vh;
+    min-height: 850px;
+    overflow: hidden;
+    @include mq($max-width: $sm) {
+        min-height: 300px;
+        height: auto;
+    }
+
+    // h1{
+    //     font-size: 50px;
+    //     //color: #fff;
+    //     z-index: 9;
+    //     @include mq($max-width: $sm) {
+    //         font-size: 33px;
+    //     }
+    // }
+
+    // h2 {
+    //     font-weight: 700;
+    //     letter-spacing: 0px;
+    //     @include mq($max-width: $sm) {
+    //         font-size: 20px;
+    //     }
+    // }
+
+    // h3 {
+    //     font-weight: 600;
+    //     letter-spacing: 0;
+    //     margin-top: 10px;
+    //     font-size: 22px;
+    // }
+
+    .hero-block {
+        position: relative;
+        z-index: 9;
+        display: inline-grid;
+        width: 100%;
+
+        p {
+            @include mq($max-width: $sm) {
+                display: none;
+            }
+        }
+    }
+
+
+    img {
+        min-height: 100%;
+        min-width: 1024px;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .cta {
+        max-width: 85%;
+        display: flex;
+        margin: 0 auto;
+        @include mq($max-width: $sm) {
+            max-width: 100%;
+            font-size: 20px;
+            display: block;
+        }
+    }
+
+    .scrollTo{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        top: 0px;
+        left: 0;
+        z-index: 1;
+        right: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.99) 0%, transparent 100%);
+    }
+}

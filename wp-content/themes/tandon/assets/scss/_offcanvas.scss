@@ -1,152 +1,100 @@
-/*!
- * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
-/* Toggle Styles */
-
 #wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    overflow: hidden;
-    background: #fff;
-}
-
-#wrapper.toggled {
-    padding-left: 300px;
-    @include mq($max-width: $xs) {
-        padding-left: 240px;
-
-    }
-}
-// .site-title.toggled {
-//     position: absolute;
-//     right: 0;
-//     @include mq($max-width: $lg) {
-//         padding-right: 0;
-
-//     }
-// }
-
-#sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    padding-top: 40px;
-    left: 300px;
-    font-weight: 500;
-    width: 0;
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
     height: 100%;
-    margin-left: -300px;
-    overflow-y: auto;
-    background: #22252a;
-    transition: all 0.2s ease;
-    @include mq($max-width: $xs) {
-        box-shadow: none;
-    }
-
 }
 
-#wrapper.toggled #sidebar-wrapper {
+#canvas {
+    width: 100%;
+    height:100%;
+    position:relative;
+    transform: translateX(0);
+    transition: .3s ease all;
+}
+
+#menu {
     width: 300px;
-    @include mq($max-width: $xs) {
-        width: 240px;
-
-    }
-}
-
-
-#wrapper.toggled #page-content-wrapper {
+    height: 100%;
     position: absolute;
-    margin-right: -300px;
-    @include mq($max-width: $xs) {
-        margin-right: -240px;
-
-    }
+    top: 0;
+    left: -300px;
+    background-color: $nyu-dark-violet;
+    color: white;
+    z-index: 9;
 }
 
-/* Sidebar Styles */
+#wrapper.showNav #canvas {
+    transform: translateX(300px);
+}
 
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 300px;
+    width: 100%;
+    min-width: 300px;
     margin: 0;
     list-style: none;
     text-align: center;
-    font-weight: 900;
-    padding: 20px 0 0 0;
+    padding: 0;
     @include mq($max-width: $xs) {
         width: 240px;
 
     }
-}
-
-.sidebar-nav {
+    h4 {
+        color: #fff;
+        font-weight: 900;
+        padding: 3px;
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+    }
     hr {
         background: #fff;
-        border-width: 3px;
+        border-width: 2px;
     }
-    .contact {
-        color: #fff;
-        font-family: 'Lato', sans-serif;
-        letter-spacing: 0px;
-        text-transform: uppercase;
+    ul {
+        line-height: 40px;
+        list-style: none;
+        margin: 0;
+        padding: 15px 0;
+    }
+    li {
+        line-height: 40px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        a {
+            display: block;
+            font-weight: 900;
+            text-decoration: none;
+            color: #fff;
+            letter-spacing: 0px;
+            margin: 10px 15px;
+            transition: all 0.2s;
+            font-family: 'Conv_MercuryDisplay-Semibold';
+            font-size: 24px;
+            &:hover,&:active,&:focus {
+                text-decoration: none;
+                color: #fff;
+                background: #9A69BA;
+            }
+        }
+    }
+    .header-mob {
+        background: #000;
+        padding: 0;
+    }
+    .logo-mob {
+        a {
+            margin: 0
+        }
+        img {
+            float: left;
+            margin: 0 8px 0 0;
+        }
     }
 }
 
-.sidebar-nav ul {
-    line-height: 40px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.sidebar-nav li {
-    line-height: 40px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
-.sidebar-nav li a {
-    display: block;
-    font-weight: 900;
-    font-size: 14px;
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0px;
-    background: #000;
-    margin: 10px 15px;
-}
-
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: ligten($brand, 15%);
-    background: $brand;
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
 

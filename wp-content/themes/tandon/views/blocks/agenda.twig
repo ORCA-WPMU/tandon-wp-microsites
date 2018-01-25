@@ -2,7 +2,9 @@
 
 	<div class="container">
 
-		{% include 'blocks/block-title.twig' %}
+        {% include 'partial/block-title.twig' %}
+
+        {% include 'partial/block-intro.twig' %}
 
 		<table class="table table-responsive table-hover">
 
@@ -10,12 +12,35 @@
 
 			{% for list in block.agenda_content_repeater %}
 
-				<tr>
-					<td style="min-width: 187px;">{{ list.agenda_title|striptags('<span>')|wpautop }}</td>
+				{% if list.new_agenda_section %}
+
+				<tr class="header">
+					<td>
+
+						<strong><p>{{ list.section_title }}</p></strong>
+
+
+					</td>
 
 					<td>
-					{{ list.agenda_item|striptags('<span>, <a>')|wpautop }}
+						{{ list.section_description }}
+
 					</td>
+
+				</tr>
+
+				{% endif %}
+
+				<tr>
+
+					<td style="min-width: 287px;">{{ list.agenda_title|striptags('<span>')|wpautop }}</td>
+
+					<td>
+
+						{{ list.agenda_item|striptags('<span>, <a>')|wpautop }}
+
+					</td>
+
 				</tr>
 
 			{% endfor %}
@@ -23,6 +48,16 @@
 			</tbody>
 
 		</table>
+
+		{% if block.has_footer == 'yes' %}
+
+		    <div class="content mb-5">
+
+		        {{ block.footer }}
+
+		    </div><!-- /.text_container -->
+
+		{% endif %}
 
 	</div>
 

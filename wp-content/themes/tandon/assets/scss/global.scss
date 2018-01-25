@@ -1,21 +1,62 @@
 html, body {
-    font-size: 1.12rem;
+    background-color: $brand;
+    font-size: 1rem;
+    font-family: 'Conv_Gotham-Book';
 	// @include mq($max-width: $sm) {
-	// 	//http://stackoverflow.com/a/32698531
-	// 	// height: 100%;
-	// 	// overflow-x: hidden !important;
-	// 	// width: 100%;
-	// 	// position: fixed;
+ //        overflow-x: hidden;
+ //        display: inline-block;
 	// }
 }
 
 body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #fff;
 }
 
-html {
-    background-color: $brand;
+a{
+    color: $secondary;
+    //transition: all .2s;
+    &:hover{
+        color: lighten($secondary, 15%);
+        text-decoration: none;
+        cursor: pointer;
+    }
+    &:focus{
+        color: lighten($secondary, 15%);
+        //text-decoration: none;
+        outline: none;
+    }
+    &:active{
+        color: lighten($secondary, 15%);
+        //text-decoration: none;
+    }
 }
 
+
+h1, h2, h3 {
+    font-family: $serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h4, h5, h6 {
+    font-family: 'Conv_Gotham-Medium';
+    text-transform: uppercase;
+    font-size: 120%;
+    opacity: .75;
+}
+
+h1{
+    font-size: 50px;
+    @include mq($max-width: $sm) {
+        font-size: 36px;
+    }
+}
+
+h2 {
+    font-weight: 700;
+    letter-spacing: 0px;
+    @include mq($max-width: $sm) {
+        font-size: 28px;
+    }
+}

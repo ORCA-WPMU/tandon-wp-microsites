@@ -4,7 +4,7 @@
 
     <li>
 
-        <a href="#hero" class="anchor">
+        <a href="{{ site.link }}">
             Home
         </a>
 
@@ -12,7 +12,7 @@
 
     <li>
 
-        <a href="#about" class="anchor">
+        <a href="{% if fn('is_singular') %}{{ site.link }}/{% endif %}#about" class="anchor">
             About
         </a>
 
@@ -26,8 +26,8 @@
 
    <li>
 
-        <a href="#{{ anchor|sanitize }}" class="anchor">
-            {{ block.block_title }}
+        <a href="{% if fn('is_singular') %}{{ site.link }}/{% endif %}#{{ anchor|sanitize }}" class="anchor">
+            {{ block.anchor_label }}
         </a>
 
     </li>

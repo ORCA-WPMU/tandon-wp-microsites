@@ -1,86 +1,67 @@
-<div id="link_list" style="background-color: {{ block.background_color_picker }}">
+<div id="linklist">
 
     <div class="container">
 
-        {% include 'blocks/block-title.twig' %}
+        {% include 'partial/block-title.twig' %}
+
+        {% include 'partial/block-intro.twig' %}
 
         <div class="card-deck">
 
-        {% for list in block.links_repeater %}
+            {% for list in block.links_repeater %}
 
-        <div class="card mb-4">
+            <div class="card mb-4">
 
-            <div class="card-body">
+                <div class="card-body">
 
-                {% if list.section_title %}
+                    {% if list.section_title %}
 
-                <h4> {{ list.section_title }}</h4>
+                    <h4> {{ list.section_title }}</h4>
 
-                {% endif %}
+                    {% endif %}
 
-                <div class="bulleted-list">
+                    <div class="bulleted-list">
 
+                    {% for item in list.links %}
 
-                        {% for item in list.links %}
+                        {% if item.link_type == 'external' %}
 
+                            <li>
 
-                                    <li>
+                                <a href="{{ item.external_url }}" target="_blank">{{ item.title }}<i class="fa fa-external-link ml-1" style="font-size: 16px;bottom: -2px;position:relative;" aria-hidden="true"></i></a>
 
-                                        {{ item.title }}
+                            </li>
 
-                                    </li>
+                        {% elseif item.link_type == 'internal' %}
 
+                            <li>
 
-                                {#% if item.link_type == 'external' %}
+                                <a href="{{ item.internal_url }}">{{ item.title }}</a>
 
-                                    <li>
+                            </li>
 
-                                    <a href="{{ item.external_url }}" target="_blank">{{ item.title }}</a>
+                        {% else %}
 
-                                    </li>
+                            <li>
 
-                                {% elseif item.link_type == 'internal' %}
+                                {{ item.title }}
 
-                                    <li>
+                            </li>
 
-                                    <a href="{{ item.internal_url }}">{{ item.title }}</a>
+                        {% endif %}
 
-                                    </li>
+                    {% endfor %}
 
-                                {% else %}
+                    </div><!-- /.bulleted-list -->
 
-                                    <li>
+                </div><!-- /.card-body -->
 
-                                        {{ item.title }}
+            </div><!-- /.card -->
 
-                                    </li>
+            {% endfor %}
 
-                                {% endif %#}
+        </div><!-- /.card-deck -->
 
+    </div><!-- /.container -->
 
-                        {% endfor %}
-
-
-                </div><!-- /.bulleted-list -->
-
-                {% if loop.last %}
-
-                    <span></span>
-
-                {% elseif loop.index %}
-
-                    <div class="spacer-half"></div>
-
-                {% endif %}
-
-                </div>
-
-            </div>
-
-        {% endfor %}
-
-        </div>
-
-    </div>
-
-</div>
+</div><!-- #linklist -->

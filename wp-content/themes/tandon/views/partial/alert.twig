@@ -1,0 +1,15 @@
+{% if alerttrue == "true" %}
+
+<div id="topAlert" class="alert alert-warning alert-dismissible fade show text-center my-0" role="alert">
+
+    {{ alert|striptags('<a>') }}
+
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+        <a href="#0" aria-hidden="true" class="text-light">&times;</span></a>
+
+    </button>
+
+</div>
+
+{% endif %}

@@ -26,6 +26,22 @@
 
         {% endif %}
 
+    {% elseif 'files' == block.acf_fc_layout %}
+
+        {% if block.download_files %}
+
+            {% include 'blocks/file_download.twig' %}
+
+        {% endif %}
+
+    {% elseif 'publication_block' == block.acf_fc_layout %}
+
+        {% if block.publication_type %}
+
+            {% include 'blocks/publications.twig' %}
+
+        {% endif %}
+
     {% elseif 'link_list_new_repeater' == block.acf_fc_layout %}
 
         {% if block.links_repeater %}
@@ -34,39 +50,13 @@
 
         {% endif %}
 
-    {% elseif 'list_descriptions' == block.acf_fc_layout %}
+    {% elseif 'news_block' == block.acf_fc_layout %}
 
-        {% if block.list_items %}
-
-            {% include 'blocks/list_descriptions_repeater.twig' %}
-
-        {% endif %}
+            {% include 'blocks/news.twig' %}
 
     {% elseif 'people' == block.acf_fc_layout %}
 
         {% if block.people %}
-
-            {% if block.has_intro == 'yes' %}
-
-            <div class="row">
-
-                <div class="col-xs-12 col-sm-8">
-
-                    <div class="content">
-
-                        <div class="spacer"></div>
-
-                        {{ block.introduction }}
-
-                    </div><!-- /.text_container -->
-
-                </div>
-
-            </div>
-
-            {% else %}
-
-            {% endif %}
 
             {% include 'blocks/people.twig' %}
 
@@ -74,27 +64,9 @@
 
     {% elseif 'pull_quote' == block.acf_fc_layout %}
 
-        {% if block.pull_quote %}
-
-            <h3 class="mt-5">{{ block.block_title }}</h3>
+        {% if block.quote %}
 
             {% include 'blocks/pull_quote.twig' %}
-
-        {% endif %}
-
-    {% elseif 'related_content_repeater' == block.acf_fc_layout %}
-
-        {% if block.content_repeater %}
-
-            {% include 'blocks/related_content_repeater.twig' %}
-
-        {% endif %}
-
-    {% elseif 'related_text_widget' == block.acf_fc_layout %}
-
-        {% if block.text_widget %}
-
-            {% include 'blocks/related_text_widget.twig' %}
 
         {% endif %}
 

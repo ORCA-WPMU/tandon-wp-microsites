@@ -1,0 +1,192 @@
+.scroll-button {
+    background: $brand;
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //margin: 15px 0;
+    margin-right: 10px;
+    float: none;
+    transition: all .2s;
+
+    @include mq($max-width: $lg) {
+        margin: 0;
+    }
+
+    @include mq($max-width: $sm) {
+        font-size: 12px;
+        margin: 10px 0 0;
+        margin-right: 10px;
+    }
+
+    &:hover, &:active, &:focus {
+        background: lighten($brand, 15%);
+        color: #FFF;
+    }
+}
+
+.register-button {
+    background: green;
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //margin: 15px 0;
+    float: right;
+    transition: all .2s;
+
+    @include mq($max-width: $lg) {
+        margin: 0 0 10px;
+    }
+
+    @include mq($max-width: $sm) {
+        font-size: 12px;
+        margin: 10px 0 0;
+            float: none;
+            display: inline-block;
+    }
+
+    &:hover, &:active, &:focus {
+        background: lighten(green, 15%);
+        color: #FFF;
+    }
+}
+
+.cta-button {
+    background: $brand;
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 15px 0;
+    transition: all .2s;
+    &:hover {
+        color: #FFF;
+        background: lighten($brand, 15%);
+    }
+}
+
+button.navbar-toggler {
+    height: 40px;
+    width: 40px;
+    border: 0px solid;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.btn-primary{
+    background-color: $brand;
+    border-color: $brand;
+    color: #fff;
+    padding: 10px 15px;
+    transition: all .2s;
+    &:hover{
+        background-color: darken($brand, 10%);
+        color: #fff;
+    }
+    &:active{
+        background-color: $brand;
+        color: #fff;
+        border-color: $brand;
+    }
+    &:focus{
+        box-shadow: 0 0 0 3px lighten($brand, 25%);
+    }
+}
+
+.btn-primary.disabled, .btn-primary:disabled{
+    background-color: transparent;
+    border-color: $brand;
+    color: $brand;
+    // &:hover{
+    //     border-color: lighten($brand, 15%);
+    //     background-color: $brand;
+    //     color: #fff;
+    // }
+    // &:active{
+    //     background-color: $brand;
+    //     color: #fff;
+    //     border-color: $brand;
+    // }
+    // &:focus{
+    //     box-shadow: 0 0 0 3px lighten($brand, 25%);
+    // }
+}
+
+
+
+.btn-outline-primary, .btn-outline-primary.disabled, .btn-outline-primary:disabled{
+    border-color: $brand;
+    color: $brand;
+    &:hover{
+        border-color: lighten($brand, 15%);
+        background-color: $brand;
+        color: #fff;
+    }
+    &:active{
+        background-color: $brand;
+        color: #fff;
+        border-color: $brand;
+    }
+    &:focus{
+        box-shadow: 0 0 0 3px lighten($brand, 25%);
+    }
+}
+
+
+.dropdown-item.active, .dropdown-item:active{
+    background-color: $brand;
+}
+
+
+.btn-primary, .show > .btn-primary.dropdown-toggle{
+    background-color: $brand;
+    border-color: $brand;
+    &:hover{
+        border-color: lighten($brand, 15%);
+        background-color: lighten($brand, 15%);
+    }
+    &:focus{
+        color: #fff;
+    }
+}
+
+.btn{
+    border-radius: 0;
+}
+
+.btn.buy-now{
+    background: #f2f2f2;
+    border: 2px solid $brand;
+    border-radius: 0;
+    color: $brand;
+    transition: all .2s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1;
+    &:hover{
+        cursor: pointer;
+        background: $brand;
+        color: #fff;
+    }
+}
+
+.btn-overflow {
+    display: none;
+    text-decoration: none;
+}
+
+input.btn.btn-outline-primary {
+    margin-right: 15px;
+}
+
+button{
+    border-radius: 0;
+}

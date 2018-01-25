@@ -1,0 +1,75 @@
+<div id="people">
+    <span>
+        <div class="container">
+
+            <div class="jumbotron">
+
+                <h2 class="section-title my-5">Bios</h2>
+
+                <div class="card-deck">
+
+                    {% for item in people %}
+
+                    <div class="card">
+
+                        <div class="card-body">
+
+                            <a href="{{ item.link }}"><img class="w-100 mx-auto" src="{{Image(item.headshot).src|resize(500, 500, 'center') }}" alt=""></a>
+
+                            <h2 class="serif mt-3 mb-1 text-center">
+                                <a href="{{ item.link }}">{{ item.name }}</a>
+                            </h2>
+
+                            <h5 class="text-center">{{ item.job_title }}</h5>
+
+                            <hr class="my-3">
+
+                            <div class="read-more text-left">
+
+                            {% set text = item.bio|split(' ') %}
+
+                            {% if text|length > 50 %}
+
+                                {% for shorttxt in text|slice(0, 50) %}
+
+                                    {{ shorttxt }}
+
+                                {% endfor %}
+
+                                <span class="elipsis">...</span>
+
+                                <div class="readmore">
+                                {% for moretxt in text|slice(50, 1000) %}
+
+                                    {{ moretxt }}
+
+                                {% endfor %}
+                                </div>
+
+                                <div>
+                                    <a href="#0" class="read-more">
+                                      Read More
+                                    </a>
+                                </div>
+
+                                {% else %}
+
+                                {{ text|join(' ') }}
+
+                            {% endif %}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div><!-- /.jumbotron -->
+
+        </div>
+    </span>
+</div>
