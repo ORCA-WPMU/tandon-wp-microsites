@@ -104,8 +104,8 @@ class Enqueue {
 	 */
 	public function site_styles() {
 
-		// wp_enqueue_style( 'bs_css', get_template_directory_uri() . '/public/css/bootstrap.css' );
-		// wp_enqueue_style( 'theme_css', get_template_directory_uri() . '/public/css/app.css' );
+		wp_enqueue_style( 'bs_css', get_template_directory_uri() . '/public/css/bootstrap.css' );
+		wp_enqueue_style( 'theme_css', get_template_directory_uri() . '/public/css/app.css' );
 
 	}
 
