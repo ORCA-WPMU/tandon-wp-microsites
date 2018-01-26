@@ -58,35 +58,36 @@
     <body class="{{body_class}}" data-source="base.twig">
 
         <div id="wrapper">
-        <div id="canvas">
-
-            {% block content %}
 
             {% set flex_blocks = flexblock %}
 
             {% include 'templates/sidebar-nav.twig' %}
+                {% include 'templates/header.twig' %}
 
-            {% include 'templates/header.twig' %}
+            <div id="canvas">
 
-            {% include 'templates/hero.twig' %}
+                {% block content %}
 
-            {% include 'templates/about-us.twig' %}
+                {% include 'templates/hero.twig' %}
 
-            <div id="breaker"><!-- de-attaches sticky event detail --></div>
+                {% include 'templates/about-us.twig' %}
 
-            {% if flex_blocks %}
+                <div id="breaker"><!-- de-attaches sticky event detail --></div>
 
-            {% include 'templates/flex-content.twig' with flex_blocks %}
+                {% if flex_blocks %}
 
-            {% endif %}
+                {% include 'templates/flex-content.twig' with flex_blocks %}
 
-            {% include 'templates/footer.twig' %}
+                {% endif %}
 
-            {% endblock %}
+                {% include 'templates/footer.twig' %}
 
-            {{ function('wp_footer') }}
+                {% endblock %}
 
-        </div><!-- /#canvas -->
+                {{ function('wp_footer') }}
+
+            </div><!-- /#canvas -->
+
         </div><!-- /#wrapper -->
 
     </body>

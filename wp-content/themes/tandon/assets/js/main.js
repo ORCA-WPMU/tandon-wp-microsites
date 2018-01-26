@@ -2,7 +2,7 @@ export function main() {
 
 
 
-      var $wrapper = $("#wrapper"),
+      var $wrapper = $("#wrapper, #menu, header.banner"),
              $this = $(this),
         $accordian = $('#accordion .card'),
            $header = $("header"),
@@ -11,15 +11,36 @@ export function main() {
            $window = $(window);
 
 
-function toggleNav() {
-$('#wrapper').toggleClass('showNav');
-}
-
-$(function() {
   $buttonhamburger.click(function() {
+
     toggleNav();
+
   });
-});
+
+
+  function toggleNav() {
+
+    $wrapper.toggleClass('showNav');
+
+    if (($(window).innerWidth() < 460)) {
+
+      $header.toggleClass("shrink");
+
+    }
+
+    if ($header.offset().top < -80) {
+
+      $header.toggleClass("shrink");
+
+    }
+
+    if ($('#menu').hasClass('open')) {
+
+      $header.addClass("shrink");
+
+    }
+
+  }
 
 
 
@@ -43,7 +64,7 @@ $(function() {
 
       };
 
-      if ($header.offset().top > 980) {
+      if ($header.offset().top > 80) {
 
           $header.addClass("shrink");
 
@@ -52,6 +73,18 @@ $(function() {
           $header.removeClass("shrink");
 
       };
+
+
+    if ($('#menu').offset().top > 180) {
+      $('#menu').addClass("open");
+
+
+    } else {
+
+      $('#menu').removeClass("open");
+
+    }
+
 
   });
 
