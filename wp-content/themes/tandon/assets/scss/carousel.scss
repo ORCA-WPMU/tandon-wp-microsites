@@ -1,4 +1,10 @@
+
+
+
+
+
 .carousel {
+
     height: 100vh;
     @include mq($max-width: $sm) {
          max-height: 300px !important;
@@ -37,7 +43,11 @@
     list-style: none;
     &.withevent {
         bottom: 94px;
+        @include mq($max-width: $sm) {
+            bottom: 15px;
+        }
     }
+
     @include mq($max-width: $sm) {
         right: 0;
         left: 0;
@@ -45,16 +55,21 @@
         bottom: 10px;
 
     }
+
     a {
         color: rgba(255, 255, 255, 0.2);
         transition: all .2s;
+
         @include mq($max-width: $sm) {
             margin: 0 15px;
         }
+
         &:active, &:focus, &:hover {
             color: rgba(255, 255, 255, 1);
         }
+
     }
+
 }
 
 .carousel-indicators {

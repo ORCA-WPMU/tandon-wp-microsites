@@ -16,16 +16,17 @@ $menuwidth: 300px;
 }
 
 #menu {
+    background: $nyu-dark-violet;
     width: 300px;
     height: 100vh;
     position: fixed;
-    top: 50px;
+    padding-top: 50px;
     left:  -$menuwidth;
     color: white;
-    z-index: 99999999;
+    z-index: 1;
     transition: .3s ease all;
     @include mq($max-width: $sm) {
-        top: 42px;
+        padding-top: 42px;
     }
 }
 
@@ -47,20 +48,6 @@ $menuwidth: 300px;
     text-align: center;
     padding: 0;
 
-    h4 {
-        color: #fff;
-        font-weight: 900;
-        padding: 3px;
-        font-size: 20px;
-        margin: 0;
-        padding: 0;
-    }
-
-    hr {
-        background: #fff;
-        border-width: 2px;
-    }
-
     ul {
         line-height: 40px;
         list-style: none;
@@ -80,11 +67,11 @@ $menuwidth: 300px;
         text-decoration: none;
         color: #fff;
         letter-spacing: 0;
-        /* margin: 10px 15px; */
+        font-size: 24px;
         transition: all .2s;
         padding: 3px 0;
         font-family: Conv_MercuryDisplay-Semibold;
-        font-size: 24px
+        font-size: 24px;
 
             &:hover,&:active,&:focus {
                 text-decoration: none;
@@ -94,9 +81,26 @@ $menuwidth: 300px;
         }
     }
 
+    hr {
+        background: #fff;
+        border-width: 2px;
+    }
+
     .header-mob {
         background: #000;
         padding: 10px 15px;
+
+        a {
+            color: #fff;
+
+            h4 {
+                margin: 2px 0 1px;
+                font-size: 24px;
+                line-height: 1;
+            }
+
+        }
+
     }
 
     .logo-mob {

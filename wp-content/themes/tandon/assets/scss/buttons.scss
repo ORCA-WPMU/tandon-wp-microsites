@@ -11,10 +11,6 @@
     float: none;
     transition: all .2s;
 
-    @include mq($max-width: $lg) {
-        margin: 0;
-    }
-
     @include mq($max-width: $sm) {
         font-size: 12px;
         margin: 10px 0 0;
@@ -38,10 +34,6 @@
     //margin: 15px 0;
     float: right;
     transition: all .2s;
-
-    @include mq($max-width: $lg) {
-        margin: 0 0 10px;
-    }
 
     @include mq($max-width: $sm) {
         font-size: 12px;

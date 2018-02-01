@@ -4,7 +4,7 @@ header.banner {
     position: fixed;
     top: 0;
     background-color: transparent;
-    height: 49px;
+    height: 0;
     width: 100%;
     text-align: center;
     padding: 0;
@@ -30,16 +30,15 @@ header.banner {
             }
         }
 
-        .site-title {
-            top: 41px;
-        }
+        // .site-title {
+        //     top: 41px;
+        // }
 
     }
 
     .site-title {
         color: #fff;
         position: relative;
-        top: 5px;
         left: 10px;
         @include mq($max-width: $sm) {
             top: 1px;
@@ -87,7 +86,7 @@ header.banner {
             text-align: left;
             transition: all .1s;
             right: 20px;
-            top: 14px;
+            top: 5px;
             position: fixed;
             @include mq($max-width: $sm) {
                 max-width: 215px;
@@ -119,7 +118,9 @@ header.banner {
     &.shrink{
         height: 42px;
         background-color: $brand;
-        transform: translateX(0);
+        @include mq($max-width: $sm) {
+            transform: translateX(0);
+        }
         &.if_alert {
             .site-title {
                 top: 0;
