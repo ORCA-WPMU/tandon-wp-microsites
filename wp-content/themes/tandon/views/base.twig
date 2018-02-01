@@ -48,26 +48,33 @@
 
 </head>
 
-    <body class="{{body_class}}" data-source="base.twig">
+    <body class="{{body_class}}" data-source="base.twig" style="background: #26053B url('{{ globalbackgroundimage.url }}') fixed">
 
-	<div id="wrapper">
+        <div id="wrapper">
 
-	    {% include 'templates/sidebar-nav.twig' %}
+            {% set flex_blocks = flexblock %}
 
-	    {% include 'templates/header.twig' %}
+            {% include 'templates/sidebar-nav.twig' %}
 
-				{% block wrapper %}
+            {% include 'templates/header.twig' %}
 
-					{% block content %}
-					{% endblock %}
 
-				{% endblock %}
+            <div id="canvas">
 
-	    {% include 'templates/footer.twig' %}
+                {% block wrapper %}
 
-		{{ function('wp_footer') }}
+                    {% block content %}
+                    {% endblock %}
 
-	</div><!-- /.wrapper -->
+                {% endblock %}
+
+                {% include 'templates/footer.twig' %}
+
+                {{ function('wp_footer') }}
+
+            </div><!-- /#canvas -->
+
+        </div><!-- /#wrapper -->
 
     </body>
 

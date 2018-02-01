@@ -3,64 +3,66 @@
     {% include 'partial/block-title.twig' %}
 
     <a href="{{ site.link }}/{{ block.block_title|sanitize }}" class="show-all float-right" style="color:{{block.text_color_picker}}!important;">
-       <h4 class="section-title mt-3 mb-4"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
+
+       <h4 class="section-title mt-3 mb-4 d-none d-sm-block"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
+
     </a>
 
     {% include 'partial/block-intro.twig' %}
 
     <div class="card-deck">
 
-        {% if block.featured_news %}
+    {% if block.featured_news %}
 
         {% for item in block.featured_news %}
 
-            <div class="card">
+        <div class="card">
 
-                <div class="card-body">
+            <div class="card-body">
 
-                    <a href="{{ function('get_permalink', item.ID) }}">
+                <a href="{{ function('get_permalink', item.ID) }}">
 
-                        <img src="{{TimberImage(item.featured_image).src|resize(500, 500, 'center') }}" alt="" class="rounded w-100 mx-auto">
+                    <img src="{{TimberImage(item.featured_image).src|resize(500, 500, 'center') }}" alt="" class="rounded w-100 mx-auto">
 
-                    </a>
+                </a>
 
-                    <h2 class="serif mt-3 mb-1 text-left">
-                        <a href="{{ function('get_permalink', item.ID) }}">{{ item.post_title }}</a>
-                    </h2>
+                <h2 class="serif mt-3 mb-1 text-left">
+                    <a href="{{ function('get_permalink', item.ID) }}">{{ item.post_title }}</a>
+                </h2>
 
-                    <hr class="my-3">
+                <hr class="my-3">
 
-                    <div class="read-more text-left">
+                <div class="read-more text-left">
 
-                    {% set text = item.post_content|split(' ') %}
+                {% set text = item.post_content|split(' ') %}
 
-                    {% if text|length > 50 %}
+                {% if text|length > 50 %}
 
-                        {% for shorttxt in text|slice(0, 50) %}
+                    {% for shorttxt in text|slice(0, 50) %}
 
-                            {{ shorttxt }}
+                        {{ shorttxt }}
 
-                        {% endfor %}
+                    {% endfor %}
 
-                        <span class="elipsis">...</span>
+                    <span class="elipsis">...</span>
 
-                        <div>
-                            <a href="{{ function('get_permalink', item.ID) }}">
-                              Read More
-                            </a>
-                        </div>
-
-                    {% endif %}
-
+                    <div>
+                        <a href="{{ function('get_permalink', item.ID) }}">
+                          Read More
+                        </a>
                     </div>
+
+                {% endif %}
 
                 </div>
 
             </div>
 
+        </div>
+
         {% endfor %}
 
-        {% else %}
+    {% else %}
 
         {% for post in posts %}
 
@@ -79,6 +81,12 @@
     {% endif %}
 
     </div>
+
+    <a href="{{ site.link }}/{{ block.block_title|sanitize }}" class="show-all" style="color:{{block.text_color_picker}}!important;">
+
+       <h4 class="section-title mt-2 mb-4 d-inline-block d-sm-none"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
+
+    </a>
 
     {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 

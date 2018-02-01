@@ -7,17 +7,16 @@
     <div class="container">
 
         <div class="content">
-            <h2 class="page-title">
+
             {% if slug.name %}
-                {{ title_post_type|capitalize }}
+                <h2>{{ slug.name|capitalize }}</h2>
             {% elseif title_term.name %}
-                {{ title_post_type|capitalize }} <span>{{ title_term.name|capitalize }}</span>
+                <h2>{{ title_term.name|capitalize }}</h2>
             {% elseif title_post_type %}
-                {{ title_post_type|capitalize }}
+                <h2>{{ title_post_type|capitalize }}</h2>
             {% elseif title %}
-                {{ title_post_type|capitalize }}
+                <h2>{{ title|capitalize }}</h2>
             {% endif %}
-            </h2>
 
             <hr class="mt-0 mb-5">
 
@@ -94,9 +93,11 @@
 
                 {% endfor %}
 
+
                 <p><br></p>
 
                 {% include ['partial/pagination.twig'] %}
+
 
                 </div><!-- /.col-8 -->
 

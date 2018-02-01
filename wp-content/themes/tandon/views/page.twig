@@ -8,13 +8,78 @@
 
     <div class="container">
 
-        <div class="content">
+        <h2>{{ post.name }}</h2>
 
-            <h2>{{ post.name }}</h2>
+        <hr class="mt-2 mb-5">
 
-            <hr class="mt-2 mb-5">
+        <div class="row">
 
-            {{ post.content }}
+            {% if sidebarnavrepeater %}
+
+            <div class="col-12 col-sm-8">
+
+                <div class="content">
+
+                    {{ post.content }}
+
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="col-12">
+
+            {% endif %}
+
+            {% if sidebarnavrepeater %}
+
+            <div class="col-12 col-sm-4">
+
+                <div class="jumbotron">
+
+                    <h4 class="my-3">{{ post.sidebar_nav_title }}</h4>
+
+                    <ul class="list-group list-group-flush">
+
+                    {% for list in sidebarnavrepeater %}
+
+                        {% if list.link_type == 'external' %}
+
+                        <li class="list-group-item">
+
+                            <a href="{{ list.external_link }}" target="_blank">{{ list.link_title }}<i class="fa fa-external-link ml-1" style="font-size: 16px;bottom: -2px;position:relative;" aria-hidden="true"></i></a>
+
+                        </li>
+
+                        {% elseif list.link_type == 'internal' %}
+
+                        <li class="list-group-item">
+
+                            <a href="{{ list.internal_link.guid }}">{{ list.link_title }}</a>
+
+                        </li>
+
+                        {% else %}
+
+                        <li class="list-group-item">
+
+                            {{ list.link_title }}
+
+                        </li>
+
+                        {% endif %}
+
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            {% endif %}
 
         </div>
 

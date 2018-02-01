@@ -1,6 +1,18 @@
 {% if aboutsection =='true' %}
 
-<section id="about" class="{% if backgroundfixed == 'true' %}scroll-fix{% endif %}" style="{% if istherebackgroundimage == 'true' %}background:url({{ aboutbackgroundimage.url }})no-repeat center center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;{% endif %}{% if centercontent %}text-align:center;{% endif %}{% if abouttextcolor %}color:{{abouttextcolor}};{% endif %}">
+<section id="about" {% if parallax == 'true' %}data-type="background" data-speed="{{ parallaxamount }}"{% endif %} class="
+    {% if backgroundfixed == 'true' %}scroll-fix{% endif %}{% if parallax == 'true' %} parallax{% endif %}{% if fullheight == 'true' %} full_height{% endif %}" style="
+    {% if istherebackgroundimage == 'true' %}
+        {% if aboutbackgroundimage %}
+            background: url({{ aboutbackgroundimage.url }}) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        {% endif %}
+    {% endif %}
+    {% if abouttextcolor %}color:{{ abouttextcolor }}!important;{% endif %}
+    {% if centercontent %}text-align:center;{% endif %}">
 
     <div class="container">
 
@@ -16,15 +28,10 @@
 
     </div>
 
-    {% if istherebackgroundimage == 'true' %}
-
-    <div class="bkg-color" style="background: {{ aboutbackgroundcolor }};opacity:0.{{backgroundcoloropacity}}"></div>
-
-    {% else %}
-
-    <div class="bkg-color" style="background: {{ aboutbackgroundcolor }};"></div>
-
-    {% endif %}
+    <div class="bkg-color" style="z-index:0;background:{{ aboutbackgroundcolor }};
+    {% if backgroundcoloropacity == 0 %} opacity:0;{% elseif backgroundcoloropacity == 9 %} opacity:.96;{% elseif backgroundcoloropacity == 10 %} opacity:1;{% else %}
+    opacity:0.{{ backgroundcoloropacity }};{% endif %}
+    "></div>
 
 </section>
 

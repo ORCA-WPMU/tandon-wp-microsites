@@ -5,93 +5,97 @@
         {% include 'partial/block-title.twig' %}
 
         <a href="{{ site.link }}/{{ block.block_title|sanitize }}" class="show-all float-right" style="color:{{block.text_color_picker}}!important;">
-           <h4 class="section-title mt-3 mb-4"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
+
+           <h4 class="section-title mt-3 mb-4 d-none d-sm-block"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
+
         </a>
 
         {% include 'partial/block-intro.twig' %}
 
-        <div class="content-block">
+        <div class="card-deck {% if block.if_center_content %}justify-content-center{% endif %}">
 
-            <div class="card-deck {% if block.if_center_content %}justify-content-center{% endif %}">
+        {% for item in block.people %}
 
-            {% for item in block.people %}
+            <div class="card">
 
-                <div class="card">
+                <div class="card-body">
 
-                    <div class="card-body">
+                    {% if item.headshot %}
 
-                        {% if item.headshot %}
+                        <a href="{{ function('get_permalink', item.ID) }}">
 
-                            <a href="{{ function('get_permalink', item.ID) }}">
+                            <img src="{{Image(item.headshot).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto">
 
-                                <img src="{{Image(item.headshot).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto">
-
-                            </a>
+                        </a>
 
 
-                            {% else %}
+                        {% else %}
 
-                            <a href="{{ function('get_permalink', item.ID) }}">
+                        <a href="{{ function('get_permalink', item.ID) }}">
 
-                                <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto">
+                            <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto">
 
-                            </a>
+                        </a>
 
-                        {% endif %}
+                    {% endif %}
 
-                        <h2 class="serif mt-3 mb-1 text-center">
-                            <a href="{{ function('get_permalink', item.ID) }}">{{ item.post_title }}</a>
-                        </h2>
+                    <h2 class="serif mt-3 mb-1 text-center">
+                        <a href="{{ function('get_permalink', item.ID) }}">{{ item.post_title }}</a>
+                    </h2>
 
-                        <h5 class="text-center">{{ item.job_title }}</h5>
+                    <h5 class="text-center">{{ item.job_title }}</h5>
 
-                        <hr class="my-3">
+                    <hr class="my-3">
 
-                        <div class="read-more text-left">
+                    <div class="read-more text-left">
 
-                        {% set text = item.bio|split(' ') %}
+                    {% set text = item.bio|split(' ') %}
 
-                        {% if text|length > 50 %}
+                    {% if text|length > 50 %}
 
-                            {% for shorttxt in text|slice(0, 50) %}
+                        {% for shorttxt in text|slice(0, 50) %}
 
-                                {{ shorttxt }}
+                            {{ shorttxt }}
 
-                            {% endfor %}
+                        {% endfor %}
 
-                            <span class="elipsis">...</span>
+                        <span class="elipsis">...</span>
 
-                            <div class="readmore">
-                            {% for moretxt in text|slice(50, 1000) %}
+                        <div class="readmore">
+                        {% for moretxt in text|slice(50, 1000) %}
 
-                                {{ moretxt }}
+                            {{ moretxt }}
 
-                            {% endfor %}
-                            </div>
-
-                            <div>
-                                <a href="#0" class="read-more">
-                                  Read More
-                                </a>
-                            </div>
-
-                            {% else %}
-
-                            {{ text|join(' ') }}
-
-                        {% endif %}
-
+                        {% endfor %}
                         </div>
+
+                        <div>
+                            <a href="#0" class="read-more">
+                              Read More
+                            </a>
+                        </div>
+
+                        {% else %}
+
+                        {{ text|join(' ') }}
+
+                    {% endif %}
 
                     </div>
 
                 </div>
 
-            {% endfor %}
-
             </div>
 
+        {% endfor %}
+
         </div>
+
+        <a href="{{ site.link }}/{{ block.block_title|sanitize }}" class="show-all" style="color:{{block.text_color_picker}}!important;">
+
+           <h4 class="section-title mt-2 mb-4 d-block d-sm-none"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
+
+        </a>
 
     </div>
 

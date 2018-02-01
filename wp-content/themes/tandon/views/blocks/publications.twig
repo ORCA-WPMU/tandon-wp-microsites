@@ -12,81 +12,90 @@
 
                 {% for item in tax.taxonomy %}
 
+
                     {% if item.name == 'Conferences' %}
 
                         <div class="jumbotron">
 
-                        <h4 class="mt-0 mb-4 d-inline-block">{{ item.name }}</h4>
+                            <h4 class="mt-0 mb-4 d-inline-block">{{ item.name }}</h4>
 
-                        {% if conferenceposts|length > 5 %}
+                            {% if conferenceposts %}
 
-                            <a href="{{ site.link }}/category/{{item.name|sanitize}}" class="show-all float-right">
-                                <h4><i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
-                            </a>
+                            <div class="show-more">
 
-                        {% endif %}
+                                <ul class="list">
 
-                        {% if conferenceposts %}
+                                {% for post in conferenceposts|slice(0, 5) %}
 
-                        <div class="show-more">
+                                    {% if tax.single_post == 'true' %}
 
-                            <ul class="list">
+                                    <li><a href="{{ post.link }}">{{ post.name }}</a></li>
 
-                            {% for post in conferenceposts|slice(0, 5) %}
+                                    {% else %}
 
-                                {% if tax.single_post == 'false' %}
+                                    <li>{{ post.content|striptags('<a>') }}</li>
 
-                                <li><a href="{{ post.link }}">{{ post.name }}</a></li>
-
-                                {% else %}
-
-                                <li>{{ post.content|striptags('<a>') }}</li>
-
-                                {% endif %}
-
-                                {% if loop.last %}{% else %}<hr class="my-3">{% endif %}
-
-                            {% endfor %}
-
-                            {% if conferenceposts|length > 5 %}
-
-                                <div class="showmore">
-
-                                {% for post in conferenceposts|slice(5, 20) %}
-
-                                    {% if loop.first %}<hr class="my-3">{% else %}{% endif %}
-
-                                        {% if tax.single_post == 'false' %}
-
-                                        <li><a href="{{ post.link }}">{{ post.name }}</a></li>
-
-                                        {% else %}
-
-                                        <li>{{ post.content|striptags('<a>') }}</li>
-
-                                        {% endif %}
+                                    {% endif %}
 
                                     {% if loop.last %}{% else %}<hr class="my-3">{% endif %}
 
                                 {% endfor %}
 
-                                </div>
+                                {% if conferenceposts|length > 5 %}
 
-                                <div class="float-left">
+                                    <div class="showmore">
 
-                                    <a href="#0" class="show-more fa">
-                                      <i class="fa fa-chevron-down" aria-hidden="true"></i><span>Show More</span>
-                                    </a>
+                                    {% for post in conferenceposts|slice(5, 20) %}
 
-                                </div>
+                                        {% if loop.first %}<hr class="my-3">{% else %}{% endif %}
+
+                                            {% if tax.single_post == 'true' %}
+
+                                            <li><a href="{{ post.link }}">{{ post.name }}</a></li>
+
+                                            {% else %}
+
+                                            <li>{{ post.content|striptags('<a>') }}</li>
+
+                                            {% endif %}
+
+                                        {% if loop.last %}{% else %}<hr class="my-3">{% endif %}
+
+                                    {% endfor %}
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col mt-5 mb-0">
+
+                                        <h4 class="my-0"><a href="#0" class="show-more float-left fa">
+
+                                          <i class="fa fa-chevron-down" aria-hidden="true"></i><span>Show More</span>
+
+                                        </a></h4>
+
+                                        {% if conferenceposts|length > 5 %}
+
+                                            <h4 class="my-0"><a href="{{ site.link }}/types/{{item.name|sanitize}}" class="show-all float-right">
+
+                                                <i class="fa fa-list-ul" aria-hidden="true"></i> See All
+
+                                            </a></h4>
+
+                                        {% endif %}
+
+
+                                        </div>
+                                    </div>
+
+                                {% endif %}
+
+                                </ul>
+
+                            </div>
 
                             {% endif %}
-
-                            </ul>
-
-                        </div>
-
-                        {% endif %}
 
                         </div>
 
@@ -100,7 +109,7 @@
 
                         {% if journalposts|length > 5 %}
 
-                            <a href="{{ site.link }}/category/{{item.name|sanitize}}" class="show-all float-right">
+                            <a href="{{ site.link }}/types/{{item.name|sanitize}}" class="show-all float-right">
                                 <h4><i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
                             </a>
 
@@ -114,7 +123,7 @@
 
                             {% for post in journalposts|slice(0, 5) %}
 
-                                {% if tax.single_post == 'false' %}
+                                {% if tax.single_post == 'true' %}
 
                                 <li><a href="{{ post.link }}">{{ post.name }}</a></li>
 
@@ -136,7 +145,7 @@
 
                                     {% if loop.first %}<hr class="my-3">{% else %}{% endif %}
 
-                                        {% if tax.single_post == 'false' %}
+                                        {% if tax.single_post == 'true' %}
 
                                         <li><a href="{{ post.link }}">{{ post.name }}</a></li>
 
@@ -175,7 +184,6 @@
                 {% endfor %}
 
             {% endfor %}
-
 
             <!-- ///// dumps all categories and their posts ////// -->
 

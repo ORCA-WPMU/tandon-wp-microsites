@@ -1,40 +1,36 @@
 {% if herotrue == 'carousel' %}
 
-    {% include 'partial/alert.twig' %}
-
     <div id="hero-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-
-        <div class="carousel-nav{% if upcomingevent == 'true' %} withevent{% endif %}">
-
-            <a href="#hero-carousel" role="button" data-slide="prev">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                <span class="sr-only">Previous</span>
-            </a>
-
-            <ol class="carousel-indicators">
-
-                {% for item in carousel %}
-
-                {% set looper = loop.index %}
-
-                <li data-target="#hero-carousel" data-slide-to="{{looper - 1}}" class="{% if loop.index0 == 0 %}active{% endif %}"></li>
-
-                {% endfor %}
-
-            </ol>
-
-            <a href="#hero-carousel" role="button" data-slide="next">
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                <span class="sr-only">Next</span>
-            </a>
-
-        </div>
-
 
         <div class="carousel-inner">
 
-            {% for item in carousel %}
+            <div class="carousel-nav{% if upcomingevent == 'true' %} withevent{% endif %}">
 
+                <a href="#hero-carousel" role="button" data-slide="prev">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <ol class="carousel-indicators">
+
+                    {% for item in carousel %}
+
+                    {% set looper = loop.index %}
+
+                    <li data-target="#hero-carousel" data-slide-to="{{looper - 1}}" class="{% if loop.index0 == 0 %}active{% endif %}"></li>
+
+                    {% endfor %}
+
+                </ol>
+
+                <a href="#hero-carousel" role="button" data-slide="next">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+
+            {% for item in carousel %}
 
             <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}" style="background: url('{{ item.carousel_image.url }}')no-repeat center center{% if item.carousel_fixed == 'true' %} fixed{% endif %}; background-size: cover;">
 
@@ -64,7 +60,6 @@
 
         </div><!-- /.carousel-inner -->
 
-    {% include 'partial/cta.twig' %}
 
     {% if aboutsection =='true' %}
 
@@ -93,15 +88,24 @@
 
 {% else %}
 
-<div id="hero" class="{% if herofixed == 'true' %}scroll-fix{% endif %}" style="{% if ifherobackgroundimage == 'true' %}{% if heroimage.url %}background: url({{ heroimage.url }})no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;{% endif %}{% else %}background-color:{{herobackgroundcolor}};{% endif %}{% if herotextcolor %}color:{{herotextcolor}}!important;{% endif %}position:relative;">
+<div id="hero" {% if parallax == 'true' %}data-type="background" data-speed="{{ parallaxamount }}"{% endif %} class="
+    {% if herofixed == 'true' %}scroll-fix{% endif %}{% if parallax == 'true' %} parallax{% endif %}{% if fullheight == 'true' %} full_height{% endif %}" style="
+    {% if ifherobackgroundimage == 'true' %}
+        {% if heroimage %}
+            background: url({{ heroimage.url }}) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        {% endif %}
+    {% endif %}
+    {% if herotextcolor %}color:{{ herotextcolor }}!important;{% endif %}position:relative;">
 
     <div class="hero">
 
-        {% include 'partial/alert.twig' %}
-
         <div class="hero-block align-items-center" style="height: 100%;">
 
-            <div class="align-items-center d-xs-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+            <div class="align-items-center">
 
                 <div class="container">
 
@@ -125,7 +129,10 @@
 
     </div><!-- /.hero -->
 
-    <div class="bkg-color" style="background: {{ herobackgroundcolor }};opacity:0.{{herobackgroundcoloropacity}}"></div>
+    <div class="bkg-color" style="z-index:0;background:{{ herobackgroundcolor }};
+    {% if herobackgroundcoloropacity == 0 %} opacity:0;{% elseif herobackgroundcoloropacity == 9 %} opacity:.96;{% elseif herobackgroundcoloropacity == 10 %} opacity:1;{% else %}
+    opacity:0.{{ herobackgroundcoloropacity }};{% endif %}
+    "></div>
 
     {% if aboutsection =='true' %}
 

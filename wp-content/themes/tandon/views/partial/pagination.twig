@@ -2,17 +2,17 @@
 
     <ul class="pages pagination justify-content-center">
 
-        {% if blog_posts.pagination.prev %}
+        {% if posting.pagination.prev %}
 
             <li class="page-item">
 
-                <a href="{{blog_posts.pagination.prev.link}}" class="page-link prev {{blog_posts.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+                <a href="{{posting.pagination.prev.link}}" class="page-link prev {{posting.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
 
             </li>
 
         {% endif %}
 
-        {% for page in blog_posts.pagination.pages %}
+        {% for page in posting.pagination.pages %}
 
             <li class="page-item">
 
@@ -30,11 +30,11 @@
 
         {% endfor %}
 
-        {% if blog_posts.pagination.next %}
+        {% if posting.pagination.next %}
 
             <li class="page-item">
 
-                <a href="{{blog_posts.pagination.next.link}}" class="page-link next {{blog_posts.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+                <a href="{{posting.pagination.next.link}}" class="page-link next {{posting.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
 
             </li>
 

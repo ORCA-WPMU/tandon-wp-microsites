@@ -1,36 +1,35 @@
+<li>
 
-    {% if aboutsection =='true' %}
+    <a href="{{ site.link }}">
+        Home
+    </a>
 
-    <li>
+</li>
 
-        <a href="{{ site.link }}">
-            Home
-        </a>
+{% if aboutsection =='true' %}
 
-    </li>
+<li>
 
-    <li>
+    <a href="{% if fn('is_singular') %}{{ site.link }}/{% endif %}#about" class="anchor">
+        About
+    </a>
 
-        <a href="{% if fn('is_singular') %}{{ site.link }}/{% endif %}#about" class="anchor">
-            About
-        </a>
+</li>
 
-    </li>
+{% endif %}
 
-    {% endif %}
+{% for block in flex_blocks %}
 
-    {% for block in flex_blocks %}
+{% set anchor = block.block_title ~ '-' ~ loop.index %}
 
-    {% set anchor = block.block_title ~ '-' ~ loop.index %}
+<li>
 
-   <li>
+    <a href="{% if fn('is_singular') %}{{ site.link }}/{% endif %}#{{ anchor|sanitize }}" class="anchor">
+        {{ block.anchor_label }}
+    </a>
 
-        <a href="{% if fn('is_singular') %}{{ site.link }}/{% endif %}#{{ anchor|sanitize }}" class="anchor">
-            {{ block.anchor_label }}
-        </a>
+</li>
 
-    </li>
-
-    {% endfor %}
+{% endfor %}
 
 

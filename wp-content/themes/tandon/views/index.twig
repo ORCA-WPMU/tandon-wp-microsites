@@ -55,14 +55,17 @@
 
 </head>
 
-    <body class="{{body_class}}" data-source="base.twig">
+    <body class="{{body_class}}" data-source="base.twig" style="background: #26053B url('{{ globalbackgroundimage.url }}') fixed">
 
         <div id="wrapper">
 
             {% set flex_blocks = flexblock %}
 
             {% include 'templates/sidebar-nav.twig' %}
-                {% include 'templates/header.twig' %}
+
+            {% include 'templates/header.twig' %}
+
+            {% include 'partial/cta.twig' %}
 
             <div id="canvas">
 
@@ -72,13 +75,13 @@
 
                 {% include 'templates/about-us.twig' %}
 
-                <div id="breaker"><!-- de-attaches sticky event detail --></div>
-
                 {% if flex_blocks %}
 
                 {% include 'templates/flex-content.twig' with flex_blocks %}
 
                 {% endif %}
+
+                <div id="breaker"><!-- de-attaches sticky event detail --></div>
 
                 {% include 'templates/footer.twig' %}
 
