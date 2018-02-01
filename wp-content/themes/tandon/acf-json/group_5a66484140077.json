@@ -78,17 +78,17 @@
             "name": "is_hero_background_image",
             "type": "true_false",
             "value": null,
-            "instructions": "** DO NOT LOAD IMAGES GREATER THAN 500 KB ** \r\n** IDEALLY IMAGES WILL SAVED FOR WEB IN PHOTOSHOP **\r\n** IMAGES LONG SIDE NO GREATER THAN 1800 PX **",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33.3333",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 0,
-            "ui": 1,
+            "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
         },
@@ -102,7 +102,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33.3333",
+                "width": "16.666",
                 "class": "",
                 "id": ""
             },
@@ -118,11 +118,32 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33.3333",
+                "width": "16.666",
                 "class": "",
                 "id": ""
             },
             "default_value": ""
+        },
+        {
+            "key": "field_5a6649a096369",
+            "label": "Background Color Opacity",
+            "name": "hero_background_color_opacity",
+            "type": "range",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 9,
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5a6649a09630a",
@@ -130,7 +151,7 @@
             "name": "hero_image",
             "type": "image",
             "value": null,
-            "instructions": "",
+            "instructions": "** DO NOT LOAD IMAGES GREATER THAN 500 KB ** \r\n** IDEALLY IMAGES WILL SAVED FOR WEB IN PHOTOSHOP **\r\n** IMAGES LONG SIDE NO GREATER THAN 1800 PX **",
             "required": 0,
             "conditional_logic": [
                 [
@@ -142,7 +163,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "33.3333",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
@@ -175,7 +196,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "33.3333",
+                "width": "16.666",
                 "class": "",
                 "id": ""
             },
@@ -186,10 +207,10 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5a6649a096369",
-            "label": "Background Color Opacity",
-            "name": "hero_background_color_opacity",
-            "type": "range",
+            "key": "field_5a7093649df0f",
+            "label": "Parallax",
+            "name": "parallax",
+            "type": "true_false",
             "value": null,
             "instructions": "",
             "required": 0,
@@ -199,17 +220,50 @@
                         "field": "field_5a6649a0962d3",
                         "operator": "==",
                         "value": "1"
+                    },
+                    {
+                        "field": "field_5a6649a09634c",
+                        "operator": "==",
+                        "value": "1"
                     }
                 ]
             ],
             "wrapper": {
-                "width": "33.3333",
+                "width": "16.666",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a7093639df0e",
+            "label": "Parallax Amount",
+            "name": "parallax_amount",
+            "type": "range",
+            "value": null,
+            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a7093649df0f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 5,
             "min": 1,
-            "max": 9,
+            "max": 100,
             "step": "",
             "prepend": "",
             "append": ""
@@ -468,5 +522,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1516823609
+    "modified": 1517342736
 }

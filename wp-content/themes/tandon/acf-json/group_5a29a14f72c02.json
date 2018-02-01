@@ -1,24 +1,6 @@
 {
     "key": "group_5a29a14f72c02",
     "title": "About",
-    "location": [
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "acf-options-about"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
-    "modified": 1514995466,
     "fields": [
         {
             "key": "field_5a29a4a5cb1aa",
@@ -125,34 +107,6 @@
             "delay": 0
         },
         {
-            "key": "field_5a29ae211a99b",
-            "label": "Center Content?",
-            "name": "center_content",
-            "type": "true_false",
-            "value": null,
-            "instructions": "Do you want content centered?",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5a29a4a5cb1aa",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "100",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_5a29b8bd3d420",
             "label": "Background Image?",
             "name": "is_there_background_image",
@@ -170,7 +124,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "33.3333",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
@@ -198,7 +152,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "33.333",
+                "width": "16.666",
                 "class": "",
                 "id": ""
             },
@@ -222,11 +176,68 @@
                 ]
             ],
             "wrapper": {
-                "width": "25",
+                "width": "16.666",
                 "class": "",
                 "id": ""
             },
             "default_value": ""
+        },
+        {
+            "key": "field_5a29b9223d422",
+            "label": "Background Color Opacity",
+            "name": "background_color_opacity",
+            "type": "range",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 9,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5a29ae211a99b",
+            "label": "Center Content?",
+            "name": "center_content",
+            "type": "true_false",
+            "value": null,
+            "instructions": "Do you want content centered?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29a4a5cb1aa",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "16.666",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5a29b37d1dcbd",
@@ -251,7 +262,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "33.3333",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
@@ -280,16 +291,11 @@
                         "field": "field_5a29b8bd3d420",
                         "operator": "==",
                         "value": "1"
-                    },
-                    {
-                        "field": "field_5a29a4a5cb1aa",
-                        "operator": "==",
-                        "value": "1"
                     }
                 ]
             ],
             "wrapper": {
-                "width": "33.3333",
+                "width": "16.666",
                 "class": "",
                 "id": ""
             },
@@ -300,10 +306,10 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5a29b9223d422",
-            "label": "Background Color Opacity",
-            "name": "background_color_opacity",
-            "type": "range",
+            "key": "field_5a7093f6b3895",
+            "label": "Parallax",
+            "name": "parallax",
+            "type": "true_false",
             "value": null,
             "instructions": "",
             "required": 0,
@@ -315,23 +321,107 @@
                         "value": "1"
                     },
                     {
-                        "field": "field_5a29a4a5cb1aa",
+                        "field": "field_5a29b8e23d421",
                         "operator": "==",
                         "value": "1"
                     }
                 ]
             ],
             "wrapper": {
-                "width": "25",
+                "width": "16.666",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a7093f5b3894",
+            "label": "Parallax Amount",
+            "name": "parallax_amount",
+            "type": "range",
+            "value": null,
+            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29b8bd3d420",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5a7093f6b3895",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 5,
             "min": 1,
-            "max": 9,
+            "max": 100,
             "step": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_5a7093f4b3893",
+            "label": "Full Height",
+            "name": "full_height",
+            "type": "true_false",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a29b8bd3d420",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5a29b8e23d421",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "16.666",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
-    ]
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-about"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1517339506
 }

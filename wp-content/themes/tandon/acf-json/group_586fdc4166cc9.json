@@ -199,27 +199,7 @@
                             ]
                         },
                         {
-                            "key": "field_5a3013d6ef2f3",
-                            "label": "Center Content?",
-                            "name": "if_center_content",
-                            "type": "true_false",
-                            "value": null,
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5a3013d6ef2f4",
+                            "key": "field_5a70917ea1fc5",
                             "label": "Background Image?",
                             "name": "if_content_block_background_image",
                             "type": "true_false",
@@ -228,7 +208,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -239,7 +219,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a3013d6ef2f5",
+                            "key": "field_5a70917ea1fc4",
                             "label": "Background Color",
                             "name": "background_color_picker",
                             "type": "color_picker",
@@ -248,14 +228,35 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#FFFFFF"
                         },
                         {
-                            "key": "field_5a3013d6ef2f6",
+                            "key": "field_5a70917ca1fc2",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a70917da1fc3",
                             "label": "Text Color",
                             "name": "text_color_picker",
                             "type": "color_picker",
@@ -264,14 +265,34 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#000000"
                         },
                         {
-                            "key": "field_5a3013d6ef2f7",
+                            "key": "field_5a70917ba1fc1",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a70917aa1fc0",
                             "label": "Background Image",
                             "name": "content_block_background_image",
                             "type": "image",
@@ -281,14 +302,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a3013d6ef2f4",
+                                        "field": "field_5a70917ea1fc5",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "float-right",
                                 "id": ""
                             },
@@ -304,7 +325,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5a3013d6ef2f8",
+                            "key": "field_5a709179a1fbf",
                             "label": "Fixed",
                             "name": "fixed",
                             "type": "true_false",
@@ -314,14 +335,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a3013d6ef2f4",
+                                        "field": "field_5a70917ea1fc5",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
@@ -332,33 +353,89 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a3013d6ef2f9",
-                            "label": "Background Color Opacity",
-                            "name": "content_block_bkg_color_opacity",
-                            "type": "range",
+                            "key": "field_5a709179a1fbe",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
                             "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a3013d6ef2f4",
+                                        "field": "field_5a70917ea1fc5",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a709178a1fbd",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a70917ea1fc5",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
                             "min": 1,
-                            "max": 9,
+                            "max": 100,
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_5a709177a1fbc",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a70917ea1fc5",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -655,27 +732,7 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_5a2ac3d5a25a3",
-                            "label": "Center Content?",
-                            "name": "if_center_content",
-                            "type": "true_false",
-                            "value": null,
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5a2a9e24ef51e",
+                            "key": "field_5a7090d5eefe0",
                             "label": "Background Image?",
                             "name": "if_content_block_background_image",
                             "type": "true_false",
@@ -684,7 +741,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -695,7 +752,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a2063440a9f6",
+                            "key": "field_5a7090d4eefdf",
                             "label": "Background Color",
                             "name": "background_color_picker",
                             "type": "color_picker",
@@ -704,14 +761,14 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#FFFFFF"
                         },
                         {
-                            "key": "field_5a21bf0ae5077",
+                            "key": "field_5a7090d3eefde",
                             "label": "Text Color",
                             "name": "text_color_picker",
                             "type": "color_picker",
@@ -720,14 +777,55 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#000000"
                         },
                         {
-                            "key": "field_5a21bf0de5078",
+                            "key": "field_5a7090d2eefdd",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a7090d1eefdc",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a7090d0eefdb",
                             "label": "Background Image",
                             "name": "content_block_background_image",
                             "type": "image",
@@ -737,14 +835,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2a9e24ef51e",
+                                        "field": "field_5a7090d5eefe0",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "float-right",
                                 "id": ""
                             },
@@ -760,7 +858,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5a2a9ee0ef51f",
+                            "key": "field_5a7090cfeefda",
                             "label": "Fixed",
                             "name": "fixed",
                             "type": "true_false",
@@ -770,14 +868,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2a9e24ef51e",
+                                        "field": "field_5a7090d5eefe0",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
@@ -788,33 +886,89 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a2a9ef6ef520",
-                            "label": "Background Color Opacity",
-                            "name": "content_block_bkg_color_opacity",
-                            "type": "range",
+                            "key": "field_5a7090ceeefd9",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
                             "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2a9e24ef51e",
+                                        "field": "field_5a7090d5eefe0",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a7090cdeefd8",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a7090d5eefe0",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
                             "min": 1,
-                            "max": 9,
+                            "max": 100,
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_5a7090cceefd7",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a7090d5eefe0",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -1091,27 +1245,7 @@
                             ]
                         },
                         {
-                            "key": "field_5a2ac556fcfbc",
-                            "label": "Center Content?",
-                            "name": "if_center_content",
-                            "type": "true_false",
-                            "value": null,
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5a2ac5a2fcfbd",
+                            "key": "field_5a708ffcfb1b5",
                             "label": "Background Image?",
                             "name": "if_content_block_background_image",
                             "type": "true_false",
@@ -1120,7 +1254,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -1131,7 +1265,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a2069fc59fbf",
+                            "key": "field_5a708ffbfb1b4",
                             "label": "Background Color",
                             "name": "background_color_picker",
                             "type": "color_picker",
@@ -1140,14 +1274,14 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "25",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#FFFFFF"
                         },
                         {
-                            "key": "field_5a21bfc4e5082",
+                            "key": "field_5a708ff9fb1b3",
                             "label": "Text Color",
                             "name": "text_color_picker",
                             "type": "color_picker",
@@ -1156,31 +1290,72 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "25",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#000000"
                         },
                         {
-                            "key": "field_5a21bfc1e5081",
+                            "key": "field_5a708ff5fb1b2",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a708ff3fb1b1",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708ff2fb1b0",
                             "label": "Background Image",
                             "name": "content_block_background_image",
                             "type": "image",
                             "value": null,
-                            "instructions": "",
+                            "instructions": "** DO NOT LOAD IMAGES GREATER THAN 500 KB * IDEALLY IMAGES WILL SAVED FOR WEB IN PHOTOSHOP * IMAGES LONG SIDE NO GREATER THAN 1800 PX **",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac5a2fcfbd",
+                                        "field": "field_5a708ffcfb1b5",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "float-right",
                                 "id": ""
                             },
@@ -1196,7 +1371,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5a2ac5a7fcfbe",
+                            "key": "field_5a708ff2fb1af",
                             "label": "Fixed",
                             "name": "fixed",
                             "type": "true_false",
@@ -1206,14 +1381,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac5a2fcfbd",
+                                        "field": "field_5a708ffcfb1b5",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
@@ -1224,33 +1399,89 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a2ac5adfcfbf",
-                            "label": "Background Color Opacity",
-                            "name": "content_block_bkg_color_opacity",
-                            "type": "range",
+                            "key": "field_5a708ff1fb1ae",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
                             "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac5a2fcfbd",
+                                        "field": "field_5a708ffcfb1b5",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708ff0fb1ad",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708ffcfb1b5",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
                             "min": 1,
-                            "max": 9,
+                            "max": 100,
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_5a708feffb1ac",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708ffcfb1b5",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -1382,27 +1613,7 @@
                             "return_format": "object"
                         },
                         {
-                            "key": "field_5a2ac78db8bfc",
-                            "label": "Center Content?",
-                            "name": "if_center_content",
-                            "type": "true_false",
-                            "value": null,
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5a2ac78cb8bfb",
+                            "key": "field_5a708ed0da689",
                             "label": "Background Image?",
                             "name": "if_content_block_background_image",
                             "type": "true_false",
@@ -1411,7 +1622,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -1422,7 +1633,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a206a0d59fc1",
+                            "key": "field_5a708ecfda688",
                             "label": "Background Color",
                             "name": "background_color_picker",
                             "type": "color_picker",
@@ -1431,14 +1642,14 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "25",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#FFFFFF"
                         },
                         {
-                            "key": "field_5a21bf60e507e",
+                            "key": "field_5a708ecdda687",
                             "label": "Text Color",
                             "name": "text_color_picker",
                             "type": "color_picker",
@@ -1447,14 +1658,55 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#000000"
                         },
                         {
-                            "key": "field_5a21bf60e507d",
+                            "key": "field_5a708eccda686",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a708ecada685",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708ec9da684",
                             "label": "Background Image",
                             "name": "content_block_background_image",
                             "type": "image",
@@ -1464,14 +1716,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac78cb8bfb",
+                                        "field": "field_5a708ed0da689",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "float-right",
                                 "id": ""
                             },
@@ -1487,7 +1739,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5a2ac77cb8bfa",
+                            "key": "field_5a708ec9da683",
                             "label": "Fixed",
                             "name": "fixed",
                             "type": "true_false",
@@ -1497,14 +1749,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac78cb8bfb",
+                                        "field": "field_5a708ed0da689",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
@@ -1515,33 +1767,89 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a2ac77bb8bf9",
-                            "label": "Background Color Opacity",
-                            "name": "content_block_bkg_color_opacity",
-                            "type": "range",
+                            "key": "field_5a708ec8da682",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
                             "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac78cb8bfb",
+                                        "field": "field_5a708ed0da689",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708ec7da681",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708ed0da689",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
                             "min": 1,
-                            "max": 9,
+                            "max": 100,
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_5a708ec6da680",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708ed0da689",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -1594,27 +1902,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5a2ac8129d461",
-                            "label": "Center Content?",
-                            "name": "if_center_content",
-                            "type": "true_false",
-                            "value": null,
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5a2ac8119d460",
+                            "key": "field_5a708e0f934dd",
                             "label": "Background Image?",
                             "name": "if_content_block_background_image",
                             "type": "true_false",
@@ -1623,7 +1911,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -1634,7 +1922,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a206a1a59fc2",
+                            "key": "field_5a708e0e934dc",
                             "label": "Background Color",
                             "name": "background_color_picker",
                             "type": "color_picker",
@@ -1643,14 +1931,14 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#FFFFFF"
                         },
                         {
-                            "key": "field_5a21bf3fe507c",
+                            "key": "field_5a708e0d934db",
                             "label": "Text Color",
                             "name": "text_color_picker",
                             "type": "color_picker",
@@ -1659,14 +1947,55 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#000000"
                         },
                         {
-                            "key": "field_5a21bf3ee507b",
+                            "key": "field_5a708e0c934da",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a708e0b934d9",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708e0a934d8",
                             "label": "Background Image",
                             "name": "content_block_background_image",
                             "type": "image",
@@ -1676,14 +2005,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac8119d460",
+                                        "field": "field_5a708e0f934dd",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "float-right",
                                 "id": ""
                             },
@@ -1699,7 +2028,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5a2ac80f9d45f",
+                            "key": "field_5a708e09934d7",
                             "label": "Fixed",
                             "name": "fixed",
                             "type": "true_false",
@@ -1709,14 +2038,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac8119d460",
+                                        "field": "field_5a708e0f934dd",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
@@ -1727,33 +2056,89 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a2ac80e9d45e",
-                            "label": "Background Color Opacity",
-                            "name": "content_block_bkg_color_opacity",
-                            "type": "range",
+                            "key": "field_5a708e08934d6",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
                             "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac8119d460",
+                                        "field": "field_5a708e0f934dd",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708e07934d5",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708e0f934dd",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
                             "min": 1,
-                            "max": 9,
+                            "max": 100,
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_5a708e06934d4",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708e0f934dd",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -1823,27 +2208,7 @@
                             "return_format": "rendered_html"
                         },
                         {
-                            "key": "field_5a2ac9576aac8",
-                            "label": "Center Content?",
-                            "name": "if_center_content",
-                            "type": "true_false",
-                            "value": null,
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5a2ac9566aac7",
+                            "key": "field_5a708d587ec0c",
                             "label": "Background Image?",
                             "name": "if_content_block_background_image",
                             "type": "true_false",
@@ -1852,7 +2217,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -1863,7 +2228,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a206a2e59fc4",
+                            "key": "field_5a708d567ec0b",
                             "label": "Background Color",
                             "name": "background_color_picker",
                             "type": "color_picker",
@@ -1872,14 +2237,14 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#FFFFFF"
                         },
                         {
-                            "key": "field_5a219e2ce721e",
+                            "key": "field_5a708d557ec0a",
                             "label": "Text Color",
                             "name": "text_color_picker",
                             "type": "color_picker",
@@ -1888,14 +2253,55 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#000000"
                         },
                         {
-                            "key": "field_5a2198d46c2e3",
+                            "key": "field_5a708d547ec09",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a708d537ec08",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708d527ec07",
                             "label": "Background Image",
                             "name": "content_block_background_image",
                             "type": "image",
@@ -1905,14 +2311,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac9566aac7",
+                                        "field": "field_5a708d587ec0c",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "float-right",
                                 "id": ""
                             },
@@ -1928,7 +2334,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5a2ac9546aac6",
+                            "key": "field_5a708d517ec06",
                             "label": "Fixed",
                             "name": "fixed",
                             "type": "true_false",
@@ -1938,14 +2344,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac9566aac7",
+                                        "field": "field_5a708d587ec0c",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
@@ -1956,33 +2362,89 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a2ac8ea6aac1",
-                            "label": "Background Color Opacity",
-                            "name": "content_block_bkg_color_opacity",
-                            "type": "range",
+                            "key": "field_5a708d507ec05",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
                             "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a2ac9566aac7",
+                                        "field": "field_5a708d587ec0c",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708d4f7ec04",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708d587ec0c",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
                             "min": 1,
-                            "max": 9,
+                            "max": 100,
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_5a708d4e7ec03",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708d587ec0c",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -2055,26 +2517,6 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_5a2ac9b43966a",
-                            "label": "Center Content?",
-                            "name": "if_center_content",
-                            "type": "true_false",
-                            "value": null,
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
                             "key": "field_5a2ac9b339669",
                             "label": "Background Image?",
                             "name": "if_content_block_background_image",
@@ -2084,7 +2526,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -2104,11 +2546,11 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#FFFFFF"
                         },
                         {
                             "key": "field_5a21becde5075",
@@ -2120,11 +2562,52 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#000000"
+                        },
+                        {
+                            "key": "field_5a2ac9b039667",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a2ac9b43966a",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         },
                         {
                             "key": "field_5a21bed1e5076",
@@ -2144,7 +2627,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "float-right",
                                 "id": ""
                             },
@@ -2177,7 +2660,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
@@ -2188,10 +2671,10 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a2ac9b039667",
-                            "label": "Background Color Opacity",
-                            "name": "content_block_bkg_color_opacity",
-                            "type": "range",
+                            "key": "field_5a6ba1b0a7dad",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
                             "value": null,
                             "instructions": "",
                             "required": 0,
@@ -2205,16 +2688,72 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a6fbccbd7b0b",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a2ac9b339669",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
                             "min": 1,
-                            "max": 9,
+                            "max": 100,
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_5a7081047e94e",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a2ac9b339669",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -2300,7 +2839,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "taxonomy": "category",
+                                    "taxonomy": "types",
                                     "field_type": "checkbox",
                                     "allow_null": 0,
                                     "add_term": 0,
@@ -2315,7 +2854,7 @@
                                     "name": "single_post",
                                     "type": "select",
                                     "value": null,
-                                    "instructions": "If Checked, will link title to single post. If not checked, will show post's content.",
+                                    "instructions": "If True, will link title to single post. If false, will show post's content.",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -2324,7 +2863,6 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "null": "Choose",
                                         "true": "True",
                                         "false": "False"
                                     },
@@ -2339,27 +2877,7 @@
                             ]
                         },
                         {
-                            "key": "field_5a5fb36cf4d85",
-                            "label": "Center Content?",
-                            "name": "if_center_content",
-                            "type": "true_false",
-                            "value": null,
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5a5fb36cf4d86",
+                            "key": "field_5a708b739459e",
                             "label": "Background Image?",
                             "name": "if_content_block_background_image",
                             "type": "true_false",
@@ -2368,7 +2886,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -2379,7 +2897,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a5fb36cf4d87",
+                            "key": "field_5a708b6b9459d",
                             "label": "Background Color",
                             "name": "background_color_picker",
                             "type": "color_picker",
@@ -2388,14 +2906,14 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#FFFFFF"
                         },
                         {
-                            "key": "field_5a5fb36cf4d88",
+                            "key": "field_5a708b6a9459c",
                             "label": "Text Color",
                             "name": "text_color_picker",
                             "type": "color_picker",
@@ -2404,14 +2922,55 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#000000"
                         },
                         {
-                            "key": "field_5a5fb36cf4d89",
+                            "key": "field_5a708b689459b",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a708b679459a",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708b6694599",
                             "label": "Background Image",
                             "name": "content_block_background_image",
                             "type": "image",
@@ -2421,14 +2980,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a5fb36cf4d86",
+                                        "field": "field_5a708b739459e",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "float-right",
                                 "id": ""
                             },
@@ -2444,7 +3003,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5a5fb36cf4d8a",
+                            "key": "field_5a708b6494598",
                             "label": "Fixed",
                             "name": "fixed",
                             "type": "true_false",
@@ -2454,14 +3013,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a5fb36cf4d86",
+                                        "field": "field_5a708b739459e",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
@@ -2472,33 +3031,89 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a5fb36cf4d8b",
-                            "label": "Background Color Opacity",
-                            "name": "content_block_bkg_color_opacity",
-                            "type": "range",
+                            "key": "field_5a708b6494597",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
                             "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a5fb36cf4d86",
+                                        "field": "field_5a708b739459e",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708b6294596",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708b739459e",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
                             "min": 1,
-                            "max": 9,
+                            "max": 100,
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_5a708b6094595",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708b739459e",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -2579,27 +3194,7 @@
                             "return_format": "object"
                         },
                         {
-                            "key": "field_5a62324ff77e2",
-                            "label": "Center Content?",
-                            "name": "if_center_content",
-                            "type": "true_false",
-                            "value": null,
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5a62324ff77e3",
+                            "key": "field_5a708c770e4fb",
                             "label": "Background Image?",
                             "name": "if_content_block_background_image",
                             "type": "true_false",
@@ -2608,7 +3203,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -2619,7 +3214,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a62324ff77e4",
+                            "key": "field_5a708c830e504",
                             "label": "Background Color",
                             "name": "background_color_picker",
                             "type": "color_picker",
@@ -2628,14 +3223,14 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#FFFFFF"
                         },
                         {
-                            "key": "field_5a62324ff77e5",
+                            "key": "field_5a708c820e503",
                             "label": "Text Color",
                             "name": "text_color_picker",
                             "type": "color_picker",
@@ -2644,14 +3239,55 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "float-left",
                                 "id": ""
                             },
-                            "default_value": ""
+                            "default_value": "#000000"
                         },
                         {
-                            "key": "field_5a62324ff77e6",
+                            "key": "field_5a708c810e502",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a708c800e501",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708c7f0e500",
                             "label": "Background Image",
                             "name": "content_block_background_image",
                             "type": "image",
@@ -2661,14 +3297,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a62324ff77e3",
+                                        "field": "field_5a708c770e4fb",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "30",
                                 "class": "float-right",
                                 "id": ""
                             },
@@ -2684,7 +3320,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5a62324ff77e7",
+                            "key": "field_5a708c7e0e4ff",
                             "label": "Fixed",
                             "name": "fixed",
                             "type": "true_false",
@@ -2694,14 +3330,14 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a62324ff77e3",
+                                        "field": "field_5a708c770e4fb",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
@@ -2712,33 +3348,89 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5a62324ff77e8",
-                            "label": "Background Color Opacity",
-                            "name": "content_block_bkg_color_opacity",
-                            "type": "range",
+                            "key": "field_5a708c7d0e4fe",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
                             "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5a62324ff77e3",
+                                        "field": "field_5a708c770e4fb",
                                         "operator": "==",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "33.3333",
+                                "width": "16.666",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a708c7c0e4fd",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708c770e4fb",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
                             "min": 1,
-                            "max": 9,
+                            "max": 100,
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_5a708c7b0e4fc",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a708c770e4fb",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -2759,7 +3451,7 @@
             }
         ]
     ],
-    "menu_order": 10,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -2769,5 +3461,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1516631079
+    "modified": 1517506166
 }
