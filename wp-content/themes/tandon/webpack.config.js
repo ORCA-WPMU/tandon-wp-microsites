@@ -74,12 +74,12 @@ module.exports = {
                 }
             },
             {
-               test: /\.(png|svg|jp?g|gif)$/i,
-                use: [
-                    'file-loader?name=images/[name].[ext]',
-                ]
+                test: /\.(png|svg|jp?g|gif)$/i,
+                loader: 'url-loader?limit=100000&name=images/[name].[ext]'
             },
-            { test: /fonts\/.*\.(woff|woff2|eot|otf|ttf|svg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=100000&name=fonts/[name].[ext]' },
+            {
+                test: /fonts\/.*\.(woff|woff2|eot|otf|ttf|svg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'url-loader?limit=100000&name=fonts/[name].[ext]' },
         ]
     },
     // devServer: {
