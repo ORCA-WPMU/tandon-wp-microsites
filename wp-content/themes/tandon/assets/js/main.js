@@ -18,8 +18,6 @@ export function main() {
 
   });
 
-
-
   // $('#sidebar-wrapper li a').on('click', function(){
 
   //   toggleButtonActiveState();
@@ -62,7 +60,6 @@ export function main() {
 
   }
 
-
   $sidenav.click(function() {
 
     toggleSubNav();
@@ -79,7 +76,9 @@ export function main() {
 
   $(".sidebar-nav li a").on('click', function() {
 
-        $('.active').removeClass('active');
+        //@jamesgillispie todo
+
+        //$('.active').removeClass('active');
 
         $(this).addClass('active');
 
@@ -159,6 +158,8 @@ export function main() {
     });
 
   }
+
+
 
   $('#topAlert').on('close.bs.alert', function () {
 
@@ -308,33 +309,31 @@ export function main() {
 
   $('a.anchor, a.about-more, a.scroll-button').click(function(e){
 
-    toggleNav();
+    //toggleNav();
 
-    toggleButtonActiveState();
+    //toggleButtonActiveState();
 
       var id = $(this).attr("href");
 
       var offset = $(id).offset();
 
-      if($('a.about-more')){
-
-        e.preventDefault();
-
+if ($('#topAlert').length > 0) {
         $("html, body").animate({
 
           scrollTop: offset.top - 41,
 
         }, 300);
 
-      } else {
+} else {
 
         $("html, body").animate({
 
-          scrollTop: offset.top - 41,
+          scrollTop: offset.top - 0,
 
         }, 300);
 
       }
+
 
   });
 
