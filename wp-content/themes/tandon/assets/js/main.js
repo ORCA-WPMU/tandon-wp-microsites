@@ -1,12 +1,11 @@
 export function main() {
 
-
-
-      var $wrapper = $("#wrapper, #menu, header.banner"),
+      var $wrapper = $("#wrapper, #menu, header.banner, .event-details"),
              $this = $(this),
         $accordian = $('#accordion .card'),
            $header = $("header"),
           $headpad = $("#headpad"),
+          $sidenav = $(".show-subnav"),
   $buttonhamburger = $("button.hamburger"),
            $window = $(window);
 
@@ -15,12 +14,33 @@ export function main() {
 
     toggleNav();
 
+    toggleButtonActiveState();
+
   });
 
+
+
+  // $('#sidebar-wrapper li a').on('click', function(){
+
+  //   toggleButtonActiveState();
+
+  //   toggleNav();
+
+
+  // });
+
+
+
+  function toggleButtonActiveState() {
+
+    $buttonhamburger.toggleClass('is-active');
+
+  }
 
   function toggleNav() {
 
     $wrapper.toggleClass('showNav');
+          //$header.addClass("shrink");
 
     if (($(window).innerWidth() < 460)) {
 
@@ -28,7 +48,7 @@ export function main() {
 
     }
 
-    if ($header.offset().top < -80) {
+    if ($header.offset().top < -50) {
 
       $header.toggleClass("shrink");
 
@@ -43,14 +63,40 @@ export function main() {
   }
 
 
+  $sidenav.click(function() {
 
-  $window.scroll(function () {
+    toggleSubNav();
+
+  });
+
+
+  function toggleSubNav() {
+
+    $(".sidebar-nav .subnav").toggleClass('show-submenu');
+
+  }
+
+
+  $(".sidebar-nav li a").on('click', function() {
+
+        $('.active').removeClass('active');
+
+        $(this).addClass('active');
+
+  });
+
+
+
+
+  function scrollIt() {
+
+    $window.scroll(function () {
 
       var scroll = $window.scrollTop();
 
       $('.event-details').toggleClass('unstick', scroll >= $('#breaker').offset().top - 950);
 
-      if ($header.offset().top < -80) {
+      if ($header.offset().top < -50) {
 
           $wrapper.addClass("showNav");
 
@@ -58,13 +104,23 @@ export function main() {
 
       } else {
 
-          $wrapper.removeClass("showNav");
+          // ********************************** //
+          // ****** hides menu on scroll ****** //
+          // ********************************** //
 
-          $buttonhamburger.removeClass("is-active");
+          // $wrapper.removeClass("showNav");
+
+          // $buttonhamburger.removeClass("is-active");
+
+          // ********************************** //
+          // ********************************** //
+          // ********************************** //
+
+          $('#subnav-collapse').collapse('hide');
 
       };
 
-      if ($header.offset().top > 80) {
+      if ($header.offset().top > 50) {
 
           $header.addClass("shrink");
 
@@ -74,24 +130,48 @@ export function main() {
 
       };
 
+      if ($('#menu').offset().top > 50) {
 
-    if ($('#menu').offset().top > 180) {
-      $('#menu').addClass("open");
+        $('#menu').addClass("open");
+
+      } else {
+
+        $('#menu').removeClass("open");
+
+      }
+
+    });
+
+  }
 
 
-    } else {
+  $('#subnav-collapse').on('show.bs.collapse', function () {
 
-      $('#menu').removeClass("open");
+    $(".plus").addClass('open');
 
-    }
+    toggleNav();
 
+    toggleButtonActiveState();
+
+  });
+
+
+  $('#subnav-collapse').on('hide.bs.collapse', function () {
+
+    $(".plus").removeClass('open');
+
+  });
+
+
+  $('#subnav-collapse').on('hidden.bs.collapse', function () {
+
+    $(".sidebar-nav li a").removeClass('active');
 
   });
 
 
 
   $('table').addClass('table-responsive');
-
 
 
   $accordian.on('show.bs.collapse', function () {
@@ -101,14 +181,11 @@ export function main() {
   });
 
 
-
-
   $accordian.on('hide.bs.collapse', function () {
 
     $this.removeClass('is-active');
 
   });
-
 
 
   $('#topAlert').on('closed.bs.alert', function () {
@@ -205,23 +282,12 @@ export function main() {
 
 
 
-  $buttonhamburger.on('click', function(){
-
-    $(this).toggleClass('is-active');
-
-  });
-
-
-
-  $('#sidebar-wrapper li a').on('click', function(){
-
-    $buttonhamburger.toggleClass('is-active');
-
-  });
-
-
 
   $('a.anchor, a.about-more, a.scroll-button').click(function(e){
+
+    toggleNav();
+
+    toggleButtonActiveState();
 
       var id = $(this).attr("href");
 
@@ -248,5 +314,69 @@ export function main() {
       }
 
   });
+
+
+  // makes the parallax elements
+  function parallaxIt() {
+
+    // create variables
+
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // on window scroll event
+    $window.on('scroll resize', function() {
+
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    });
+
+    // for each of content parallax element
+    $('[data-type="content"]').each(function (index, e) {
+
+      var $contentObj = $(this);
+      var fgOffset = parseInt($contentObj.offset().top);
+      var yPos;
+      var speed = ($contentObj.data('speed') || 1 );
+
+      $window.on('scroll resize', function (){
+
+        yPos = fgOffset - scrollTop / speed;
+
+        $contentObj.css('top', yPos);
+
+      });
+
+    });
+
+    // for each of background parallax element
+    $('[data-type="background"]').each(function(){
+
+      var $backgroundObj = $(this);
+      var bgOffset = parseInt($backgroundObj.offset().top);
+      var yPos;
+      var coords;
+      var speed = ($backgroundObj.data('speed') || 0 );
+
+      $window.on('scroll resize', function() {
+
+        yPos = - ((scrollTop - bgOffset) / speed);
+
+        coords = '40% '+ yPos + 'px';
+
+        $backgroundObj.css({ backgroundPosition: coords });
+
+      });
+
+    });
+
+    $window.trigger('scroll');
+
+  };
+
+  parallaxIt();
+
+  scrollIt();
+
+  toggleNavActive();
 
 };

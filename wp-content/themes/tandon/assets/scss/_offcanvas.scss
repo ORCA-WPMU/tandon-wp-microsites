@@ -11,17 +11,17 @@ $menuwidth: 300px;
     width: 100%;
     height:100%;
     position:relative;
-    //transform: translateX(0);
     transition: .3s ease all;
+    //transform: translateX(0);
 }
 
 #menu {
-    background: $nyu-dark-violet;
-    width: 300px;
+    background: darken($brand, 8%);
+    width: $menuwidth;
     height: 100vh;
     position: fixed;
     padding-top: 50px;
-    left:  -$menuwidth;
+    transform: translateX(- $menuwidth);
     color: white;
     z-index: 1;
     transition: .3s ease all;
@@ -31,7 +31,7 @@ $menuwidth: 300px;
 }
 
 #menu.showNav {
-    left: 0;
+    transform: translateX(0);
     @include mq($max-width: $sm) {
         width: 100%;
     }
@@ -39,14 +39,80 @@ $menuwidth: 300px;
 
 #wrapper.showNav #canvas {
     transform: translateX($menuwidth);
+    width: calc(100% - #{$menuwidth});
     @include mq($max-width: $sm) {
         transform: translateX(100%);
     }
 }
 
+.plus {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: inline-block;
+    left: 4px;
+    top: 3px;
+    transition: all .2s;
+    transform: rotate(0);
+    &.open {
+        transform: rotate(45deg);
+    }
+    &:after {
+      content: " ";
+      position: absolute;
+      display: block;
+      background-color: #fff;
+      height: 4px;
+      margin-top: -2px;
+      top: 50%;
+      left: 2px;
+      right: 2px;
+      z-index: 9;
+    }
+    &:before {
+      content: " ";
+      position: absolute;
+      display: block;
+      background-color: #fff;
+      width: 4px;
+      margin-left: -2px;
+      left: 50%;
+      top: 2px;
+      bottom: 2px;
+      z-index: 9;
+    }
+}
+
+
 .sidebar-nav {
     text-align: center;
     padding: 0;
+
+    .subnav {
+        background: $nyu-dark-violet;
+        padding: 0 0 10px;
+
+        li {
+        line-height: 26px;
+
+            a {
+                font-family: $sans-medium;
+                text-transform: uppercase;
+                font-size: 15px;
+                padding: 8px 0 5px;
+                transition: all .2s;
+                opacity: .6;
+
+                &:hover,&:active,&:focus {
+                    text-decoration: none;
+                    color: inherit;
+                    background: inherit;
+                    background: #000;
+                }
+            }
+        }
+
+    }
 
     ul {
         line-height: 40px;
@@ -60,25 +126,33 @@ $menuwidth: 300px;
         list-style: none;
         margin: 0;
         padding: 0;
+        position: relative;
 
         a {
-        display: block;
-        font-weight: 900;
-        text-decoration: none;
-        color: #fff;
-        letter-spacing: 0;
-        font-size: 24px;
-        transition: all .2s;
-        padding: 3px 0;
-        font-family: Conv_MercuryDisplay-Semibold;
-        font-size: 24px;
+            display: block;
+            font-weight: 900;
+            text-decoration: none;
+            color: #fff;
+            letter-spacing: 0;
+            font-size: 24px;
+            transition: all .2s;
+            padding: 3px 0;
+            font-family: Conv_MercuryDisplay-Semibold;
+            font-size: 24px;
 
-            &:hover,&:active,&:focus {
+            &.active {
                 text-decoration: none;
                 color: #fff;
-                background: #9A69BA;
+                background: $nyu-dark-violet;
             }
+            &:hover {
+                text-decoration: none;
+                color: #fff;
+                background: $nyu-dark-violet;
+            }
+
         }
+
     }
 
     hr {

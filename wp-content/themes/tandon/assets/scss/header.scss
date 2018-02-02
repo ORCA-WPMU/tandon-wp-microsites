@@ -20,6 +20,7 @@ header.banner {
 
     &.showNav {
         transform: translateX(300px);
+        width: calc(100% - 300px);
     }
 
     &.if_alert {
@@ -66,7 +67,7 @@ header.banner {
         letter-spacing: -1px;
         .single &, .page &, .archive &, .error404 & {
             font-size: 32px;
-            left: 75px;
+            left: 70px;
         }
         // &:before {
         //     content: "";
@@ -82,7 +83,7 @@ header.banner {
 
     .logo{
         img{
-            max-width: 275px;
+            max-width: 270px;
             text-align: left;
             transition: all .1s;
             right: 20px;
@@ -137,7 +138,7 @@ header.banner {
         h1{
             color: #FFF;
             font-size: 32px;
-            left: 75px;
+            left: 70px;
         }
 
         .nav-desktop {

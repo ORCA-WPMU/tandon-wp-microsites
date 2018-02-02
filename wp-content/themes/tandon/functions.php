@@ -4,7 +4,21 @@ require_once( __DIR__ . '/functions/acf.php' );
 
 require_once( __DIR__ . '/functions/enqueue.php' );
 
+require_once( __DIR__ . '/functions/menu.php' );
+
 Timber::$dirname = array('templates', 'views');
+
+
+function add_custom_types_to_tax( $query ) {
+    if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+
+        // Get all your post types
+        $post_types = get_post_types();
+
+        $query->set( 'post_type', $post_types );
+        return $query;
+    }
+}
 
 /**
  * Filter hook function monkey patching form classes

@@ -10,10 +10,10 @@
     left: 0px;
     top: 1px;
     padding: 10px 10px 5px;
-    transition: all .2s;
+    transition: all .3s;
     &:hover {
         opacity: 1;
-            transition: all .2s;
+            transition: all .3s;
 
     }
     .single &, .page &, .archive &, .error404 & {
@@ -27,7 +27,7 @@
         @include mq($max-width: $sm) {
         }
         .single &, .page &, .archive &, .error404 & {
-            width: 45px;
+            width: 35px;
             height: 21px;
         }
     }
@@ -45,12 +45,12 @@
         width: 55px;
         height: 5px;
         border-radius: 0;
-        transition: all .2s;
+        transition: all .3s;
         @include mq($max-width: $sm) {
         }
         .single &, .page &, .archive &, .error404 & {
             background-color: #fff;
-            width: 45px;
+            width: 35px;
             height: 3px;
         }
     }
@@ -85,7 +85,7 @@
 
 .fa-stack {
     color: transparent;
-    transition: all .2s;
+    transition: all .3s;
     &:hover {
         color: $brand;
     }
@@ -109,7 +109,7 @@ header.banner {
         .hamburger-inner::before,
         .hamburger-inner::after {
             background-color: #fff;
-            width: 45px;
+            width: 35px;
             height: 3px;
             @include mq($max-width: $sm) {
                 width: 35px;
@@ -117,7 +117,7 @@ header.banner {
         }
 
         .hamburger .hamburger-box {
-            width: 45px;
+            width: 35px;
             height: 21px;
             @include mq($max-width: $sm) {
                 width: 35px;
@@ -134,30 +134,30 @@ header.banner {
 
     }
     .hamburger--squeeze .hamburger-inner {
-        transition: all .2s;
+        transition: all .3s;
 
     }
     .hamburger--squeeze .hamburger-inner::before {
-        transition: all .2s;
+        transition: all .3s;
 
     }
     .hamburger--squeeze .hamburger-inner::after {
-        transition: all .2s;
+        transition: all .3s;
 
     }
     .hamburger--squeeze.menu-hover .hamburger-inner, .hamburger.hamburger--squeeze.is-active .hamburger-inner{
         background-color: lighten(#fff, 15%);
-        transition: all .2s;
+        transition: all .3s;
 
     }
     .hamburger--squeeze.menu-hover .hamburger-inner::before, .hamburger.hamburger--squeeze.is-active .hamburger-inner::before {
         background-color: lighten(#fff, 15%);
-        transition: all .2s;
+        transition: all .3s;
 
     }
     .hamburger--squeeze.menu-hover .hamburger-inner::after, .hamburger.hamburger--squeeze.is-active .hamburger-inner::after {
         background-color: lighten(#fff, 15%);
-        transition: all .2s;
+        transition: all .3s;
 
     }
     .hamburger--squeeze.is-active .hamburger-inner::after {

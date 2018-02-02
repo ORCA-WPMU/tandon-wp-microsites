@@ -1,6 +1,6 @@
 <li>
 
-    <a href="{{ site.link }}">
+    <a href="#hero{#{ site.link }#}">
         Home
     </a>
 
@@ -10,11 +10,38 @@
 
 <li>
 
-    <a href="{% if fn('is_singular') %}{{ site.link }}/{% endif %}#about" class="anchor">
-        About
-    </a>
+    <div data-toggle="collapse" data-target="#subnav-collapse" aria-expanded="false" aria-controls="subnav-collapse">
+
+        <a href="{% if fn('is_singular') %}{{ site.link }}/{% endif %}#about" class="anchor show-subnav">
+            About {% if primary.get_items %}<div class="plus"></div>{% endif %}
+        </a>
+
+    </div>
 
 </li>
+
+{% if primary.get_items %}
+
+<div class="collapse" id="subnav-collapse">
+
+    <div class="subnav">
+
+        {% for item in primary.get_items %}
+
+        <li>
+            <div class="shelf-menu">
+                <a href="{{ item.get_link }}" title="" class="anchor active">{{ item.title }}</a>
+            </div>
+        </li>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endif %}
+
 
 {% endif %}
 
