@@ -55,7 +55,7 @@
 
 </head>
 
-    <body class="{{body_class}}" data-source="base.twig" style="background: #26053B url('{{ globalbackgroundimage.url }}') fixed">
+    <body class="{{body_class}}" data-source="base.twig" style="background: #26053B {% if globalbackgroundimage %} url('{{ globalbackgroundimage.url }}') fixed{% endif %}">
 
         <div id="wrapper">
 

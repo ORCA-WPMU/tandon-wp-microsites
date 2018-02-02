@@ -40,9 +40,9 @@
 
                     <div class="float-left">
 
-                        <h2 class="serif mb-1">
+                        <h2 class="page-title serif mb-1">
 
-                            {{ post.name }}
+                            {{ post.name }} {{ dump(post) }} {% for item in taxterms %} <span>{{ item.name }}</span> {% endfor %}
 
                         </h2>
 
