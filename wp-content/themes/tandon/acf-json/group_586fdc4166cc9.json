@@ -3119,6 +3119,366 @@
                     "min": "",
                     "max": ""
                 },
+                "5a7494632c907": {
+                    "key": "5a7494632c907",
+                    "name": "instrument_block",
+                    "label": "Instrumentation",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a7494632c908",
+                            "label": "Anchor Label",
+                            "name": "anchor_label",
+                            "type": "text",
+                            "value": null,
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a7494632c909",
+                            "label": "Block Title",
+                            "name": "block_title",
+                            "type": "text",
+                            "value": null,
+                            "instructions": "If Block Title is not set, it will display the Anchor Label.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a7494632c90a",
+                            "label": "Instrumentation",
+                            "name": "instrumentation_type",
+                            "type": "repeater",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "row",
+                            "button_label": "Add Publication Type",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5a7494632c90b",
+                                    "label": "Taxonomy",
+                                    "name": "taxonomy",
+                                    "type": "taxonomy",
+                                    "value": null,
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "taxonomy": "instrument-types",
+                                    "field_type": "checkbox",
+                                    "allow_null": 0,
+                                    "add_term": 0,
+                                    "save_terms": 0,
+                                    "load_terms": 0,
+                                    "return_format": "object",
+                                    "multiple": 0
+                                },
+                                {
+                                    "key": "field_5a7494632c90c",
+                                    "label": "Show Single Post?",
+                                    "name": "single_post",
+                                    "type": "select",
+                                    "value": null,
+                                    "instructions": "If True, will link title to single post. If false, will show post's content.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "true": "True",
+                                        "false": "False"
+                                    },
+                                    "default_value": [],
+                                    "allow_null": 1,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "return_format": "value",
+                                    "placeholder": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_5a7494632c90d",
+                            "label": "Background Image?",
+                            "name": "if_content_block_background_image",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a7494632c90e",
+                            "label": "Background Color",
+                            "name": "background_color_picker",
+                            "type": "color_picker",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "float-left",
+                                "id": ""
+                            },
+                            "default_value": "#FFFFFF"
+                        },
+                        {
+                            "key": "field_5a7494632c90f",
+                            "label": "Text Color",
+                            "name": "text_color_picker",
+                            "type": "color_picker",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "float-left",
+                                "id": ""
+                            },
+                            "default_value": "#000000"
+                        },
+                        {
+                            "key": "field_5a7494632c910",
+                            "label": "Background Color Opacity",
+                            "name": "content_block_bkg_color_opacity",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 8,
+                            "min": 0,
+                            "max": 10,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a7494632c911",
+                            "label": "Center Content?",
+                            "name": "if_center_content",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a7494632c912",
+                            "label": "Background Image",
+                            "name": "content_block_background_image",
+                            "type": "image",
+                            "value": null,
+                            "instructions": "** DO NOT LOAD IMAGES GREATER THAN 500 KB * IDEALLY IMAGES WILL SAVED FOR WEB IN PHOTOSHOP * IMAGES LONG SIDE NO GREATER THAN 1800 PX **",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a7494632c90d",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "30",
+                                "class": "float-right",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5a7494632c913",
+                            "label": "Fixed",
+                            "name": "fixed",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a7494632c90d",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a7494632c914",
+                            "label": "Parallax",
+                            "name": "parallax",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a7494632c90d",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a7494632c915",
+                            "label": "Parallax Amount",
+                            "name": "parallax_amount",
+                            "type": "range",
+                            "value": null,
+                            "instructions": "Depending on the height of your div, increase or decrease to prevent breaking of parallax background image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a7494632c90d",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 5,
+                            "min": 1,
+                            "max": 100,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5a7494632c916",
+                            "label": "Full Height",
+                            "name": "full_height",
+                            "type": "true_false",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a7494632c90d",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "16.666",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "5a62324ff77dc": {
                     "key": "5a62324ff77dc",
                     "name": "news_block",
@@ -3461,5 +3821,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1517506166
+    "modified": 1517589663
 }
