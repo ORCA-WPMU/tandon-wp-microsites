@@ -13,7 +13,7 @@ $context['title_post_type'] = get_post_type();
 
 $context['slug'] = get_queried_object();
 
-$context['taxterms'] = Timber::get_terms('types');
+$context['taxterms'] = Timber::get_terms('publication-types');
 
 global $paged;
 
