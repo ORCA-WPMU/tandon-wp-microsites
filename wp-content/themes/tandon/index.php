@@ -37,7 +37,7 @@ $conferenceposts = array(
     'post_type' => 'publications',
     'tax_query' => array(
         array (
-            'taxonomy' => 'types',
+            'taxonomy' => 'publication-types',
             'field' => 'slug',
             'terms' => 'conferences',
         )
@@ -52,7 +52,7 @@ $journalposts = array(
     'post_type' => 'publications',
     'tax_query' => array(
         array (
-            'taxonomy' => 'types',
+            'taxonomy' => 'publication-types',
             'field' => 'slug',
             'terms' => 'journals',
         )

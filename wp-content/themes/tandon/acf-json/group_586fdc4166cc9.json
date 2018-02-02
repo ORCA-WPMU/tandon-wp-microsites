@@ -2839,7 +2839,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "taxonomy": "types",
+                                    "taxonomy": "publication-types",
                                     "field_type": "checkbox",
                                     "allow_null": 0,
                                     "add_term": 0,
@@ -3821,5 +3821,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1517589663
+    "modified": 1517608127
 }
