@@ -1,10 +1,6 @@
 import 'bootstrap';
 
-import 'flickity';
-
-import 'flickity-imagesloaded';
-
-import 'flickity-bg-lazyload';
+// import 'skrollr';
 
 import css from './scss/app.scss';
 
