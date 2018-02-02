@@ -20,7 +20,7 @@ $menuwidth: 300px;
     width: $menuwidth;
     height: 100vh;
     position: fixed;
-    padding-top: 50px;
+    padding-top: 20px;
     transform: translateX(- $menuwidth);
     color: white;
     z-index: 1;
@@ -42,6 +42,7 @@ $menuwidth: 300px;
     width: calc(100% - #{$menuwidth});
     @include mq($max-width: $sm) {
         transform: translateX(100%);
+        width: 100%;
     }
 }
 

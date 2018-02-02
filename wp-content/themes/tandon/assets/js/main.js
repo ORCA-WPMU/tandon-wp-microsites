@@ -1,6 +1,6 @@
 export function main() {
 
-      var $wrapper = $("#wrapper, #menu, header.banner, .event-details"),
+      var $wrapper = $("#wrapper, #menu, header.banner, .event-details, .alert"),
              $this = $(this),
         $accordian = $('#accordion .card'),
            $header = $("header"),
@@ -140,10 +140,33 @@ export function main() {
 
       }
 
+      var elm = $('.alert');
+
+      if ( $(this).scrollTop() > 0 ) {
+
+        $('.showalert').addClass('hide');
+
+      } else {
+
+        if ( !elm.hasClass('show') )
+
+          elm.addClass('show');
+
+          $('.showalert').removeClass('hide');
+
+        }
+
     });
 
   }
 
+  $('#topAlert').on('close.bs.alert', function () {
+
+    $('.showalert').addClass('hide');
+
+    return(false);
+
+  })
 
   $('#subnav-collapse').on('show.bs.collapse', function () {
 
@@ -377,6 +400,9 @@ export function main() {
 
   scrollIt();
 
-  toggleNavActive();
+
+
+
+  // toggleNavActive();
 
 };

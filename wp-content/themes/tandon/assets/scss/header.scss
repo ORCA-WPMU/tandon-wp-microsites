@@ -1,8 +1,64 @@
+.showalert {
+    height: 42px;
+    transition: .2s all;
+    &.hide {
+        height: 0;
+        overflow: hidden;
+    }
+    .alert {
+        &.show {
+            height: 42px;
+            &.hide {
+                height: 0;
+                overflow: hidden;
+            }
+
+        }
+
+    }
+
+}
+
+
+.alert {
+    display: none;
+    position: relative;
+    min-width: 350px;
+    top: 0;
+    height: 45px;
+    width: 100%;
+    z-index: 99;
+    padding: 10px;
+    border: 0;
+    border-radius: 0;
+    background-color: #000;
+    border-radius: 0;
+    font-weight: 700;
+    transition: .3s ease all;
+    &.showNav {
+        transform: translateX(300px);
+        width: calc(100% - 300px);
+        @include mq($max-width: $sm) {
+            width: 100%;
+        }
+    }
+    &.show {
+        display: inline-block;
+    }
+}
+
+.alert-dismissible .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 0;
+    color: inherit;
+}
 
 header.banner {
     z-index: 99;
     position: fixed;
-    top: 0;
+    //transform: translateY(0);
     background-color: transparent;
     height: 0;
     width: 100%;
@@ -13,28 +69,60 @@ header.banner {
         height: 65px;
     }
 
+    // &.if_alert {
+    //      //transform: translateY(0);
+    // }
+
     .single &, .page &, .archive &, .error404 & {
-        height: 42px;
+        transition: .3s ease all;
+        height: 44px;
         background: $brand;
+        //transform: translateY(0);
+
+        &.if_alert {
+            transition: .3s ease all;
+            //transform: translateY(0);
+            &.shrink {
+                //transform: translateY(0);
+                .logo{
+                    img{
+                        //transform: translateY(0);
+                    }
+                }
+            }
+
+        }
     }
+
+    .logo{
+        img{
+            max-width: 260px;
+            text-align: left;
+            transition: all .1s;
+            right: 20px;
+            top: 7px;
+            position: absolute;
+            @include mq($max-width: $sm) {
+                max-width: 215px;
+                right: 10px;
+                top: 10px;
+                position: absolute;
+            }
+
+            .single &, .page &, .archive &, .error404 & {
+                max-width: 220px;
+                top: 3px;
+            }
+        }
+    }
+
 
     &.showNav {
         transform: translateX(300px);
         width: calc(100% - 300px);
-    }
-
-    &.if_alert {
-
-        .logo{
-            img{
-                top: 50px;
-            }
+        @include mq($max-width: $sm) {
+            width: 100%;
         }
-
-        // .site-title {
-        //     top: 41px;
-        // }
-
     }
 
     .site-title {
@@ -59,7 +147,7 @@ header.banner {
         padding: 0;
         position: relative;
         text-align: left;
-        left: 90px;
+        left: 80px;
         float: left;
         top: 5px;
         text-transform: uppercase;
@@ -80,36 +168,6 @@ header.banner {
         //     right: 20px;
         // }
     }
-
-    .logo{
-        img{
-            max-width: 270px;
-            text-align: left;
-            transition: all .1s;
-            right: 20px;
-            top: 5px;
-            position: fixed;
-            @include mq($max-width: $sm) {
-                max-width: 215px;
-                right: 10px;
-                top: 10px;
-                position: absolute;
-            }
-            .single &, .page &, .archive &, .error404 & {
-                max-width: 220px;
-                top: 3px;
-                right: 15px;
-            }
-        }
-        .single &, .page &, .archive &, .error404 & {
-            left: auto;
-            right: 5px;
-            top: 3px;
-            width: auto;
-            transform: initial;
-        }
-    }
-
     .nav-desktop {
         position: relative;
         top: 30px;
@@ -117,6 +175,7 @@ header.banner {
     }
 
     &.shrink{
+        //transform: translateY(0);
         height: 42px;
         background-color: $brand;
         @include mq($max-width: $sm) {
@@ -124,13 +183,13 @@ header.banner {
         }
         &.if_alert {
             .site-title {
-                top: 0;
+                //transform: translateY(0);
             }
         }
 
         .site-title {
             //left: 0px;
-            top: 0px;
+            //transform: translateY(0);
 
         }
 

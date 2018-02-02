@@ -48,7 +48,7 @@
 
 </head>
 
-    <body class="{{body_class}}" data-source="base.twig" style="background: #26053B url('{{ globalbackgroundimage.url }}') fixed">
+    <body class="{{body_class}}" data-source="base.twig">
 
         <div id="wrapper">
 
@@ -58,6 +58,7 @@
 
             {% include 'templates/header.twig' %}
 
+            {#% include 'partial/cta.twig' %#}
 
             <div id="canvas">
 
@@ -67,6 +68,8 @@
                     {% endblock %}
 
                 {% endblock %}
+
+                <div id="breaker"><!-- de-attaches sticky event detail --></div>
 
                 {% include 'templates/footer.twig' %}
 

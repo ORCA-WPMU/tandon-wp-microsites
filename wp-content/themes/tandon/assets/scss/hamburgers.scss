@@ -8,8 +8,8 @@
     position: absolute;
     right: auto;
     left: 0px;
-    top: 1px;
-    padding: 10px 10px 5px;
+    top: 6px;
+    padding: 5px 10px 0px;
     transition: all .3s;
     &:hover {
         opacity: 1;
@@ -22,7 +22,7 @@
     }
 
     .hamburger-box {
-        width: 55px;
+        width: 45px;
         height: 30px;
         @include mq($max-width: $sm) {
         }
@@ -42,7 +42,7 @@
     .hamburger-inner:before,
     .hamburger-inner:after {
         background-color: #fff;
-        width: 55px;
+        width: 45px;
         height: 5px;
         border-radius: 0;
         transition: all .3s;

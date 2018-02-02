@@ -69,28 +69,6 @@ form .form-row {
     margin: 0 0 10px;
 }
 
-.alert {
-    //position: relative;
-    min-width: 350px;
-    top: 0;
-    height: 45px;
-    width: 100%;
-    z-index: 999;
-    padding: 10px;
-    border: 0;
-    border-radius: 0;
-    background-color: #000;
-    border-radius: 0;
-    font-weight: 700;
-}
-
-.alert-dismissible .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    padding: 0;
-    color: inherit;
-}
 
 .modal-dialog {
     max-width: 800px;
@@ -396,8 +374,9 @@ h2.heading{
 
 .sub-footer{
     font-size: 12px;
-    padding: 10px 0;
+    padding: 5px 0;
     color: #aaa;
+    background: $nyu-dark-violet;
 }
 
 #content{
@@ -840,6 +819,9 @@ select.custom-select {
 
 .full_height {
     height: calc(100vh - 41px);
+    @include mq($max-width: $sm) {
+        height: 100%;
+    }
 }
 
 #accordion.card .card-header {
