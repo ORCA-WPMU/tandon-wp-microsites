@@ -35,7 +35,13 @@ $context['people'] = Timber::get_posts( $personargs );
 
 $conferenceposts = array(
     'post_type' => 'publications',
-    'category_name' => 'conferences',
+    'tax_query' => array(
+        array (
+            'taxonomy' => 'types',
+            'field' => 'slug',
+            'terms' => 'conferences',
+        )
+    ),
     'posts_per_page' => -1,
     'orderby' => array(
     'date' => 'ASC'
@@ -44,7 +50,13 @@ $context['conferenceposts'] = Timber::get_posts( $conferenceposts );
 
 $journalposts = array(
     'post_type' => 'publications',
-    'category_name' => 'journals',
+    'tax_query' => array(
+        array (
+            'taxonomy' => 'types',
+            'field' => 'slug',
+            'terms' => 'journals',
+        )
+    ),
     'posts_per_page' => -1,
     'orderby' => array(
     'date' => 'ASC'

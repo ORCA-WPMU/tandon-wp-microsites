@@ -27,6 +27,6 @@ $args = array(
     'paged' => $paged
 );
 
-$context['blog_posts'] = new Timber\PostQuery($args);
+$context['posting'] = new Timber\PostQuery($args);
 
 Timber::render('page-news.twig', $context);

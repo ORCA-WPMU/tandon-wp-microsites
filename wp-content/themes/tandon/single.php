@@ -15,6 +15,10 @@ $post = Timber::query_post();
 
 $context['post'] = $post;
 
+$context['term_page'] = new TimberTerm();
+
+$context['taxterms'] = Timber::get_terms('roles');
+
 $args = array(
 'post_type' => 'people',
 'orderby' => 'menu_order',

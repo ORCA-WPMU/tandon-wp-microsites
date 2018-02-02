@@ -90,6 +90,8 @@ function mytheme_timber_context( $context ) {
     $context['agendaintro'] = get_field('agenda_intro', 'option');
     $context['agendafooter'] = get_field('agenda_footer', 'option');
 
+    $context['globalbackgroundimage'] = get_field('global_background_image', 'option');
+
     $context['aboutsection'] = get_field('about_section', 'option');
     $context['aboutprimarytitle'] = get_field('primary_title', 'option');
     $context['aboutsecondarytitle'] = get_field('secondary_title', 'option');
@@ -101,6 +103,10 @@ function mytheme_timber_context( $context ) {
     $context['aboutbackgroundimage'] = get_field('about_background_image', 'option');
     $context['aboutbackgroundcolor'] = get_field('about_background_color', 'option');
     $context['abouttextcolor'] = get_field('about_text_color', 'option');
+
+    $context['parallax'] = get_field('parallax', 'option');
+    $context['parallaxamount'] = get_field('parallax_amount', 'option');
+    $context['fullheight'] = get_field('full_height', 'option');
 
     $context['istherebackgroundimage'] = get_field('is_there_background_image', 'option');
     $context['backgroundcoloropacity'] = get_field('background_color_opacity', 'option');

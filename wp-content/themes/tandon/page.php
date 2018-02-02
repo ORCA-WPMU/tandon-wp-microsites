@@ -20,6 +20,6 @@ $args = array(
 
 $context['people'] = Timber::get_posts( $args );
 
-$context['emailer'] = get_field('team_email');
+$context['sidebarnavrepeater'] = get_field('sidebar_nav_repeater');
 
 Timber::render( 'page.twig', $context );

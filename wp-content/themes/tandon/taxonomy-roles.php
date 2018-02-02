@@ -2,7 +2,7 @@
 
 
 /**
- * Taxonomy Publications Template
+ * Taxonomy Roles Template
  */
 
 $context = Timber::get_context();
@@ -28,7 +28,7 @@ if (!isset($paged) || !$paged){
 $queried_object = get_queried_object () ;
 
 $journals = array(
-    'post_type' => 'publications',
+    'post_type' => 'people',
     'tax_query' => array(
         array (
             'taxonomy' => $queried_object->taxonomy,

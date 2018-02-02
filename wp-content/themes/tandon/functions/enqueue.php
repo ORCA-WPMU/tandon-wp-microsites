@@ -1,6 +1,6 @@
 <?php
 
-namespace Athletics\UCD;
+namespace JDG\Topeka;
 
 class Enqueue {
 
