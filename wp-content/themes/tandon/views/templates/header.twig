@@ -1,4 +1,12 @@
-            <div class="showalert"> {% include 'partial/alert.twig' %} </div>
+{% if alerttrue == "true" %}
+
+<div class="showalert">
+
+    {% include 'partial/alert.twig' %}
+
+</div>
+
+{% endif %}
 
 <header id="banner" class="banner {% if alerttrue == "true" %}if_alert{% endif %}">
 
