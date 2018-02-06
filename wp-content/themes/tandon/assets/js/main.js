@@ -6,6 +6,7 @@ export function main() {
            $header = $("header"),
           $headpad = $("#headpad"),
           $sidenav = $(".show-subnav"),
+          $subnavbs = $("#subnav-collapse"),
   $buttonhamburger = $("button.hamburger"),
            $window = $(window);
 
@@ -18,14 +19,14 @@ export function main() {
 
   });
 
-  // $('#sidebar-wrapper li a').on('click', function(){
+  $('#sidebar-wrapper li a').on('click', function(){
 
-  //   toggleButtonActiveState();
+    toggleButtonActiveState();
 
-  //   toggleNav();
+    toggleNav();
 
 
-  // });
+  });
 
 
 
@@ -38,7 +39,6 @@ export function main() {
   function toggleNav() {
 
     $wrapper.toggleClass('showNav');
-          //$header.addClass("shrink");
 
     if (($(window).innerWidth() < 460)) {
 
@@ -60,29 +60,55 @@ export function main() {
 
   }
 
-  $sidenav.click(function() {
+  function addNav() {
 
-    toggleSubNav();
+    $wrapper.addClass('showNav');
 
-  });
+    if (($(window).innerWidth() < 460)) {
 
+      $header.addClass("shrink");
 
-  function toggleSubNav() {
+    }
 
-    $(".sidebar-nav .subnav").toggleClass('show-submenu');
+    if ($header.offset().top < -50) {
+
+      $header.addClass("shrink");
+
+    }
+
+    if ($('#menu').hasClass('open')) {
+
+      $header.addClass("shrink");
+
+    }
 
   }
 
+  // $sidenav.click(function() {
 
-  $(".sidebar-nav li a").on('click', function() {
+  //   //toggleSubNav();
 
-        //@jamesgillispie todo
+  //   //addNav();
 
-        //$('.active').removeClass('active');
+  // });
 
-        $(this).addClass('active');
 
-  });
+  // function toggleSubNav() {
+
+  //   $(".sidebar-nav .subnav").toggleClass('show-submenu');
+
+  // }
+
+
+  // $(".sidebar-nav li a").on('click', function() {
+
+  //       //@jamesgillispie todo
+
+  //       $('.nav-active').removeClass('nav-active');
+
+  //       $(this).addClass('nav-active');
+
+  // });
 
 
 
@@ -115,7 +141,7 @@ export function main() {
           // ********************************** //
           // ********************************** //
 
-          $('#subnav-collapse').collapse('hide');
+          $subnavbs.collapse('hide');
 
       };
 
@@ -139,21 +165,21 @@ export function main() {
 
       }
 
-      var elm = $('.alert');
+      // var elm = $('.alert');
 
-      if ( $(this).scrollTop() > 0 ) {
+      // if ( $(this).scrollTop() > 0 ) {
 
-        $('.showalert').addClass('hide');
+      //   $('.showalert').addClass('hide');
 
-      } else {
+      // } else {
 
-        if ( !elm.hasClass('show') )
+      //   if ( !elm.hasClass('show') )
 
-          elm.addClass('show');
+      //     elm.addClass('show');
 
-          $('.showalert').removeClass('hide');
+      //     $('.showalert').removeClass('hide');
 
-        }
+      //   }
 
     });
 
@@ -163,33 +189,33 @@ export function main() {
 
   $('#topAlert').on('close.bs.alert', function () {
 
-    $('.showalert').addClass('hide');
+    $('.inner-header').addClass('alert-closed');
 
-    return(false);
+    // return(false);
 
   })
 
-  $('#subnav-collapse').on('show.bs.collapse', function () {
+  $subnavbs.on('show.bs.collapse', function () {
 
     $(".plus").addClass('open');
 
-    toggleNav();
+    addNav();
 
-    toggleButtonActiveState();
+    //toggleButtonActiveState();
 
   });
 
 
-  $('#subnav-collapse').on('hide.bs.collapse', function () {
+  $subnavbs.on('hide.bs.collapse', function () {
 
     $(".plus").removeClass('open');
 
   });
 
 
-  $('#subnav-collapse').on('hidden.bs.collapse', function () {
+  $subnavbs.on('hidden.bs.collapse', function () {
 
-    $(".sidebar-nav li a").removeClass('active');
+    $(".sidebar-nav li a").removeClass('nav-active');
 
   });
 
@@ -245,8 +271,6 @@ export function main() {
 
   $('a.read-more').click(function(){
 
-    var $this = $this;
-
     $(this).parents().prev(".readmore").toggleClass("reveal-text");
 
     $(this).parents().prevAll(".elipsis").toggleClass("d-none");
@@ -268,8 +292,6 @@ export function main() {
 
   $('a.show-more').click(function(){
 
-    var $this = $this;
-
     $(this).parents().prev(".showmore").toggleClass("reveal-posts");
 
     $(this).toggleClass('reveal');
@@ -282,6 +304,8 @@ export function main() {
 
       $(this).toggleClass("fa-chevron-up");
 
+      $(this).parent().siblings().find(".show-all").removeClass('d-none');
+
     } else {
 
       $(this).html('<span>Show More </span>');
@@ -289,6 +313,9 @@ export function main() {
       $(this).addClass("fa-chevron-down");
 
       $(this).removeClass("fa-chevron-up");
+
+      $('.show-all').addClass('d-none');
+
 
     }
 
@@ -307,33 +334,21 @@ export function main() {
 
 
 
-  $('a.anchor, a.about-more, a.scroll-button').click(function(e){
+  $('a.anchor, a.about-more, a.scroll-button, a.sr-only').click(function(e){
 
     //toggleNav();
 
     //toggleButtonActiveState();
 
-      var id = $(this).attr("href");
+    var id = $(this).attr("href");
 
-      var offset = $(id).offset();
+    var offset = $(id).offset();
 
-if ($('#topAlert').length > 0) {
-        $("html, body").animate({
+    $("html, body").animate({
 
-          scrollTop: offset.top - 41,
+      scrollTop: offset.top - 41,
 
-        }, 300);
-
-} else {
-
-        $("html, body").animate({
-
-          scrollTop: offset.top - 0,
-
-        }, 300);
-
-      }
-
+    }, 300);
 
   });
 
