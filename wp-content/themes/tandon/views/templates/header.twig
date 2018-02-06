@@ -1,36 +1,36 @@
 {% if alerttrue == "true" %}
 
-<div class="showalert">
-
     {% include 'partial/alert.twig' %}
-
-</div>
 
 {% endif %}
 
 <header id="banner" class="banner {% if alerttrue == "true" %}if_alert{% endif %}">
 
-    <div class="site-title">
+    <div class="inner-header">
 
-        {% include 'templates/hamburger.twig' %}
+        <div class="site-title">
 
-        <a href="{{ site.link }}">
+            {% include 'templates/hamburger.twig' %}
 
-            <h1 class="d-none d-sm-none d-md-none d-lg-none d-xl-inline-block">
+            <a href="{{ site.link }}">
 
-                <span>{{ site.title }}</span>
+                <h1 class="d-none d-sm-none d-md-none d-lg-none d-xl-inline-block">
 
-            </h1>
+                    <span>{{ site.title }}</span>
 
-        </a>
+                </h1>
 
-        {#% include 'partial/socialmedia.twig' %#}
+            </a>
 
-    </div>
+            {#% include 'partial/socialmedia.twig' %#}
 
-    <div class="logo">
+        </div>
 
-        <a href="http://engineering.nyu.edu"><img src="{{ theme.link }}/img/logo.png" alt="" class="w-100" targer="_blank"></a>
+        <div class="logo">
+
+            <a href="http://engineering.nyu.edu"><img src="{{ theme.link }}/img/logo.png" alt="" class="w-100" targer="_blank"></a>
+
+        </div>
 
     </div>
 

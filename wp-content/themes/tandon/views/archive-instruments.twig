@@ -2,6 +2,8 @@
 
 {% block content %}
 
+    afsd
+
 <div id="single">
 
     <div class="container">
@@ -95,9 +97,10 @@
 
                 {% include ['partial/pagination.twig'] %}
 
+
                 </div><!-- /.col-8 -->
 
-                {% if taxterms %}
+                {% if instrumentterms %}
 
                 <div class="col-12 col-sm-4">
 
@@ -107,7 +110,7 @@
 
                         <h4 class="my-3">Terms</h4>
 
-                        {% for term in taxterms %}
+                        {% for term in instrumentterms %}
 
                             <li class="list-group-item"><a href="{{ term.link }}"> {{ term.name }}</a></li>
 

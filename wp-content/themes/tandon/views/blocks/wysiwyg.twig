@@ -6,13 +6,17 @@
 
         {% include 'partial/block-intro.twig' %}
 
-        <div class="content-block">
+        <div class="card mb-5">
 
-		    <div class="wysiwyg block-{{ anchor|sanitize }}">
+            <div class="card-body">
 
-		        {{ block.wysiwyg }}
+    		    <div class="wysiwyg block-{{ anchor|sanitize }}">
 
-		    </div>
+    		        {{ block.wysiwyg }}
+
+    		    </div>
+
+            </div>
 
     	</div>
 

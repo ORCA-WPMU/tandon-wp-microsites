@@ -1,0 +1,136 @@
+{% extends "base.twig" %}
+
+{% set flex_blocks = flexblock %}
+
+{% block content %}
+
+<div id="single">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-8">
+
+                <div class="row no-flex">
+
+                    <div class="col-7">
+
+                        {% if instrumenttype %}
+                        <h6 class="mt-3"><a href="{{ site.link }}/{{ post.post_type }}"> {{ post.post_type }}</a> | <a href="{{ instrumenttype.link }}"> {{ instrumenttype }}</a></h6>
+                        {% endif %}
+
+                        <h1 class="page-title my-5">
+
+                            {{ post.name }}
+
+                        </h1>
+
+                        <hr class="single absolute">
+
+                    </div>
+
+                    <div class="col-5 pr-0 no-flex">
+
+                        <img src="{{Image(post.feat_image).src|resize(500, 500, 'center') }}" alt="" class="w-100 mx-auto">
+
+                    </div>
+
+                </div>
+
+                <div class="mt-5 mb-3 w-100">
+
+                    {{ post.content }}
+
+                </div>
+
+                {% if instrumentvideos %}
+
+                    <div class="d-inline-block">
+
+                        <hr class="single">
+
+                    <h4 class="my-4">Informational Videos</h4>
+
+                    {% for item in instrumentvideos %}
+
+                        <strong class="my-4">{{ item.title }}</strong><br>
+                        {{ item.description }}
+                        <p class="my-4">{{ item.embed }}</p>
+
+                    {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+                {% if instrumentpicture %}
+
+                    <div class="d-inline-block">
+
+                        <hr class="single">
+
+                        <h4 class="mt-4 mb-5">Photos</h4>
+
+                        <div class="d-none d-sm-none d-md-none d-lg-block d-xl-block">
+
+                            <div class="card-columns">
+
+                            {% for item in instrumentpicture|slice(0,9) %}
+                                <div class="card p-0">
+                                    <div class="gallery-icon"><a href="{{ item.url }}"><img src="{{ item.url }}" class="card-img" alt=""></a></div>
+                                </div>
+                            {% endfor %}
+
+                            </div>
+
+
+                            <div class="collapse" id="collapseExample">
+
+                                <div class="card-columns">
+
+                                {% for item in instrumentpicture|slice(9,9000) %}
+                                    <div class="card p-0">
+                                        <div class="gallery-icon"><a href="{{ item.url }}"><img src="{{ item.url }}" class="card-img" alt=""></a></div>
+                                    </div>
+                                {% endfor %}
+
+                                </div>
+
+                            </div>
+
+                            <button class="btn photos btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Show All Photos
+                            </button>
+
+                        </div>
+
+                        <div class="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+
+                            <div class="carousel-gallery">
+
+                                {% for item in gallery %}
+                                    <div class="carousel-cell">
+                                        <div class="gallery-icon"><a href="{{ item.url }}"><img src="{{TimberImage(item)|resize(500, 500, 'center')}}" style="height: 500px;"></a></div>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+            {% include ['./partial/sidebar-'~title_post_type~'.twig'] %}
+
+        </div>
+
+    </div><!-- /.container -->
+
+</div>
+
+{% endblock %}

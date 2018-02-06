@@ -17,8 +17,6 @@ $context['cpt'] = post_type();
 
 $context['title_term'] = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
 
-$context['taxterms'] = Timber::get_terms('types');
-
 $context['posts'] = new Timber\PostQuery();
 
 Timber::render('archive.twig', $context);

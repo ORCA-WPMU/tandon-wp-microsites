@@ -25,7 +25,7 @@ if (!isset($paged) || !$paged){
 
 $journals = array(
     'post_type' => 'publications',
-    'posts_per_page' => 5,
+    'posts_per_page' => 6,
     'paged' => $paged,
     'orderby' => array(
         'date' => 'DESC'
@@ -33,6 +33,6 @@ $journals = array(
 
 $context['posting'] = new Timber\PostQuery($journals);
 
-$templates = array( 'archive-publications.twig' );
+$templates = array( 'archive.twig' );
 
 Timber::render( $templates , $context );

@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="container">
+
+        <div class="row">
+
+            {% include 'partial/block-title.twig' %}
+
+            <a href="{{ site.link }}/instruments" class="show-all ml-auto">
+
+               <h4 class="section-title d-sm-block mt-3 mb-4 d-none px-5">See All<i class="fa fa-list-ul ml-2" aria-hidden="true"></i></h4>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    {% include 'partial/block-intro.twig' %}
+
+    {% if block.featured_instrumentation %}
+
+    <div class="card-deck">
+
+        {% for post in block.featured_instrumentation %}
+
+        <div class="card">
+
+            <a href="{{ function('get_permalink', post.ID) }}">
+
+                <img src="{{TimberImage(post.feat_image).src|resize(500, 500, 'center') }}" alt="" class="w-100 mx-auto">
+
+            </a>
+
+            {% include ['./partial/tease.twig'] %}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <p><br></p>
+
+    {% endif %}
+
+</div>

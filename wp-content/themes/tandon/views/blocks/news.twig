@@ -1,62 +1,38 @@
 <div class="container">
 
-    {% include 'partial/block-title.twig' %}
+    <div class="container">
 
-    <a href="{{ site.link }}/{{ block.block_title|sanitize }}" class="show-all float-right" style="color:{{block.text_color_picker}}!important;">
+        <div class="row">
 
-       <h4 class="section-title mt-3 mb-4 d-none d-sm-block"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
+            {% include 'partial/block-title.twig' %}
 
-    </a>
+            <a href="{{ site.link }}/news" class="show-all ml-auto">
+
+               <h4 class="section-title d-sm-block mt-3 mb-4 d-none px-5">See All<i class="fa fa-list-ul ml-2" aria-hidden="true"></i></h4>
+
+            </a>
+
+        </div>
+
+    </div>
 
     {% include 'partial/block-intro.twig' %}
 
-    <div class="card-deck">
-
     {% if block.featured_news %}
 
-        {% for item in block.featured_news %}
+    <div class="card-deck">
+
+        {% for post in block.featured_news %}
 
         <div class="card">
 
-            <div class="card-body">
+            <a href="{{ function('get_permalink', post.ID) }}">
 
-                <a href="{{ function('get_permalink', item.ID) }}">
+                <img src="{{TimberImage(post.featured_image).src|resize(500, 500, 'center') }}" alt="" class="w-100 mx-auto">
 
-                    <img src="{{TimberImage(item.featured_image).src|resize(500, 500, 'center') }}" alt="" class="rounded w-100 mx-auto">
+            </a>
 
-                </a>
-
-                <h2 class="serif mt-3 mb-1 text-left">
-                    <a href="{{ function('get_permalink', item.ID) }}">{{ item.post_title }}</a>
-                </h2>
-
-                <hr class="my-3">
-
-                <div class="read-more text-left">
-
-                {% set text = item.post_content|split(' ') %}
-
-                {% if text|length > 50 %}
-
-                    {% for shorttxt in text|slice(0, 50) %}
-
-                        {{ shorttxt }}
-
-                    {% endfor %}
-
-                    <span class="elipsis">...</span>
-
-                    <div>
-                        <a href="{{ function('get_permalink', item.ID) }}">
-                          Read More
-                        </a>
-                    </div>
-
-                {% endif %}
-
-                </div>
-
-            </div>
+            {% include ['./partial/tease.twig'] %}
 
         </div>
 
@@ -70,7 +46,7 @@
 
                 <div class="card-body">
 
-                {% include ['./templates/tease-'~post.post_type~'.twig', './templates/tease.twig'] %}
+                {% include ['./partial/tease-'~post.post_type~'.twig', './partial/tease.twig'] %}
 
                 </div>
 
@@ -78,11 +54,11 @@
 
         {% endfor %}
 
-    {% endif %}
-
     </div>
 
-    <a href="{{ site.link }}/{{ block.block_title|sanitize }}" class="show-all" style="color:{{block.text_color_picker}}!important;">
+    {% endif %}
+
+    <a href="{{ site.link }}/{{ block.block_title|sanitize }}" class="show-all px-5" style="color:{{block.text_color_picker}}!important;">
 
        <h4 class="section-title mt-2 mb-4 d-inline-block d-sm-none"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
 
@@ -91,4 +67,3 @@
     {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 
 </div>
-

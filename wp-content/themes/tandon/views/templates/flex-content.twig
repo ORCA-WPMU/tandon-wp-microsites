@@ -47,6 +47,18 @@
 
         {% endif %}
 
+    {% elseif 'instrument_block' == block.acf_fc_layout %}
+
+        {% if block.display == 'taxonomy' %}
+
+            {% include 'blocks/instrument-list.twig' %}
+
+        {% elseif block.display == 'relationship' %}
+
+            {% include 'blocks/instrument-block.twig' %}
+
+        {% endif %}
+
     {% elseif 'publication_block' == block.acf_fc_layout %}
 
         {% if block.publication_type %}

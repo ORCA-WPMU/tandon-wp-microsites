@@ -2,15 +2,24 @@
 
     <div class="container">
 
-        {% include 'partial/block-title.twig' %}
+        <div class="container">
 
-        <a href="{{ site.link }}/{{ block.block_title|sanitize }}" class="show-all float-right" style="color:{{block.text_color_picker}}!important;">
+            <div class="row">
 
-           <h4 class="section-title mt-3 mb-4 d-none d-sm-block"> <i class="fa fa-list-ul" aria-hidden="true"></i> See All</h4>
+                {% include 'partial/block-title.twig' %}
 
-        </a>
+                <a href="{{ site.link }}/people" class="show-all ml-auto">
+
+                   <h4 class="section-title d-sm-block mt-3 mb-4 d-none px-5">See All<i class="fa fa-list-ul ml-2" aria-hidden="true"></i></h4>
+
+                </a>
+
+            </div>
+
+        </div>
 
         {% include 'partial/block-intro.twig' %}
+
 
         <div class="card-deck {% if block.if_center_content %}justify-content-center{% endif %}">
 
@@ -18,34 +27,32 @@
 
             <div class="card">
 
+                {% if item.headshot %}
+
+                    <a href="{{ function('get_permalink', item.ID) }}">
+
+                        <img src="{{Image(item.headshot).src|resize(500, 500, 'center') }}" alt="" class="w-100 mx-auto">
+
+                    </a>
+
+
+                    {% else %}
+
+                    <a href="{{ function('get_permalink', item.ID) }}">
+
+                        <img src="{{ theme.link }}/img/profile.png" alt="" class="w-100 mx-auto">
+
+                    </a>
+
+                {% endif %}
+
                 <div class="card-body">
 
-                    {% if item.headshot %}
-
-                        <a href="{{ function('get_permalink', item.ID) }}">
-
-                            <img src="{{Image(item.headshot).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-100 mx-auto">
-
-                        </a>
-
-
-                        {% else %}
-
-                        <a href="{{ function('get_permalink', item.ID) }}">
-
-                            <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-100 mx-auto">
-
-                        </a>
-
-                    {% endif %}
-
-                    <h2 class="serif mt-3 mb-1 text-center">
+                    <h2>
                         <a href="{{ function('get_permalink', item.ID) }}">{{ item.post_title }}</a>
                     </h2>
 
-                    <h5 class="text-center">{{ item.job_title }}</h5>
-
-                    <hr class="my-3">
+                    <h5>{{ item.job_title }}</h5>
 
                     <div class="read-more text-left">
 

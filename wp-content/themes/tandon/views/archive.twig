@@ -7,7 +7,8 @@
     <div class="container">
 
         <div class="content">
-            <h2 class="page-title">
+
+            <h2 class="section-title mb-4 ml-5">
             {% if slug.name %}
                 {{ title_post_type|capitalize }}
             {% elseif title_term.name %}
@@ -17,13 +18,11 @@
             {% elseif title %}
                 {{ title_post_type|capitalize }}
             {% endif %}
-            </h2>
+            <span class="chevron right"></span></h2>
 
-            <hr class="mt-0 mb-5">
+            <div class="row row-eq-height">
 
-            <div class="row">
-
-                {% if taxterms %}
+                {% if title_post_type %}
 
                 <div class="col-12 col-sm-8">
 
@@ -33,99 +32,45 @@
 
                 {% endif %}
 
-                {% for post in posting %}
+                    <div class="row pl-3 pr-0">
 
-                    {% for term in post.terms('journals') %}
-                        <li class="term-item"><a href="{{term.link}}">{{term.name}}</a></li>
-                    {% endfor %}
+                        {% for post in posting %}
 
-                    <article>
+                            <div class="col-12 col-sm-6 px-0">
 
-                        <div class="row">
+                                <div class="card">
 
-                            {% if post.thumbnail.src|default %}
+                                    {% for term in post.terms('journals') %}
+                                        <li class="term-item"><a href="{{term.link}}">{{term.name}}</a></li>
+                                    {% endfor %}
 
-                            <div class="col-12 col-sm-5 col-md-4">
+                                    <article>
 
-                                <a href="{{ post.link }}">
-                                    <img src="{{ post.thumbnail.src|resize(768, 768, 'center') }}" alt="{{ post.title }}" class="w-100 mb-3">
-                                </a>
+                                        <a href="{{ function('get_permalink', post.ID) }}">
+
+                                            <img src="{{TimberImage(post.featured_image).src|resize(500, 500, 'center') }}" alt="" class="w-100 mx-auto">
+
+                                        </a>
+
+                                        {% include ['./partial/tease-'~post.post_type~'.twig', './partial/tease.twig'] %}
+
+                                    </article>
+
+                                </div>
 
                             </div>
 
-                            <div class="col-12 col-sm-7 col-md-8">
-
-                            {% else %}
-
-                            <div class="col-12">
-
-                            {% endif %}
-
-                                <div class="content-padding">
-                                    <div class="w-100">
-                                        <h4>
-                                            <a href="{{ post.link }}">
-                                                {{ function('strip_tags', post.title, '<i>, <em>' ) }}
-                                            </a>
-                                        </h4>
-                                    </div>
-
-                                    {% set preview = post.get_preview(50,false,false,true) %}
-
-                                    {% if preview %}
-
-                                        <p>{{ preview }}</p>
-
-                                    {% endif %}
-
-                                    <a href="{{ post.link }}" class="read-more mt-4">Read More</a>
-
-                                </div>
-                            </div><!-- /.col -->
-
-                        </div><!-- /.row -->
-                    </article>
-
-                    {% if loop.last %}
-
-                    {% elseif loop.index %}
-                    <hr class="mt-4 mb-5">
-                    {% endif %}
-
-                {% endfor %}
-
-                <p><br></p>
-
-                {% include ['partial/pagination.twig'] %}
-
-                </div><!-- /.col-8 -->
-
-                {% if taxterms %}
-
-                <div class="col-12 col-sm-4">
-
-                    <div class="jumbotron">
-
-                        <ul class="list-group list-group-flush">
-
-                        <h4 class="my-3">Terms</h4>
-
-                        {% for term in taxterms %}
-
-                            <li class="list-group-item"><a href="{{ term.link }}"> {{ term.name }}</a></li>
-
                         {% endfor %}
-
-                        </ul>
 
                     </div>
 
-                </div><!-- /.col-4 -->
+                </div>
 
-                {% endif %}
-
+                {% include ['./partial/sidebar.twig'] %}
 
             </div>
+
+            {% include ['partial/pagination.twig'] %}
 
         </div>
 

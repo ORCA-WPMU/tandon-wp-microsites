@@ -1,0 +1,126 @@
+<div class="col-12 col-sm-4 pl-0">
+
+    <div class="jumbotron w-100 mb-0">
+
+        <h4 class="my-3">Saftey Guidlines</h4>
+
+        <hr class="mb-4">
+
+        {% for item in instrumentdocs %}
+
+            <strong>{{item.title}}</strong>
+
+            <div class="my-4">
+
+        {% set text = item.description|split(' ') %}
+
+        {% if text|length > 25 %}
+
+            {% for shorttxt in text|slice(0, 25) %}
+
+                {{ shorttxt }}
+
+            {% endfor %}
+
+            <span class="elipsis">...</span>
+
+            <div class="readmore">
+
+            {% for moretxt in text|slice(25, 1000) %}
+
+                {{ moretxt }}
+
+            {% endfor %}
+
+            </div>
+
+            <div>
+                <a href="#0" class="read-more">
+                  Read More
+                </a>
+            </div>
+
+            {% else %}
+
+            {{ text|join(' ') }}
+
+        {% endif %}
+
+            </div>
+
+            <div class="my-5">
+
+                <a href="{{ item.file }}" class="btn-nyu-primary">Download <i class="fa fa-download"></i></a>
+
+            </div>
+
+        {% endfor %}
+
+        {% if instrumentpointofcontact %}
+
+            <h4>Point of Contact</h4>
+
+            <hr class="mb-4">
+
+            {% for term in instrumentpointofcontact %}
+
+                <div class="mt-3 mb-4">
+
+                    {% if term.headshot %}
+
+                        <a href="{{ function('get_permalink', term.ID) }}">
+
+                            <img src="{{Image(term.headshot).src|resize(500, 500, 'center') }}" alt="" class="rounded-circle w-50 mx-auto">
+
+                        </a>
+
+
+                        {% else %}
+
+                        <a href="{{ function('get_permalink', term.ID) }}">
+
+                            <img src="{{ theme.link }}/img/profile.png" alt="" class="rounded-circle w-50 mx-auto">
+
+                        </a>
+
+                    {% endif %}
+
+                    <h3 class="mt-3">
+                        <a href="{{ function('get_permalink', term.ID) }}">{{ term.post_title }}</a>
+                    </h3>
+
+                    <p>{{ term.job_title }}</p>
+
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+        {% if instrumenturl %}
+
+            <div class="my-5">
+
+            <h4>Related Websites</h4>
+
+            <hr class="mt-3 mb-1">
+
+            <ul class="list-group list-group-flush">
+
+            {% for item in instrumenturl %}
+
+                <li class="list-group-item">
+
+                <a href="{{ item.website }}">{{ item.site_title }}</a>
+
+                </li>
+
+            {% endfor %}
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div><!-- /.col-4 -->

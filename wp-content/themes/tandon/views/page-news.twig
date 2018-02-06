@@ -8,21 +8,15 @@
 
     <div class="container">
 
-        <h2>News</h2>
+        <h2 class="section-title mb-4 ml-5">News <i class="fa fa-chevron-right"></i></h2>
 
-        <hr class="mt-2 mb-5">
-
-        <div class="card-deck">
+        <div class="card-deck mb-4">
 
         {% for post in posting %}
 
             <div class="card">
 
-                <div class="card-body">
-
-                {% include ['./templates/tease.twig'] %}
-
-                </div>
+                {% include ['./partial/tease.twig'] %}
 
             </div>
 
