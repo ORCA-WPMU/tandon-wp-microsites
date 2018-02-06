@@ -1,28 +1,28 @@
-.showalert {
-    height: 42px;
-    transition: .2s all;
-    &.hide {
-        height: 0;
-        overflow: hidden;
-    }
-    .alert {
-        &.show {
-            height: 42px;
-            &.hide {
-                height: 0;
-                overflow: hidden;
-            }
+// .showalert {
+//     height: 42px;
+//     transition: .2s all;
+//     &.hide {
+//         height: 0;
+//         overflow: hidden;
+//     }
+//     .alert {
+//         &.show {
+//             height: 42px;
+//             &.hide {
+//                 height: 0;
+//                 overflow: hidden;
+//             }
 
-        }
+//         }
 
-    }
+//     }
 
-}
+// }
 
 
 .alert {
-    display: none;
-    position: relative;
+    // display: none;
+    position: absolute;
     min-width: 350px;
     top: 0;
     height: 45px;
@@ -42,9 +42,12 @@
             width: 100%;
         }
     }
-    &.show {
-        display: inline-block;
+    a {
+        color: $brand;
     }
+    // &.show {
+    //     display: inline-block;
+    // }
 }
 
 .alert-dismissible .close {
@@ -58,6 +61,7 @@
 header.banner {
     z-index: 99;
     position: fixed;
+    top: 0;
     //transform: translateY(0);
     background-color: transparent;
     height: 0;
@@ -65,23 +69,29 @@ header.banner {
     text-align: center;
     padding: 0;
     transition: .3s ease all;
+    // transition: background-color .2s linear;
     @include mq($max-width: $sm) {
         height: 65px;
     }
-
-    // &.if_alert {
-    //      //transform: translateY(0);
-    // }
 
     .single &, .page &, .archive &, .error404 & {
         transition: .3s ease all;
         height: 44px;
         background: $brand;
-        //transform: translateY(0);
+        position: relative;
+
+        .inner-header {
+            position: relative;
+            top: 0;
+            transition: .2s all;
+
+            &.alert-closed {
+                top: 0px;
+            }
+        }
 
         &.if_alert {
-            transition: .3s ease all;
-            //transform: translateY(0);
+            top: 42px;
             &.shrink {
                 //transform: translateY(0);
                 .logo{
@@ -89,6 +99,129 @@ header.banner {
                         //transform: translateY(0);
                     }
                 }
+            }
+            .inner-header {
+                top: 0;
+                &.shrink {
+                    //transform: translateY(0);
+                    .logo{
+                        img{
+                            //transform: translateY(0);
+                        }
+                    }
+                }
+            }
+        }
+        &.shrink{
+            top: 0;
+        }
+    }
+
+    .inner-header {
+        position: relative;
+        top: 0;
+        transition: .2s all;
+
+        &.alert-closed {
+            top: 0px;
+        }
+    }
+
+    &.if_alert {
+        .inner-header {
+            top: 42px;
+            &.shrink {
+                //transform: translateY(0);
+                .logo{
+                    img{
+                        //transform: translateY(0);
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.shrink{
+        top: 0;
+        //transform: translateY(0);
+        height: 42px;
+        background-color: $brand;
+        @include mq($max-width: $sm) {
+            transform: translateX(0);
+        }
+
+        .alert-closed {
+
+        }
+
+        .inner-header {
+            top: 0;
+        }
+
+        &.if_alert {
+            .site-title {
+                //transform: translateY(0);
+            }
+        }
+
+        .site-title {
+            //left: 0px;
+            //transform: translateY(0);
+
+        }
+
+
+        h1{
+            color: #FFF;
+            font-size: 32px;
+            left: 70px;
+        }
+
+        .nav-desktop {
+            position: relative;
+            top: 18px;
+        }
+
+        .logo {
+
+            img{
+                max-width: 220px;
+                top: 3px;
+                right: 15px;
+            }
+        }
+
+        .right-menu{
+            padding: 16px 30px 0;
+
+            a{
+                font-weight: 700;
+                letter-spacing: 2px;
+                font-size: 16px;
+                /* color: #000; */
+                border: 3px solid $brand;
+                border-radius: 4px;
+                padding: 4px 10px 2px;
+
+                background: $brand;
+                color: #fff;
+                // &:hover,
+                // &:focus {
+                //     background: transparent;
+                //     color: $brand;
+                // }
+
+                @include mq($max-width: $sm) {
+                    font-weight: 500;
+                    letter-spacing: 0px;
+                    font-size: 12px;
+                }
+
+            }
+
+            @include mq($max-width: $sm) {
+                padding: 15px 0 10px;
             }
 
         }
@@ -168,85 +301,11 @@ header.banner {
         //     right: 20px;
         // }
     }
+
     .nav-desktop {
         position: relative;
         top: 30px;
 
-    }
-
-    &.shrink{
-        //transform: translateY(0);
-        height: 42px;
-        background-color: $brand;
-        @include mq($max-width: $sm) {
-            transform: translateX(0);
-        }
-        &.if_alert {
-            .site-title {
-                //transform: translateY(0);
-            }
-        }
-
-        .site-title {
-            //left: 0px;
-            //transform: translateY(0);
-
-        }
-
-
-        h1{
-            color: #FFF;
-            font-size: 32px;
-            left: 70px;
-        }
-
-        .nav-desktop {
-            position: relative;
-            top: 18px;
-        }
-
-        .logo {
-
-            img{
-                max-width: 220px;
-                top: 3px;
-                right: 15px;
-            }
-        }
-
-        .right-menu{
-            padding: 16px 30px 0;
-
-            a{
-                font-weight: 700;
-                letter-spacing: 2px;
-                font-size: 16px;
-                /* color: #000; */
-                border: 3px solid $brand;
-                border-radius: 4px;
-                padding: 4px 10px 2px;
-
-                background: $brand;
-                color: #fff;
-                // &:hover,
-                // &:focus {
-                //     background: transparent;
-                //     color: $brand;
-                // }
-
-                @include mq($max-width: $sm) {
-                    font-weight: 500;
-                    letter-spacing: 0px;
-                    font-size: 12px;
-                }
-
-            }
-
-            @include mq($max-width: $sm) {
-                padding: 15px 0 10px;
-            }
-
-        }
     }
 
     .btn{

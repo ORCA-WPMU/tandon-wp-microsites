@@ -20,6 +20,18 @@
     }
 }
 
+hr {
+    &.single {
+        border-top: 4px solid #ddd;
+        &.absolute {
+            position: absolute;
+            bottom: 0;
+            width: 96%;
+            margin: 0;
+        }
+    }
+}
+
 .bulleted-list {
     li {
         list-style: none;
@@ -36,7 +48,7 @@
 }
 
 ul.list {
-    margin: 20px 0;
+    margin: 20px 0 0;
     padding: 0;
     list-style: none;
 }
@@ -48,21 +60,66 @@ ul.list {
     }
 }
 
+.slide-up {
+    top: -45px;
+}
+
+.page-item {
+    .page-link {
+        border-radius: 0;
+        border-left: 5px solid #ddd;
+        border-color: $brand;
+        color: $brand;
+        font-family: $sans-medium;
+        font-size: 15px;
+        padding: 13px 18px 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    &:first-child,
+    &:last-child  {
+        .page-link {
+            border-radius: 0;
+        }
+    }
+}
+
 a.show-more {
     display: inline-block;
     padding: 0;
+    color: $brand;
+    font-size: 16px;
+    text-decoration: none;
     span {
         font-family: $sans-medium;
         margin-left: 5px;
     }
 }
 
+// .fa.fa-chevron-right {
+//     font-size: 30px;
+//     margin-left: 10px;
+//     color: #56058c;
+// }
+
 a.show-all {
+    font-family: $sans-medium;
     display: inline-block;
     padding: 0;
     z-index: 9;
     position: relative;
+    color: $brand;
+    font-size: 16px;
+    text-decoration: none;
 }
+
+h4.section-title {
+    font-family: $serif;
+    text-transform: initial;
+    font-size: 23px;
+}
+
 
 form .form-row {
     padding: 0;
@@ -95,7 +152,16 @@ h2.page-title {
 .jumbotron {
     border-radius: 0;
     color: #232323;
-    padding: 2rem 2rem;
+    padding: 3rem;
+    background: #F1F1F1;
+    width: 100%;
+    margin-bottom: 0;
+    strong {
+        color: $brand;
+        font-family: $sans-medium;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
 }
 
 .list-group-item {
@@ -216,7 +282,14 @@ h2 {
         z-index: 1;
         position: relative;
         display: inline-block;
-        //color: $secondary;
+        span  {
+            font-family: $sans-book;
+            font-size: 18px;
+            margin-left: 10px;
+            letter-spacing: 2px;
+            color: $brand;
+            text-transform: uppercase;
+        }
     }
 }
 
@@ -495,6 +568,7 @@ h2.heading{
     }
 
 }
+
 
 .rsContent h1{
     font-size: 40px;
@@ -796,18 +870,18 @@ select.custom-select {
     }
 }
 
-.chevron{
-    top: 10px;
-    left: -8px;
-    position: relative;
-    transition: all .2s;
-    @include mq($max-width: $xs) {
-        top: 3px;
-    }
-    &:hover{
-        top: 15px;
-    }
-}
+// .chevron{
+//     top: 10px;
+//     left: -8px;
+//     position: relative;
+//     transition: all .2s;
+//     @include mq($max-width: $xs) {
+//         top: 3px;
+//     }
+//     &:hover{
+//         top: 15px;
+//     }
+// }
 
 .parallax {
   background-attachment: fixed;

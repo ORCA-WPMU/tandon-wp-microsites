@@ -1,3 +1,16 @@
+a.btn-nyu-primary {
+    border-top: 1px solid $brand;
+    border-right: 1px solid $brand;
+    border-bottom: 1px solid $brand;
+    border-left: 4px solid $brand;
+    padding: 10px 20px;
+    transition: all .2s;
+    &:hover, &:focus, &:active {
+        text-decoration: none;
+        background: #fff;
+    }
+}
+
 .scroll-button {
     background: $brand;
     color: #fff;

@@ -10,22 +10,46 @@ body{
     -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+    //max-width: 1440px;
+}
+
+.row-eq-height {
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+.row > [class*='col-'] {
+  display: flex;
+  flex-wrap: wrap;
+
+  .no-flex & {
+      display: inline-block;
+  }
+}
+
+.row.no-flex > [class*='col-'] {
+  display: inline-block;
+}
+
+[class*='col-'].no-flex {
+  display: inline-block;
+}
+
 a{
-    color: $secondary;
+    color: $brand;
     cursor: pointer;
     &:hover{
-        color: lighten($secondary, 15%);
-        text-decoration: none;
+        color: lighten($brand, 15%);
+        text-decoration: underline;
         cursor: pointer;
     }
     &:focus{
-        color: lighten($secondary, 15%);
-        //text-decoration: none;
-        outline: none;
+        color: lighten($brand, 15%);
     }
     &:active{
-        color: lighten($secondary, 15%);
-        //text-decoration: none;
+        color: lighten($brand, 15%);
     }
 }
 

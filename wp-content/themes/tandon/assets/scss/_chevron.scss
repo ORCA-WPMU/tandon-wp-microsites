@@ -14,6 +14,10 @@
 
 .chevron.right:before {
 	transform: rotate(45deg);
+    height: 20px;
+    width: 20px;
+    border-width: 3px 3px 0 0;
+    top: 13px;
 }
 
 .chevron.bottom:before {
