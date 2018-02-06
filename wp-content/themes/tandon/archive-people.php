@@ -27,7 +27,7 @@ if (!isset($paged) || !$paged){
 
 $journals = array(
     'post_type' => 'people',
-    'posts_per_page' => 2,
+    'posts_per_page' => 6,
     'paged' => $paged,
     'orderby' => array(
         'date' => 'DESC'
