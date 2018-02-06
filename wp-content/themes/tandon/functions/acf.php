@@ -129,6 +129,8 @@ function mytheme_timber_context( $context ) {
 
     $context['downloadfile'] = get_field('files', 'option');
 
+    $context['featimage'] = get_field('feat_image', 'option');
+
     $context['featurednews'] = get_field('featured_news', 'option');
 
     $context['eventbackgroundcolor'] = get_field('event_background_color', 'option');
