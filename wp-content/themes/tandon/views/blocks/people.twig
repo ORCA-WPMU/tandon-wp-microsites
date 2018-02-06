@@ -56,7 +56,7 @@
 
                     <div class="read-more text-left">
 
-                    {% set text = item.bio|split(' ') %}
+                    {#% set text = item.bio|split(' ') %}
 
                     {% if text|length > 50 %}
 
@@ -86,7 +86,7 @@
 
                         {{ text|join(' ') }}
 
-                    {% endif %}
+                    {% endif %#}
 
                     </div>
 
