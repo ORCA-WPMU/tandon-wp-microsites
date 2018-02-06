@@ -3,10 +3,10 @@
     "title": "Instrumentation",
     "fields": [
         {
-            "key": "field_5a6b7f165a5a4",
-            "label": "Description",
-            "name": "instrument_desc",
-            "type": "wysiwyg",
+            "key": "field_5a78ab82092b5",
+            "label": "Featured Image",
+            "name": "feat_image",
+            "type": "image",
             "value": null,
             "instructions": "",
             "required": 0,
@@ -16,11 +16,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5a6b7f165a5df",
@@ -96,7 +101,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "url",
                     "library": "all",
                     "min_size": "",
                     "max_size": "",
@@ -162,32 +167,6 @@
                     "maxlength": ""
                 }
             ]
-        },
-        {
-            "key": "field_5a6b7f165a55e",
-            "label": "Image(s)",
-            "name": "instrument_picture",
-            "type": "gallery",
-            "value": null,
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "100",
-                "class": "",
-                "id": ""
-            },
-            "min": "",
-            "max": "",
-            "insert": "append",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
         },
         {
             "key": "field_5a6b801fd880d",
@@ -295,6 +274,32 @@
             "min": "",
             "max": "",
             "return_format": "object"
+        },
+        {
+            "key": "field_5a6b7f165a55e",
+            "label": "Image(s)",
+            "name": "instrument_picture",
+            "type": "gallery",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "insert": "append",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -313,7 +318,6 @@
     "instruction_placement": "label",
     "hide_on_screen": [
         "permalink",
-        "the_content",
         "excerpt",
         "custom_fields",
         "discussion",
@@ -330,5 +334,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1516995667
+    "modified": 1517865680
 }

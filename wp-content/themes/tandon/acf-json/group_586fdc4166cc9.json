@@ -248,7 +248,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -797,7 +797,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -1310,7 +1310,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -1678,7 +1678,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -1967,7 +1967,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -2273,7 +2273,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -2582,7 +2582,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -2811,7 +2811,7 @@
                             "name": "publication_type",
                             "type": "repeater",
                             "value": null,
-                            "instructions": "",
+                            "instructions": "For new Taxonomies, index.php and content block twig needs to be updated for context. Contact the Web Developer",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -2942,7 +2942,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -3166,10 +3166,10 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5a7494632c90a",
-                            "label": "Instrumentation",
-                            "name": "instrumentation_type",
-                            "type": "repeater",
+                            "key": "field_5a773137cf3a0",
+                            "label": "Display",
+                            "name": "display",
+                            "type": "select",
                             "value": null,
                             "instructions": "",
                             "required": 0,
@@ -3179,11 +3179,45 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "choices": {
+                                "relationship": "Relationship",
+                                "taxonomy": "Taxonomy"
+                            },
+                            "default_value": [],
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5a7494632c90a",
+                            "label": "Instrumentation",
+                            "name": "instrumentation_type",
+                            "type": "repeater",
+                            "value": null,
+                            "instructions": "For new Taxonomies, index.php and content block twig needs to be updated for context. Contact the Web Developer",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a773137cf3a0",
+                                        "operator": "==",
+                                        "value": "taxonomy"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "collapsed": "",
                             "min": 0,
                             "max": 0,
                             "layout": "row",
-                            "button_label": "Add Publication Type",
+                            "button_label": "Add Instrumentation Type",
                             "sub_fields": [
                                 {
                                     "key": "field_5a7494632c90b",
@@ -3235,6 +3269,42 @@
                                     "placeholder": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_5a7731bacf3a1",
+                            "label": "Featured Instrumentation",
+                            "name": "featured_instrumentation",
+                            "type": "relationship",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a773137cf3a0",
+                                        "operator": "==",
+                                        "value": "relationship"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "instruments"
+                            ],
+                            "taxonomy": [],
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": 1,
+                            "max": 6,
+                            "return_format": "object"
                         },
                         {
                             "key": "field_5a7494632c90d",
@@ -3302,7 +3372,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -3549,8 +3619,8 @@
                                 "taxonomy"
                             ],
                             "elements": "",
-                            "min": "",
-                            "max": "",
+                            "min": 1,
+                            "max": 6,
                             "return_format": "object"
                         },
                         {
@@ -3619,7 +3689,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 8,
+                            "default_value": 10,
                             "min": 0,
                             "max": 10,
                             "step": "",
@@ -3811,7 +3881,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 24,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -3821,5 +3891,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1517608127
+    "modified": 1517874741
 }
