@@ -3,9 +3,9 @@
     "title": "Colors (global)",
     "fields": [
         {
-            "key": "field_5a579734aaedc",
-            "label": "Primary Color",
-            "name": "primary_color",
+            "key": "field_5a7a08a5850f6",
+            "label": "Background Color",
+            "name": "background_color",
             "type": "color_picker",
             "value": null,
             "instructions": "",
@@ -16,23 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
-        },
-        {
-            "key": "field_5a57974faaedd",
-            "label": "Secondary Color",
-            "name": "secondary_color",
-            "type": "color_picker",
-            "value": null,
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": ""
+            "default_value": "#26053B"
         }
     ],
     "location": [
@@ -52,5 +36,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1515689862
+    "modified": 1517947134
 }
