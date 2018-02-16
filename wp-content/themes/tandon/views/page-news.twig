@@ -10,19 +10,26 @@
 
         <h2 class="section-title mb-4 ml-5">News<span class="chevron right"></span></h2>
 
-        <div class="card-deck mb-4">
+        <div class="row row-eq-height">
+
+            <div class="col-12">
 
         {% for post in posting %}
+        <div class="col-4 mx-0">
 
-            <div class="card">
+            <div class="card full">
 
-                {% include ['./partial/tease.twig'] %}
+                                    {% for term in post.terms('journals') %}
+                                        <li class="term-item"><a href="{{term.link}}">{{term.name}}</a></li>
+                                    {% endfor %}
 
+                                    {% include ['./partial/tease-'~post.post_type~'.twig', './partial/tease.twig'] %}
             </div>
+        </div>
 
         {% endfor %}
 
-        </div>
+        </div></div>
 
         {% include ['./partial/pagination.twig'] %}
 
