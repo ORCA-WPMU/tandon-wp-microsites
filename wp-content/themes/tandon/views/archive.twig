@@ -22,7 +22,7 @@
 
             <div class="row row-eq-height">
 
-                {% if title_post_type %}
+                {% if roletype %}
 
                 <div class="col-12 col-sm-8">
 
@@ -36,25 +36,23 @@
 
                         {% for post in posting %}
 
+                            {% if roletype %}
+
                             <div class="col-12 col-sm-6 px-0">
 
-                                <div class="card">
+                            {% else %}
+
+                            <div class="col-12 col-sm-4 px-0">
+
+                            {% endif %}
+
+                                <div class="card full">
 
                                     {% for term in post.terms('journals') %}
                                         <li class="term-item"><a href="{{term.link}}">{{term.name}}</a></li>
                                     {% endfor %}
 
-                                    <article>
-
-                                        <a href="{{ function('get_permalink', post.ID) }}">
-
-                                            <img src="{{TimberImage(post.featured_image).src|resize(500, 500, 'center') }}" alt="" class="w-100 mx-auto">
-
-                                        </a>
-
-                                        {% include ['./partial/tease-'~post.post_type~'.twig', './partial/tease.twig'] %}
-
-                                    </article>
+                                    {% include ['./partial/tease-'~post.post_type~'.twig', './partial/tease.twig'] %}
 
                                 </div>
 
@@ -66,7 +64,11 @@
 
                 </div>
 
-                {% include ['./partial/sidebar.twig'] %}
+                {% if roletype or instrumentdocs %}
+
+                {% include ['./partial/sidebar-'~title_post_type~'.twig'] %}
+
+                {% endif %}
 
             </div>
 
