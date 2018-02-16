@@ -89,7 +89,7 @@
 {% else %}
 
 <div id="hero" {% if parallax == 'true' %}data-type="background" data-speed="{{ parallaxamount }}"{% endif %} class="
-    {% if herofixed == 'true' %}scroll-fix{% endif %}{% if parallax == 'true' %} parallax{% endif %}{% if fullheight == 'true' %} full_height{% endif %}" style="
+    {% if herofixed == 'true' %}scroll-fix{% endif %}{% if parallax == 'true' %} parallax{% endif %}" style="
     {% if ifherobackgroundimage == 'true' %}
         {% if heroimage %}
             background: url({{ heroimage.url }}) no-repeat center center;
