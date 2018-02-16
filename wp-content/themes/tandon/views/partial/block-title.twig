@@ -1,7 +1,9 @@
-<h2 class="section-title mt-0 ml-5 mb-4">
+<h2 class="section-title mt-0 {% if block.if_center_content %}ml-0 {% else %}
+    ml-5{% endif %} mb-4">
 
     {{ block.block_title }}
 
-    <span class="chevron right"></span>
+    <span class="chevron right" style="color:{% if block.text_color_picker %} {{block.text_color_picker}}
+    {% endif %}"></span>
 
 </h2>
