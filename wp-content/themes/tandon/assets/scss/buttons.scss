@@ -33,12 +33,14 @@ a.btn-nyu-primary {
     &:hover, &:active, &:focus {
         background: lighten($brand, 15%);
         color: #FFF;
+        text-decoration: none;
     }
 }
 
 .register-button {
-    background: green;
-    color: #fff;
+    background: white;
+    // border: 1px solid white;
+    color: #311e3f;
     font-weight: 800;
     font-size: 14px;
     padding: 10px 20px;
@@ -56,8 +58,9 @@ a.btn-nyu-primary {
     }
 
     &:hover, &:active, &:focus {
-        background: lighten(green, 15%);
-        color: #FFF;
+        background: rgba(255, 193, 7, 1);
+        color: #311e3f;
+        text-decoration: none;
     }
 }
 

@@ -2,27 +2,53 @@
     margin-right: 0;
     margin-left: 0;
     .card {
-        min-width: 33.3333%;
+        min-width: 25%;
         margin-right: 0;
         margin-left: 0;
+        border: 0 ;
+        // border-right: 1px solid #D9D9D9;
+        // border-left: 1px solid #D9D9D9;
+    }
+    .card-body {
         border-right: 1px solid #D9D9D9;
-        border-left: 1px solid #D9D9D9;
+        border-left: 1px solid #D9D9D9;        
     }
 }
 
 .card {
-    min-width: 33.3333%;
+    min-width: 25%;
+    max-width: 25%;
     width: 100%;
     margin-right: 0;
     margin-left: 0;
-    border-right: 1px solid #D9D9D9;
-    border-left: 1px solid #D9D9D9;
+    // border-right: 1px solid #D9D9D9;
+    // border-left: 1px solid #D9D9D9;
     font-size: 17px;
     letter-spacing: 1px;
     border-top: 0;
     border-bottom: 0;
     border-radius: 0;
     background: #f6f6f6;
+
+    @include mq($max-width: $lg) {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    @include mq($max-width: $sm) {
+        margin: 0 0 15px;
+        margin-bottom: 15px;
+    }
+
+    &.list {
+        min-width: 33.3333%;
+        max-width: 33.3333%;
+    }
+
+    &.full {
+        min-width: 100%;
+        max-width: 100%;
+    }
 
     p {
         font-size: 16px;
@@ -42,15 +68,6 @@
         &:hover {
             text-decoration: underline;
         }
-    }
-
-    @include mq($max-width: $lg) {
-        max-width: 100%;
-        min-width: 100%;
-    }
-
-    @include mq($max-width: $sm) {
-        margin: 0 0 15px;
     }
 
     span{
@@ -90,10 +107,6 @@
         &.alignright {
             margin: 0 0 25px 30px;
         }
-    }
-
-    @include mq($max-width: $sm) {
-        margin-bottom: 15px;
     }
 
     h5{

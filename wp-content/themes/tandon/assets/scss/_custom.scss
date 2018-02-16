@@ -229,10 +229,12 @@ h2.page-title {
     }
 }
 
-
+hr.section {
+    border-top: 1px solid #ddd;
+}
 
 section {
-    padding-top: 40px;
+    padding: 50px 0 80px;
     position: relative;
 }
 
@@ -354,10 +356,14 @@ a.read-more.reveal {
 
 img.alignright {
     float: right;
+    margin-left: 35px;
+    margin-bottom: 15px;
 }
 
 img.alignleft {
     float: left;
+    margin-right: 35px;
+    margin-bottom: 15px;
 }
 
 .rsDefaultInv .rsBullets {
@@ -859,6 +865,9 @@ select.custom-select {
         @media ( max-height: 768px ){
             visibility: hidden
         }
+    }
+    &:hover {
+        text-decoration: none;
     }
     h3 {
         text-transform: uppercase;
