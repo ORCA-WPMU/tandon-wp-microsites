@@ -11,6 +11,14 @@ export function main() {
            $window = $(window);
 
 
+  $buttonhamburger.focus(function() {
+
+    toggleNav();
+
+    toggleButtonActiveState();
+
+  });
+
   $buttonhamburger.click(function() {
 
     toggleNav();
