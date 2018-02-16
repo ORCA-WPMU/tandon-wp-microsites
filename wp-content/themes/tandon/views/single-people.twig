@@ -74,6 +74,12 @@
 
                     </div>
 
+                    {% if post.people_url %}
+
+                        <a href="{{ post.people_url }}" target="_blank">{{ post.people_url }}</a>
+
+                    {% endif %}
+
                 </div>
 
             </div>
