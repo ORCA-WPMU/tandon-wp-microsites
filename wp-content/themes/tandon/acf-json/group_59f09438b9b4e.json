@@ -108,65 +108,6 @@
             "delay": 0
         },
         {
-            "key": "field_5a04b92039b57",
-            "label": "URL",
-            "name": "url",
-            "type": "repeater",
-            "value": null,
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Website",
-            "sub_fields": [
-                {
-                    "key": "field_5a04b94639b58",
-                    "label": "Website URL",
-                    "name": "website",
-                    "type": "url",
-                    "value": null,
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "65",
-                        "class": "float-right",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5a04b96239b59",
-                    "label": "Site Title",
-                    "name": "site_title",
-                    "type": "text",
-                    "value": null,
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "35",
-                        "class": "float-left",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
-        },
-        {
             "key": "field_5a3404e82de2d",
             "label": "Email",
             "name": "email",
@@ -224,6 +165,23 @@
             "min_size": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5a7b4e556216a",
+            "label": "People URL",
+            "name": "people_url",
+            "type": "url",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -245,5 +203,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1517859118
+    "modified": 1518031315
 }
