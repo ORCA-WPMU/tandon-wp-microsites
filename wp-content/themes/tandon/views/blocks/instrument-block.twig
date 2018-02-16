@@ -26,11 +26,15 @@
 
         <div class="card">
 
+            {% if post.feat_image %}
+
             <a href="{{ function('get_permalink', post.ID) }}">
 
                 <img src="{{TimberImage(post.feat_image).src|resize(500, 500, 'center') }}" alt="" class="w-100 mx-auto">
 
             </a>
+
+            {% endif %}
 
             {% include ['./partial/tease.twig'] %}
 
