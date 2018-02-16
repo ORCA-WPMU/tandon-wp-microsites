@@ -2,6 +2,10 @@
 
 require_once( __DIR__ . '/functions/acf.php' );
 
+require_once( __DIR__ . '/functions/cpt.php' );
+
+require_once( __DIR__ . '/functions/customtax.php' );
+
 require_once( __DIR__ . '/functions/enqueue.php' );
 
 require_once( __DIR__ . '/functions/menu.php' );

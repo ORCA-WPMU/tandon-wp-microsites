@@ -92,6 +92,8 @@ function mytheme_timber_context( $context ) {
 
     $context['globalbackgroundimage'] = get_field('global_background_image', 'option');
     $context['backgroundcolor'] = get_field('background_color', 'option');
+    $context['alertbkg'] = get_field('alert_bkg', 'option');
+    $context['alerttextcolor'] = get_field('alert_text_color', 'option');
 
     $context['aboutsection'] = get_field('about_section', 'option');
     $context['aboutprimarytitle'] = get_field('primary_title', 'option');
