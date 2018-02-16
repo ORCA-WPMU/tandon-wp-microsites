@@ -47,7 +47,7 @@ $context['roletype'] = reset( $rolecat );
 
 $context['term_page'] = new TimberTerm();
 
-$context['taxterms'] = Timber::get_terms('roles');
+// $context['taxterms'] = Timber::get_terms('roles');
 
 $args = array(
 'post_type' => 'people',
