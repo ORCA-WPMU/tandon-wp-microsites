@@ -1,0 +1,27 @@
+{% if roletype %}
+
+<div class="col-12 col-sm-4 pl-0">
+
+    <div class="jumbotron w-100 mb-0">
+
+        <ul class="list-group list-group-flush">
+
+        <h4 class="my-3">Terms</h4>
+
+        {% for term in roletype %}
+
+            {% if loop.index0 > 1 %}
+
+            <li class="list-group-item"><a href="{{ term.link }}"> {{ term.name }}</a></li>
+
+            {% endif %}
+
+        {% endfor %}
+
+        </ul>
+
+    </div>
+
+</div><!-- /.col-4 -->
+
+{% endif %}
