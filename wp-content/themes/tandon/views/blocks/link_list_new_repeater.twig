@@ -6,11 +6,11 @@
 
         {% include 'partial/block-intro.twig' %}
 
-        <div class="card-deck">
+        <div class="card-deck {% if block.if_center_content %}justify-content-center{% endif %}">
 
             {% for list in block.links_repeater %}
 
-            <div class="card mb-4">
+            <div class="card list mb-4">
 
                 <div class="card-body">
 
